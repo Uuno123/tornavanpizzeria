@@ -1,0 +1,1585 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media  (max-width:800px) {
+    
+
+/*=========================
+    MOBILE-FIRST
+==========================*/
+
+body{
+    flex-direction: column;
+    display: flex;
+    background: #ffffff;
+    height: 100vh;
+}
+
+
+.show-nav{
+      position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #1a1008;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 89;
+
+  transform: translateY(-100%);
+  transition: transform .4s ease;
+}
+
+.show-nav a{
+    color: white;
+    text-decoration: none;
+}
+
+.show-nav.open {
+  transform: translateY(80px);
+}
+
+.puh-mob{
+    padding: 10px 15px;
+    width: 100%;
+    background: orange;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: "Archivo Black", sans-serif;
+    color: white;
+}
+
+.show-nav span{
+    margin-top: 8px;
+     padding: 0px 15px;
+   font-size: 20px;
+    text-decoration: none;
+    font-family: "Archivo Black", sans-serif;
+    color: white;
+}
+
+.overlay{
+    position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  z-index: 88;
+}
+
+.overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/*============
+    NAVBAR
+==============*/
+
+.nav-holder{
+    max-height: 120px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.nav-holder2{
+    display: none;
+}
+
+.navbar{
+    position: fixed;
+    max-height: 80px;
+    width: 100%;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: black;
+    padding: 25px;
+    border-bottom: 2px solid var(--orange);
+}
+
+.logo{
+    margin-top: 5px;
+    border-radius: 50%;
+    position: absolute;
+    width: 15%;
+    height: auto;
+}
+
+.logo-desktop{
+    display: none;
+}
+
+.hamburger{
+    font-weight: bold;
+    color: white;
+    border: none;
+    font-size: 40px;
+    background: none;
+}
+
+.cart{
+    position: relative;
+    cursor: pointer;
+    margin-top: 5px;
+    font-family: "Inter", sans-serif;
+    border: none;
+    background: none;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #F5A800;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    pointer-events: none;
+}
+
+.viiva1{
+    border: none;
+    height: 2px;
+    width: 100%;
+    background: orange;
+}
+
+
+/*=====================
+    SECTION1    
+=======================*/
+
+.section1{
+    margin-top: 80px;
+    padding: 15px;
+    color: white;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+   background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(pexels-cesar-o-neill-26650613-35628174.jpg);
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    height: auto;
+}
+
+.hero1{
+    line-height: 1;
+    margin-top: 50px;
+    font-size: 60px;
+    font-weight: bold;
+     font-family: "Bebas Neue", sans-serif;
+}
+
+.hero1 span{
+    color: orange;
+}
+
+.hero2{
+    font-size: 19px;
+    margin-top: 30px;
+    color: #adadad;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+.btn-container{
+    margin-top: 40px;
+}
+
+.menu-btn{
+    font-family: "Inter", sans-serif;
+   background: #F5A800;
+  color: #fff;
+  padding: .85rem 2.2rem;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(245,168,0,.4);
+  transition: transform .2s, background .2s;
+}
+
+.menu-btn:hover{
+    background: #D48A00;
+  transform: translateY(-2px);
+}
+
+.tilaa-btn{
+    margin-top: 5px;
+    font-family: "Inter", sans-serif;
+   background: transparent;
+  color: #fff;
+  padding: .85rem 2.2rem;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 2px solid rgba(255,255,255,.5);
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+
+.tilaa-btn:hover{
+    border-color: #F5A800;
+  color: #F5A800;
+}
+
+/*====================
+    SECTION2
+=====================*/
+
+.section2{
+   background: linear-gradient(135deg, #0a0503 0%, #150a02 50%, #0a0303 100%);
+   padding: 15px;
+    color: white;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: auto;   
+}
+
+.card1,
+.card2,
+.card3{
+    width: 90%;
+    margin-top: 15px;
+      background: rgba(255,255,255,.07);
+  border: 1px solid rgba(245,168,0,.3);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.section2 h1{
+      font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  color: #F5A800;
+  line-height: 1;
+}
+
+.section2 p{
+      font-size: .75rem;
+  color: rgba(255,255,255,.6);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: .2rem;
+}
+
+
+/*===================
+    HIHNA   
+====================*/
+
+.hihna{
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    color: black;
+     overflow: hidden;
+  padding: 2rem 0;
+  white-space: nowrap;
+  background: #F5A800;
+}
+
+.hihna-inside{
+    align-items: center;
+    justify-content: center;
+     display: inline-flex;
+  animation: marquee 9s linear infinite;
+}
+
+.hihna span{
+     font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  padding: 0 2.5rem;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/*===================
+    SECTION3
+====================*/
+
+.section3{
+    background: #FFF8EC;
+   padding: 15px;
+    color: black;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    height: auto;   
+}
+
+.section3 h5{
+    padding: 80px 0px;
+    font-weight: bold;
+    letter-spacing: 0.3rcap;
+    font-size: 1.5rem;
+    color: orange;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.section3 h2{
+    margin-top: -80px;
+    font-weight: bold;
+    letter-spacing: 0.3rcap;
+    font-size: 3rem;
+    color: black;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.card-container{
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-container
+.a,
+.b,
+.c,
+.d {
+    height: 250px;
+    width: 95%;
+    border-radius: 20px;
+}
+
+.card-container
+.a,
+.b,
+.c,
+.d p{
+    padding-left: 25px;
+    padding-top: 180px;
+    font-size: 2.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    z-index: 5;
+  color: white;
+}
+
+.a{
+    margin-top: 20px;
+    background-size: cover;
+    background-position: center;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(kuva1.jpg);
+}
+
+.b{
+     background-size: cover;
+    background-position: center;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(kuva2.jpg);
+}
+
+.c{
+     background-size: cover;
+    background-position: center;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(kuva3.jpg);    
+}
+
+.d{
+     background-size: cover;
+    background-position: center;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(kuva4.jpg);
+}
+
+/*=====================
+    SECTIO0N4   
+=======================*/
+
+.section4{
+     background: orange;
+   padding: 55px;
+    color: black;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: auto;   
+}
+
+.section4 h1{
+    padding: 0.1rem;
+    font-weight: bold;
+    letter-spacing: 0.01cap;
+    font-size: 3.8rem;
+     font-family: 'Bebas Neue', sans-serif;
+    color: white;
+}
+
+.call-link{
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    color: white;
+    padding: 5px 80px;
+    border-radius: 20px;
+    background: black;
+}
+
+.link1{
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    color: orange;
+     padding: 5px 80px;
+    border-radius: 20px;
+    background: white;
+}
+
+
+/*=================
+    FOOTER
+===================*/
+
+footer{
+      background: linear-gradient(135deg, #0a0503 0%, #150a02 50%, #0a0303 100%);
+   padding: 25px;
+    color: black;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    height: auto;   
+}
+
+.logo2{
+    border-radius: 50%;
+    height: auto;
+    width: 20%;
+}
+
+.low-hero{
+    font-size: 15px;
+    margin-top: 30px;
+    color: #adadad;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+
+
+
+.auk{
+     font-size: 20px;
+    margin-top: 30px;
+    color: white;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+.auk2{
+    padding: 5px;
+     font-size: 18px;
+    margin-top: 30px;
+    color: #adadad;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*==================
+    LAPTOP
+====================*/
+
+
+@media screen and (min-width: 800px)   {
+
+
+    body{
+        overflow-x: hidden;
+    }
+    
+    /*============
+    NAVBAR
+    ==============*/
+
+.nav-holder{
+    max-height: 120px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.nav-holder2{
+    margin-left: 400px;
+    justify-content: flex-start;
+    width: 100%;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    position: absolute;
+}
+
+.nav-holder2 a{
+    font-size: 20px;
+    padding: 0px 35px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-holder2 a:hover{
+    transform: translateY(-2px);
+}
+
+
+.navbar{
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: absolute;
+    max-height: 110px;
+    width: 100%;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: black;
+    padding: 25px;
+    border-bottom: 2px solid var(--orange);
+}
+
+.logo{
+    display: none;
+}
+
+.logo-desktop{
+    margin-left: 50px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.hamburger{
+    display: none;
+}
+
+.cart{
+    position: relative;
+    cursor: pointer;
+    margin-top: 5px;
+    font-family: "Inter", sans-serif;
+    border: none;
+    background: none;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #F5A800;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    pointer-events: none;
+}
+
+.viiva1{
+    border: none;
+    height: 2px;
+    width: 100%;
+    background: orange;
+}
+
+
+/*=====================
+    SECTION1    
+=======================*/
+
+.section1{
+    margin-top: 75px;
+    padding: 100px 80px;
+    color: white;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+   background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(pexels-cesar-o-neill-26650613-35628174.jpg);
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    height: auto;
+}
+
+.hero1{
+    line-height: 1;
+    margin-top: 50px;
+    font-size: 90px;
+    font-weight: bold;
+     font-family: "Bebas Neue", sans-serif;
+}
+
+.hero1 span{
+    color: orange;
+}
+
+.hero2{
+    max-width: 70%;
+    font-size: 23px;
+    margin-top: 30px;
+    color: #adadad;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+.btn-container{
+    margin-top: 40px;
+}
+
+.menu-btn{
+    font-family: "Inter", sans-serif;
+   background: #F5A800;
+  color: #fff;
+  padding: .95rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(245,168,0,.4);
+  transition: transform .2s, background .2s;
+}
+
+.menu-btn:hover{
+    background: #D48A00;
+  transform: translateY(-2px);
+}
+
+.tilaa-btn{
+    margin-top: 5px;
+    font-family: "Inter", sans-serif;
+   background: transparent;
+  color: #fff;
+  padding: .95rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 2px solid rgba(255,255,255,.5);
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+
+.tilaa-btn:hover{
+    border-color: #F5A800;
+  color: #F5A800;
+}
+
+
+/*====================
+    SECTION2
+=====================*/
+
+.section2{
+    margin-top: -200px;
+    z-index: 2;
+   padding: 15px;
+    color: white;
+    flex-direction: row;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    height: auto;   
+}
+
+.card1,
+.card2,
+.card3{
+    margin-left: 5px;
+    width: 200px;
+    margin-top: 15px;
+      background: rgba(255,255,255,.07);
+  border: 1px solid rgba(245,168,0,.3);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.section2 h1{
+      font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  color: #F5A800;
+  line-height: 1;
+}
+
+.section2 p{
+      font-size: .75rem;
+  color: rgba(255,255,255,.6);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: .2rem;
+}
+
+
+/*===================
+    HIHNA   
+====================*/
+
+.hihna{
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    color: black;
+     overflow: hidden;
+  padding: 2rem 0;
+  white-space: nowrap;
+  background: #F5A800;
+}
+
+.hihna-inside{
+    align-items: center;
+    justify-content: center;
+     display: inline-flex;
+  animation: marquee 9s linear infinite;
+}
+
+.hihna span{
+     font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  padding: 0 2.5rem;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+
+/*===================
+    SECTION3
+====================*/
+
+.section3{
+    background: #FFF8EC;
+   padding: 15px;
+    color: black;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    height: auto;   
+}
+
+.section3 h5{
+    padding: 80px 0px;
+    font-weight: bold;
+    letter-spacing: 0.3rcap;
+    font-size: 1.5rem;
+    color: orange;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.section3 h2{
+    margin-top: -80px;
+    font-weight: bold;
+    letter-spacing: 0.3rcap;
+    font-size: 3rem;
+    color: black;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.card-container{
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-container
+.a,
+.b,
+.c,
+.d {
+    height: 250px;
+    width: 95%;
+    border-radius: 20px;
+}
+
+.card-container
+.a,
+.b,
+.c,
+.d p{
+    padding-left: 25px;
+    padding-top: 180px;
+    font-size: 2.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    z-index: 5;
+  color: white;
+}
+
+.a{
+    margin-top: 20px;
+    background-size: cover;
+    background-position: center;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(kuva1.jpg);
+}
+
+.b{
+     background-size: cover;
+    background-position: center;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(kuva2.jpg);
+}
+
+.c{
+     background-size: cover;
+    background-position: center;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(kuva3.jpg);    
+}
+
+.d{
+     background-size: cover;
+    background-position: center;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(kuva4.jpg);
+}
+
+
+.a:hover{
+    cursor: pointer;
+    transition: 1s ease ;
+    transform: scaleX(1.9);
+    transform: scaleY(1.05);
+}
+.b:hover{
+    cursor: pointer;
+    transition: 1s ease ;
+    transform: scaleX(1.9);
+    transform: scaleY(1.05);
+}
+.c:hover{
+    cursor: pointer;
+    transition: 1s ease ;
+    transform: scaleX(1.9);
+    transform: scaleY(1.05);
+}
+.d:hover{
+    cursor: pointer;
+    transition: 1s ease ;
+    transform: scaleX(1.9);
+    transform: scaleY(1.05);
+}
+
+
+/*=====================
+    SECTIO0N4   
+=======================*/
+
+.section4{
+     background: orange;
+   padding: 55px;
+    color: black;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: auto;   
+}
+
+.section4 h1{
+    padding: 0.1rem;
+    font-weight: bold;
+    letter-spacing: 0.01cap;
+    font-size: 3.8rem;
+     font-family: 'Bebas Neue', sans-serif;
+    color: white;
+}
+
+.call-link{
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    color: white;
+    padding: 5px 80px;
+    border-radius: 20px;
+    background: black;
+}
+
+.link1{
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    color: orange;
+     padding: 5px 80px;
+    border-radius: 20px;
+    background: white;
+}
+
+
+/*=================
+    FOOTER
+===================*/
+
+footer{
+      background: linear-gradient(135deg, #0a0503 0%, #150a02 50%, #0a0303 100%);
+   padding: 25px;
+    color: black;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    height: auto;   
+}
+
+.logo2{
+    border-radius: 50%;
+    height: auto;
+    width: 20%;
+}
+
+.low-hero{
+    font-size: 15px;
+    margin-top: 30px;
+    color: #adadad;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+
+
+
+.auk{
+     font-size: 20px;
+    margin-top: 30px;
+    color: white;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+.auk2{
+    padding: 5px;
+     font-size: 18px;
+    margin-top: 30px;
+    color: #adadad;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+}
+
+
+
+
+@media screen and (min-width: 1800px)  {
+
+
+    /*===================
+        DESKTOP2
+    =====================*/
+
+    
+    body{
+        overflow-x: hidden;
+    }
+    
+    /*============
+    NAVBAR
+    ==============*/
+
+.nav-holder{
+    max-height: 120px;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.nav-holder2{
+    margin-left: 900px;
+    justify-content: flex-start;
+    width: 100%;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    position: absolute;
+}
+
+.nav-holder2 a{
+    font-size: 20px;
+    padding: 0px 35px;
+    color: white;
+    text-decoration: none;
+    transition: 0.1s ease;
+}
+
+.nav-holder2 a:hover{
+    transform: translateY(-2px);
+}
+
+
+.navbar{
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: absolute;
+    max-height: 110px;
+    width: 100%;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: black;
+    padding: 25px;
+    border-bottom: 2px solid var(--orange);
+}
+
+.logo{
+    display: none;
+}
+
+.logo-desktop{
+    margin-left: 50px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.hamburger{
+    display: none;
+}
+
+.cart{
+  position: relative;
+    margin-top: 5px;
+    font-family: "Inter", sans-serif;
+    border: none;
+    background: none;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #F5A800;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    pointer-events: none;
+}
+
+.viiva1{
+    border: none;
+    height: 2px;
+    width: 100%;
+    background: orange;
+}
+
+
+/*=====================
+    SECTION1    
+=======================*/
+
+.section1{
+    margin-top: 75px;
+    padding: 250px 180px;
+    color: white;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+   background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(pexels-cesar-o-neill-26650613-35628174.jpg);
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    height: auto;
+}
+
+.hero1{
+    line-height: 1;
+    margin-top: 0px;
+    font-size: 120px;
+    font-weight: bold;
+     font-family: "Bebas Neue", sans-serif;
+}
+
+.hero1 span{
+    color: orange;
+}
+
+.hero2{
+    max-width: 70%;
+    font-size: 25px;
+    margin-top: 30px;
+    color: #adadad;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+.btn-container{
+    margin-top: 40px;
+}
+
+.menu-btn{
+    font-family: "Inter", sans-serif;
+   background: #F5A800;
+  color: #fff;
+  padding: 1.1rem 2.8rem;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(245,168,0,.4);
+  transition: transform .2s, background .2s;
+}
+
+.menu-btn:hover{
+    background: #D48A00;
+  transform: translateY(-2px);
+}
+
+.tilaa-btn{
+    margin-top: 5px;
+    font-family: "Inter", sans-serif;
+   background: transparent;
+  color: #fff;
+    padding: 1.1rem 2.8rem;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 2px solid rgba(255,255,255,.5);
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+
+.tilaa-btn:hover{
+    border-color: #F5A800;
+  color: #F5A800;
+}
+
+
+/*====================
+    SECTION2
+=====================*/
+
+.section2{
+    margin-top: -200px;
+    z-index: 2;
+   padding: 15px;
+    color: white;
+    flex-direction: row;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    height: auto;   
+}
+
+.card1,
+.card2,
+.card3{
+    margin-left: 5px;
+    width: 200px;
+    margin-top: 15px;
+      background: rgba(255,255,255,.07);
+  border: 1px solid rgba(245,168,0,.3);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.section2 h1{
+      font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  color: #F5A800;
+  line-height: 1;
+}
+
+.section2 p{
+      font-size: .75rem;
+  color: rgba(255,255,255,.6);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: .2rem;
+}
+
+
+/*===================
+    HIHNA   
+====================*/
+
+.hihna{
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    color: black;
+     overflow: hidden;
+  padding: 2rem 0;
+  white-space: nowrap;
+  background: #F5A800;
+}
+
+.hihna-inside{
+    align-items: center;
+    justify-content: center;
+     display: inline-flex;
+  animation: marquee 9s linear infinite;
+}
+
+.hihna span{
+     font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  padding: 0 2.5rem;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+
+/*===================
+    SECTION3
+====================*/
+
+.section3{
+    background: #FFF8EC;
+   padding: 15px;
+    color: black;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    height: auto;   
+}
+
+.section3 h5{
+    padding: 80px 0px;
+    font-weight: bold;
+    letter-spacing: 0.3rcap;
+    font-size: 1.5rem;
+    color: orange;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.section3 h2{
+    margin-top: -80px;
+    font-weight: bold;
+    letter-spacing: 0.3rcap;
+    font-size: 3rem;
+    color: black;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.card-container{
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-container
+.a,
+.b,
+.c,
+.d {
+    height: 250px;
+    width: 95%;
+    border-radius: 20px;
+}
+
+.card-container
+.a,
+.b,
+.c,
+.d p{
+    padding-left: 25px;
+    padding-top: 180px;
+    font-size: 2.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    z-index: 5;
+  color: white;
+}
+
+.a{
+    margin-top: 20px;
+    background-size: cover;
+    background-position: center;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(kuva1.jpg);
+}
+
+.b{
+     background-size: cover;
+    background-position: center;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(kuva2.jpg);
+}
+
+.c{
+     background-size: cover;
+    background-position: center;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(kuva3.jpg);    
+}
+
+.d{
+     background-size: cover;
+    background-position: center;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    url(kuva4.jpg);
+}
+
+
+.a:hover{
+    cursor: pointer;
+    transition: 1s ease ;
+    transform: scaleX(1.9);
+    transform: scaleY(1.05);
+}
+.b:hover{
+    cursor: pointer;
+    transition: 1s ease ;
+    transform: scaleX(1.9);
+    transform: scaleY(1.05);
+}
+.c:hover{
+    cursor: pointer;
+    transition: 1s ease ;
+    transform: scaleX(1.9);
+    transform: scaleY(1.05);
+}
+.d:hover{
+    cursor: pointer;
+    transition: 1s ease ;
+    transform: scaleX(1.9);
+    transform: scaleY(1.05);
+}
+
+
+/*=====================
+    SECTIO0N4   
+=======================*/
+
+.section4{
+     background: orange;
+   padding: 55px;
+    color: black;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: auto;   
+}
+
+.section4 h1{
+    padding: 0.1rem;
+    font-weight: bold;
+    letter-spacing: 0.01cap;
+    font-size: 3.8rem;
+     font-family: 'Bebas Neue', sans-serif;
+    color: white;
+}
+
+.call-link{
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    color: white;
+    padding: 5px 80px;
+    border-radius: 20px;
+    background: black;
+}
+
+.call-link:hover {
+  background: #222;
+  transform: translateY(-2px);
+}
+
+
+.link1{
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    color: orange;
+     padding: 5px 80px;
+    border-radius: 20px;
+    background: white;
+}
+
+.link1:hover {
+  background: orange;
+  color: white;
+  transform: translateY(-2px);
+}
+
+
+/*=================
+    FOOTER
+===================*/
+
+footer{
+      background: linear-gradient(135deg, #0a0503 0%, #150a02 50%, #0a0303 100%);
+   padding: 25px;
+    color: black;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    height: auto;   
+}
+
+.logo2{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.low-hero{
+    font-size: 15px;
+    margin-top: 30px;
+    color: #adadad;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+
+
+
+.auk{
+     font-size: 20px;
+    margin-top: 30px;
+    color: white;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+.auk2{
+    padding: 5px;
+     font-size: 18px;
+    margin-top: 30px;
+    color: #adadad;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+    
+}

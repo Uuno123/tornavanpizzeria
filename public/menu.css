@@ -1,0 +1,1505 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.html{
+    scroll-behavior: smooth;
+}
+
+@media  (max-width: 800px) {
+
+
+
+  /*===========================
+    TOAST
+  ==============================*/
+
+  .toast {
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+  position: fixed;
+
+  bottom: 20px;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(100px);
+
+  background: black;
+  color: white;
+
+  padding: 14px 25px;
+  width: 270px;
+
+  border-radius: 14px;
+
+  font-size: 15px;
+
+  opacity: 0;
+
+  transition: 0.3s ease;
+
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+
+  transform: translateX(-50%) translateY(0);
+}
+  
+
+
+/*=========================
+    MOBILE-FIRST
+==========================*/
+
+body{
+    flex-direction: column;
+    display: flex;
+    background: #ffffff;
+    height: 100vh;
+}
+
+
+.show-nav{
+      position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #1a1008;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 89;
+
+  transform: translateY(-100%);
+  transition: transform .4s ease;
+}
+
+.show-nav a{
+    color: white;
+    text-decoration: none;
+}
+
+.show-nav.open {
+  transform: translateY(80px);
+}
+
+.puh-mob{
+    padding: 10px 15px;
+    width: 100%;
+    background: orange;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: "Archivo Black", sans-serif;
+    color: white;
+}
+
+.show-nav span{
+    margin-top: 8px;
+     padding: 0px 15px;
+   font-size: 20px;
+    text-decoration: none;
+    font-family: "Archivo Black", sans-serif;
+    color: white;
+}
+
+.overlay{
+    position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  z-index: 88;
+}
+
+.overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/*============
+    NAVBAR
+==============*/
+
+.nav-holder{
+    max-height: 120px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.nav-holder2{
+    display: none;
+}
+
+.navbar{
+    position: fixed;
+    max-height: 80px;
+    width: 100%;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: black;
+    padding: 25px;
+    border-bottom: 2px solid var(--orange);
+}
+
+.logo{
+    margin-top: 5px;
+    border-radius: 50%;
+    position: absolute;
+    width: 15%;
+    height: auto;
+}
+
+.logo-desktop{
+  display: none;
+}
+
+
+.hamburger{
+    font-weight: bold;
+    color: white;
+    border: none;
+    font-size: 40px;
+    background: none;
+}
+
+.cart{
+  position: relative;
+    cursor: pointer;
+    margin-top: 5px;
+    font-family: "Inter", sans-serif;
+    border: none;
+    background: none;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #F5A800;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    pointer-events: none;
+}
+
+.viiva1{
+    border: none;
+    height: 2px;
+    width: 100%;
+    background: orange;
+}
+
+
+/*==============
+    SECTION1
+================*/
+
+.section1{
+    padding: 35px;
+    margin-top: 75px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: #1a1008;
+    width: 100%;
+    height: auto;
+}
+
+.section1 h1{
+    font-size: 3.5rem;
+    color: white;
+     font-family: "Bebas Neue", sans-serif;
+}
+
+.section1 h1 span{
+    color: orange;
+}
+
+.hero1{
+     font-size: 18px;
+    margin-top: 10px;
+    color: #adadad;
+    font-weight: 400;
+     font-family: "Inter", sans-serif;
+}
+
+/*=============
+SECTION2
+===============*/
+
+
+
+
+.section2{
+    font-family: "Inter", sans-serif;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background:  #FFF8EC;
+    width: 100%;
+    height: auto;
+}
+
+.btn-container{
+   display: flex;
+  gap: .7rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background:  #FFF8EC;
+  border-bottom: 2px solid rgba(0,0,0,.06);
+}
+
+.btn-container a{
+    text-decoration: none;
+     background: none;
+  border: 2px solid rgba(0,0,0,.1);
+  padding: .6rem 1.6rem;
+  border-radius: 50px;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: .9rem;
+  color: var(--text);
+  transition: all .2s;
+}
+
+.btn-container a:hover{
+     border-color: var(--orange);
+  color: var(--orange);
+}
+
+.btn-container a.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(245,168,0,.35);
+}
+
+/*==============
+    SECTION3
+===============*/
+
+.section3{
+    padding: 15px;
+    align-self: flex-start;
+    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    background: #FFF8EC;
+    width: 100%;
+    height: auto;
+}
+
+.otsikko{
+    font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  color: var(--dark);
+  padding-bottom: 0;
+  border-bottom: 3px solid var(--orange);
+  display: inline-block;
+}
+
+.line{
+     font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  padding-bottom: 0;
+  margin-top: -35px;
+  display: inline-block;
+    color: orange;
+}
+
+
+.holder-a{
+  flex-direction: column;
+  margin-top: 50px;
+  display: flex;
+}
+
+.holder-b{
+   flex-direction: column;
+  margin-top: 50px;
+  display: flex;
+}
+
+.holder-c{
+   flex-direction: column;
+  margin-top: 50px;
+  display: flex;
+}
+
+
+/*-------------------------TUOTE----------------*/
+
+
+.menu-item {
+  margin-top: 8px;
+    max-width: 95%;
+    font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.4rem;
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px solid rgba(0,0,0,.06);
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+  gap: 1rem;
+}
+
+.menu-item:hover {
+  border-color: #F5A800;
+  transform: translateX(4px);
+  box-shadow: 0 4px 20px rgba(245,168,0,.12);
+}
+
+.menu-item-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.menu-item-emoji { font-size: 1.8rem; flex-shrink: 0; }
+
+.menu-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+}
+
+.menu-item-name {
+  font-weight: 900;
+  font-size: 1rem;
+  color: #1a1008;
+}
+
+.menu-item-desc {
+  font-size: .83rem;
+  color: #999;
+  line-height: 1.4;
+}
+
+.menu-item-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.menu-item-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  color: #F5A800;
+  white-space: nowrap;
+}
+
+.add-btn {
+  background: #F5A800;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s, transform .2s;
+}
+
+.add-btn:hover {
+  background: #D48A00;
+  transform: scale(1.1);
+}
+
+/* badget */
+.menu-item-badges {
+  display: flex;
+  gap: .3rem;
+  margin-top: .3rem;
+}
+
+.badge {
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  padding: .15rem .5rem;
+  border-radius: 50px;
+}
+
+.badge-veg  { background: #eafaf1; color: #27ae60; }
+.badge-hot  { background: #ffeaea; color: #c0392b; }
+.badge-new  { background: #fff3cd; color: #d48a00; }
+.badge-suos { background: #f0e6ff; color: #8e44ad; }
+
+
+
+/*=================
+    FOOTER
+===================*/
+
+footer{
+      background: linear-gradient(135deg, #0a0503 0%, #150a02 50%, #0a0303 100%);
+   padding: 25px;
+    color: black;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    height: auto;   
+}
+
+.logo2{
+    border-radius: 50%;
+    height: auto;
+    width: 20%;
+}
+
+.low-hero{
+    font-size: 15px;
+    margin-top: 30px;
+    color: #adadad;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+
+
+
+.auk{
+     font-size: 20px;
+    margin-top: 30px;
+    color: white;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+.auk2{
+    padding: 5px;
+     font-size: 18px;
+    margin-top: 30px;
+    color: #adadad;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+
+
+
+
+/*============================
+  PIZZA-MODAL
+===============================*/
+
+.overlay2 {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: 0.3s ease;
+  z-index: 998;
+}
+
+.overlay2.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+.pizza-modal {
+  font-family: "Inter", sans-serif;
+  position: fixed;
+  left: 0;
+  bottom: -100%;
+
+  width: 100%;
+  max-height: 85vh;
+
+  background: white;
+
+  border-radius: 25px 25px 0 0;
+
+  overflow-y: auto;
+
+  transition: bottom 0.35s ease;
+
+  z-index: 999;
+
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+}
+
+.pizza-modal.active {
+  bottom: 0;
+}
+
+/* DRAG HANDLE */
+.drag-line {
+  width: 60px;
+  height: 5px;
+
+  background: #ccc;
+
+  border-radius: 20px;
+
+  margin: 12px auto;
+}
+
+/* IMAGE */
+.modal-image {
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+/* CONTENT */
+.modal-content {
+  padding: 20px;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+
+  right: 15px;
+  top: 10px;
+
+  border: none;
+  background: white;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+/* OPTIONS */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-bottom: 15px;
+}
+
+.options label {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+/* ADD BUTTON */
+.add-cart-btn {
+  width: 100%;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: black;
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  margin-top: 15px;
+}
+
+.modal-title{
+  margin-left: 10px;
+  font-family: "Inter", sans-serif;
+}
+
+.big-text{
+  padding: 10px 10px;
+  font-family: "Inter", sans-serif;
+}
+
+.add-cart-btn{
+  font-family: "Inter", sans-serif;
+}
+}
+
+
+
+
+/*==================
+  DESKTOP
+===================*/
+
+@media screen and (min-width: 800px) {
+
+
+  body{
+        overflow-x: hidden;
+    }
+
+    /*===========================
+    TOAST
+  ==============================*/
+
+  .toast {
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+  position: fixed;
+
+  bottom: 20px;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(100px);
+
+  background: black;
+  color: white;
+
+  padding: 14px 25px;
+  width: 270px;
+
+  border-radius: 14px;
+
+  font-size: 15px;
+
+  opacity: 0;
+
+  transition: 0.3s ease;
+
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+
+  transform: translateX(-50%) translateY(0);
+}
+
+    
+    
+    /*============
+    NAVBAR
+    ==============*/
+
+.nav-holder{
+    max-height: 120px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.nav-holder2{
+    margin-left: 400px;
+    justify-content: flex-start;
+    width: 100%;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    position: absolute;
+}
+
+.nav-holder2 a{
+    font-size: 20px;
+    padding: 0px 35px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-holder2 a:hover{
+    transform: translateY(-2px);
+}
+
+
+.navbar{
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: absolute;
+    max-height: 110px;
+    width: 100%;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: black;
+    padding: 25px;
+    border-bottom: 2px solid var(--orange);
+}
+
+.logo{
+  display: none;
+}
+
+.logo-desktop{
+    margin-left: 50px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.hamburger{
+    display: none;
+}
+
+.cart{
+    position: relative;
+    cursor: pointer;
+    margin-right: 50px;
+    margin-top: 5px;
+    font-family: "Inter", sans-serif;
+    border: none;
+    background: none;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #F5A800;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    pointer-events: none;
+}
+
+.viiva1{
+    border: none;
+    height: 2px;
+    width: 100%;
+    background: orange;
+}
+
+
+
+/*==============
+    SECTION1
+================*/
+
+.section1{
+    padding: 100px;
+    margin-top: 75px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: #1a1008;
+    width: 100%;
+    height: auto;
+}
+
+.section1 h1{
+    font-size: 6.5rem;
+    color: white;
+     font-family: "Bebas Neue", sans-serif;
+}
+
+.section1 h1 span{
+    color: orange;
+}
+
+.hero1{
+     font-size: 18px;
+    margin-top: 10px;
+    color: #adadad;
+    font-weight: 400;
+     font-family: "Inter", sans-serif;
+}
+
+
+
+/*=============
+SECTION2
+===============*/
+
+
+
+
+.section2{
+    font-family: "Inter", sans-serif;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background:  #FFF8EC;
+    width: 100%;
+    height: auto;
+}
+
+.btn-container{
+   display: flex;
+  gap: .7rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background:  #FFF8EC;
+  border-bottom: 2px solid rgba(0,0,0,.06);
+}
+
+.btn-container a{
+    text-decoration: none;
+     background: none;
+  border: 2px solid rgba(0,0,0,.1);
+  padding: .6rem 1.6rem;
+  border-radius: 50px;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: .9rem;
+  color: var(--text);
+  transition: all .2s;
+}
+
+.btn-container a:hover{
+     border-color: var(--orange);
+  color: var(--orange);
+}
+
+.btn-container a.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(245,168,0,.35);
+}
+
+
+/*==============
+    SECTION3
+===============*/
+
+.section3{
+  flex-direction: column;
+  display: flex;
+    padding: 15px;
+    align-self: center;
+    justify-content: center;
+    background: #FFF8EC;
+    width: 100%;
+    height: auto;
+}
+
+.otsikko{
+    font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  color: var(--dark);
+  padding-bottom: 0;
+  border-bottom: 3px solid var(--orange);
+  display: inline-block;
+}
+
+.line{
+     font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  padding-bottom: 0;
+  margin-top: -35px;
+  display: inline-block;
+    color: orange;
+}
+
+
+/*-------------------------TUOTE----------------*/
+
+
+.menu-item {
+  margin-top: 5px;
+    max-width: 95%;
+    font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.4rem;
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px solid rgba(0,0,0,.06);
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+  gap: 1rem;
+}
+
+.menu-item:hover {
+  border-color: #F5A800;
+  transform: translateX(4px);
+  box-shadow: 0 4px 20px rgba(245,168,0,.12);
+}
+
+.menu-item-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.menu-item-emoji { font-size: 1.8rem; flex-shrink: 0; }
+
+.menu-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+}
+
+.menu-item-name {
+  font-weight: 900;
+  font-size: 1rem;
+  color: #1a1008;
+}
+
+.menu-item-desc {
+  font-size: .83rem;
+  color: #999;
+  line-height: 1.4;
+}
+
+.menu-item-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.menu-item-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  color: #F5A800;
+  white-space: nowrap;
+}
+
+.add-btn {
+  background: #F5A800;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s, transform .2s;
+}
+
+.add-btn:hover {
+  background: #D48A00;
+  transform: scale(1.1);
+}
+
+/* badget */
+.menu-item-badges {
+  display: flex;
+  gap: .3rem;
+  margin-top: .3rem;
+}
+
+.badge {
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  padding: .15rem .5rem;
+  border-radius: 50px;
+}
+
+.badge-veg  { background: #eafaf1; color: #27ae60; }
+.badge-hot  { background: #ffeaea; color: #c0392b; }
+.badge-new  { background: #fff3cd; color: #d48a00; }
+.badge-suos { background: #f0e6ff; color: #8e44ad; }
+
+
+.holder-a{
+  margin-top: 50px;
+  display: grid;
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+}
+
+.holder-b{
+  margin-top: 50px;
+   display: grid;
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+}
+
+.holder-c{
+  max-width: 50%;
+   margin-top: 50px;
+   display: grid;
+  display: grid;
+grid-template-columns: repeat(1, 1fr);
+}
+
+
+/*============================
+  PIZZA-MODAL
+===============================*/
+
+.overlay2 {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: 0.3s ease;
+  z-index: 998;
+}
+
+.overlay2.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+.pizza-modal {
+  font-family: "Inter", sans-serif;
+  position: fixed;
+  bottom: -100%;
+
+  width: 500px;
+  max-height: 75vh;
+
+  background: white;
+
+  border-radius: 25px 25px 0 0;
+
+  overflow-y: auto;
+
+  transition: bottom 0.35s ease;
+
+  z-index: 10000;
+
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+}
+
+.pizza-modal.active {
+  bottom: 50px;
+}
+
+/* DRAG HANDLE */
+.drag-line {
+  width: 60px;
+  height: 5px;
+
+  background: #ccc;
+
+  border-radius: 20px;
+
+  margin: 12px auto;
+}
+
+/* IMAGE */
+.modal-image {
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+/* CONTENT */
+.modal-content {
+  padding: 20px;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+
+  right: 15px;
+  top: 10px;
+
+  border: none;
+  background: white;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+/* OPTIONS */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-bottom: 15px;
+}
+
+.options label {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+/* ADD BUTTON */
+.add-cart-btn {
+  width: 100%;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: black;
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  margin-top: 15px;
+}
+
+.modal-title{
+  margin-left: 10px;
+  font-family: "Inter", sans-serif;
+}
+
+.big-text{
+  padding: 10px 10px;
+  font-family: "Inter", sans-serif;
+}
+
+.add-cart-btn{
+  font-family: "Inter", sans-serif;
+}
+
+
+
+/*=================
+    FOOTER
+===================*/
+
+footer{
+      background: linear-gradient(135deg, #0a0503 0%, #150a02 50%, #0a0303 100%);
+   padding: 25px;
+    color: black;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    height: auto;   
+}
+
+.logo2{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.low-hero{
+    font-size: 15px;
+    margin-top: 30px;
+    color: #adadad;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+
+
+
+.auk{
+     font-size: 20px;
+    margin-top: 30px;
+    color: white;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+.auk2{
+    padding: 5px;
+     font-size: 18px;
+    margin-top: 30px;
+    color: #adadad;
+    font-weight: 600;
+     font-family: "Inter", sans-serif;
+}
+
+  
+}
+
+
+@media screen and (min-width: 1800px) {
+
+  
+
+
+ /*============
+    NAVBAR
+    ==============*/
+    
+
+.nav-holder{
+    max-height: 120px;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.nav-holder2{
+    margin-left: 900px;
+    justify-content: flex-start;
+    width: 100%;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    position: absolute;
+}
+
+.nav-holder2 a{
+    font-size: 20px;
+    padding: 0px 35px;
+    color: white;
+    text-decoration: none;
+    transition: 0.1s ease;
+}
+
+.nav-holder2 a:hover{
+    transform: translateY(-2px);
+}
+
+
+.navbar{
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: absolute;
+    max-height: 110px;
+    width: 100%;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: black;
+    padding: 25px;
+    border-bottom: 2px solid var(--orange);
+}
+
+.logo{
+    display: none;
+}
+
+.logo-desktop{
+    margin-left: 50px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.hamburger{
+    display: none;
+}
+
+.cart{
+    cursor: pointer;
+    margin-right: 50px;
+    margin-top: 5px;
+    font-family: "Inter", sans-serif;
+    border: none;
+    background: none;
+}
+
+.viiva1{
+    border: none;
+    height: 2px;
+    width: 100%;
+    background: orange;
+}
+
+
+/*============================
+  PIZZA-MODAL
+===============================*/
+
+.overlay2 {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: 0.3s ease;
+  z-index: 998;
+}
+
+.overlay2.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+.pizza-modal {
+  font-family: "Inter", sans-serif;
+  position: fixed;
+  bottom: -100%;
+
+  width: 500px;
+  max-height: 75vh;
+
+  background: white;
+
+  border-radius: 25px 25px 0 0;
+
+  overflow-y: auto;
+
+  transition: bottom 0.35s ease;
+
+  z-index: 999;
+
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+}
+
+.pizza-modal.active {
+  bottom: 100px;
+}
+
+/* DRAG HANDLE */
+.drag-line {
+  width: 60px;
+  height: 5px;
+
+  background: #ccc;
+
+  border-radius: 20px;
+
+  margin: 12px auto;
+}
+
+/* IMAGE */
+.modal-image {
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+/* CONTENT */
+.modal-content {
+  padding: 20px;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+
+  right: 15px;
+  top: 10px;
+
+  border: none;
+  background: white;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+/* OPTIONS */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-bottom: 15px;
+}
+
+.options label {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+/* ADD BUTTON */
+.add-cart-btn {
+  width: 100%;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: black;
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  margin-top: 15px;
+}
+
+.modal-title{
+  margin-left: 10px;
+  font-family: "Inter", sans-serif;
+}
+
+.big-text{
+  padding: 10px 10px;
+  font-family: "Inter", sans-serif;
+}
+
+.add-cart-btn{
+  font-family: "Inter", sans-serif;
+}
+
+
+}

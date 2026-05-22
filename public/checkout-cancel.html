@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maksu peruutettu – Törnävän Pizzeria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #FFF8EC;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .top-logo img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 36px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      border-top: 5px solid #1a1008;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+      width: 100%;
+      max-width: 480px;
+      overflow: hidden;
+    }
+
+    .card-header {
+      background: #1a1008;
+      padding: 40px 32px 36px;
+      text-align: center;
+    }
+
+    .x-wrap {
+      width: 72px;
+      height: 72px;
+      background: #e11d48;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+
+    @keyframes pop {
+      0%   { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .x-wrap svg {
+      width: 34px;
+      height: 34px;
+      stroke: #fff;
+      stroke-width: 3;
+      fill: none;
+      stroke-linecap: round;
+      stroke-dasharray: 60;
+      stroke-dashoffset: 60;
+      animation: draw 0.35s 0.3s ease forwards;
+    }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+
+    .card-header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      color: #fff;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .card-header p {
+      font-size: 0.92rem;
+      color: #aaa;
+      line-height: 1.5;
+    }
+
+    .card-body {
+      padding: 32px;
+      text-align: center;
+    }
+
+    .info-box {
+      background: #FFF8EC;
+      border: 1px solid #f0ede6;
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+    }
+    .info-box p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    .info-box strong {
+      color: #1a1008;
+    }
+
+    .btn-primary {
+      background: #F5A800;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 0.9rem 2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(245,168,0,0.35);
+      transition: background 0.2s, transform 0.2s;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 12px;
+    }
+    .btn-primary:hover { background: #D48A00; transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: #1a1008;
+      border: 2px solid #e5e0d8;
+      border-radius: 50px;
+      padding: 0.85rem 2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+    .btn-secondary:hover { border-color: #F5A800; color: #F5A800; }
+  </style>
+</head>
+<body>
+
+  <div class="top-logo">
+    <img src="logo.png" alt="Törnävän Pizzeria">
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="x-wrap">
+        <svg viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </div>
+      <h1>Maksu peruutettiin</h1>
+      <p>Maksua ei veloitettu. Ostoskorisi on tallessa.</p>
+    </div>
+
+    <div class="card-body">
+      <div class="info-box">
+        <p>Voit palata ostoskoriin ja yrittää maksua uudelleen, tai jatkaa ostoksia menusta.<br><br>
+        <strong>Ongelma maksun kanssa?</strong> Soita meille: <strong>040 553 6005</strong></p>
+      </div>
+
+      <a href="ostoskori.html" class="btn-primary">Palaa ostoskoriin</a>
+      <a href="menu.html" class="btn-secondary">Takaisin menuun</a>
+    </div>
+  </div>
+
+</body>
+</html>

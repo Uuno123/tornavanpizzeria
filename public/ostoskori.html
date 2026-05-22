@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="format-detection" content="telephone=no">
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet">
+    <script src="products.js" defer></script>
+    <script src="ostoskori.js"></script>
+    <link rel="stylesheet" href="ostoskori.css">
+    <title>Document</title>
+</head>
+<body>
+      <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <nav class="navbar">
+        <img src="logo.png" class="logo">
+        <div class="nav-holder">
+            <img src="logo.png" class="logo-desktop">
+            <button id="ham" onclick="toggleMenu()" class="hamburger">&#9776;</button>
+            <button onclick="window.location.href='ostoskori.html'" class="cart"><span class="cart-badge" id="cartBadge">0</span><img src="shopping_cart_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40 (1).png" class="cart-pic"></button>
+        </div>
+
+        <div class="nav-holder2">
+            <a href="index.html">Etusivu</a>
+            <a href="menu.html">Menu</a>
+            <a href="#">Yhteystiedot</a>
+        </div>
+    </nav>
+
+    
+
+    <div class="show-nav" id="show-nav">
+       <span><a href="index.html">Etusivu</a></span>
+       <span><a href="menu.html">Menu</a></span>
+       <span><a href="menu.html">Tilaa nyt!</a></span>
+       <a class="puh-mob" href="#">0405536005</a>
+    </div>
+    <hr class="viiva1">
+
+
+    <div class="cart-layout">
+        <section class="section1">
+            <h2 class="hero1">Tilauksesi</h2>
+            <hr class="viiva">
+
+            <div class="holder1">
+                <div id="cartItems" class="cart-inside"></div>
+            </div>
+        </section>
+
+        <section class="section2">
+            <h1 class="hero4">Yhteenveto</h1>
+            <hr class="viiva2">
+
+            <div class="summary-card">
+                <div class="summary-items" id="summaryItems"></div>
+                <div class="summary-footer">
+                    <div class="summary-total-row">
+                        <span class="total-label">Yhteensä</span>
+                        <span class="total-price" id="totalPrice">0.00 €</span>
+                    </div>
+
+                    <!-- Asiakkaan tiedot -lomake -->
+                    <div class="customer-form">
+                        <p class="form-label">Toimitustiedot</p>
+
+                        <div class="delivery-toggle">
+                            <button type="button" class="toggle-btn active" id="btnDelivery" onclick="setDelivery('delivery')">Toimitus</button>
+                            <button type="button" class="toggle-btn" id="btnPickup" onclick="setDelivery('pickup')">Nouto</button>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="customerName" placeholder="Nimi *" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="customerPhone" placeholder="Puhelinnumero *" class="form-input" required>
+                        </div>
+                        <div id="addressGroup" class="form-group">
+                            <input type="text" id="customerAddress" placeholder="Toimitusosoite *" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="customerNotes" placeholder="Lisätiedot (vapaaehtoinen)" class="form-input form-textarea" rows="2"></textarea>
+                        </div>
+                    </div>
+
+                    <button class="order-btn" onclick="startCheckout()">Siirry maksamaan &rarr;</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
