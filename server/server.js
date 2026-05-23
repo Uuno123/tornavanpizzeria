@@ -1,23 +1,14 @@
 require('dotenv').config();
 const express = require('express');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 const path = require('path');
 const products = require('../public/products');
 const { customerReceiptHtml, restaurantOrderHtml } = require('./emails');
 
 const app = express();
 
-const mailer = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: false,
-  family: 4,
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Webhook tarvitsee raa'an bodyn ennen JSON-middlewarea
 app.use('/webhook', express.raw({ type: 'application/json' }));
@@ -177,16 +168,16 @@ app.post('/webhook', async (req, res) => {
     };
 
     if (customerEmail) {
-      mailer.sendMail({
-        from: `"Törnävän Pizzeria" <${process.env.GMAIL_USER}>`,
+      resend.emails.send({
+        from: 'Törnävän Pizzeria <onboarding@resend.dev>',
         to: customerEmail,
         subject: '✅ Tilauksesi on vastaanotettu!',
         html: customerReceiptHtml(customerName, items, total, deliveryInfo, session.id),
       }).catch(err => console.error('Asiakkaan email epäonnistui:', err.message));
     }
 
-    mailer.sendMail({
-      from: `"Törnävän Pizzeria" <${process.env.GMAIL_USER}>`,
+    resend.emails.send({
+      from: 'Törnävän Pizzeria <onboarding@resend.dev>',
       to: process.env.RESTAURANT_EMAIL,
       subject: `🍕 Uusi tilaus – ${total} € – ${customerName}`,
       html: restaurantOrderHtml(customerName, customerEmail, items, total, deliveryInfo, session.id),
