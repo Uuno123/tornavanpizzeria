@@ -1,9 +1,9 @@
 function itemTableRows(items) {
   return items.map(item => {
-    const name = item.description || 'Tuote';
-    const custom = item.price?.product?.description || '';
-    const qty = item.quantity;
-    const price = ((item.amount_total || 0) / 100).toFixed(2);
+    const name = item.n || 'Tuote';
+    const custom = item.d || '';
+    const qty = item.q;
+    const price = item.p;
     return `
       <tr>
         <td style="padding:14px 0;border-bottom:1px solid #f0ede6;font-family:Arial,sans-serif;">
@@ -122,10 +122,10 @@ function restaurantOrderHtml(customerName, customerEmail, items, total, delivery
   const now = new Date().toLocaleString('fi-FI', { timeZone: 'Europe/Helsinki' });
 
   const itemList = items.map(item => {
-    const name = item.description || 'Tuote';
-    const custom = item.price?.product?.description || '';
-    const qty = item.quantity;
-    const price = ((item.amount_total || 0) / 100).toFixed(2);
+    const name = item.n || 'Tuote';
+    const custom = item.d || '';
+    const qty = item.q;
+    const price = item.p;
     return `
       <tr>
         <td style="padding:14px 0;border-bottom:1px solid #f0ede6;font-family:Arial,sans-serif;">

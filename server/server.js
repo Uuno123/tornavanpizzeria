@@ -69,6 +69,16 @@ app.post('/create-checkout-session', async (req, res) => {
     if (!line_items.length)
       return res.status(400).json({ error: 'Ei kelvollisia tuotteita' });
 
+    // Tallenna tilausrivit metadataan ennen toimitusmaksun lisäystä
+    const orderItemsMeta = JSON.stringify(
+      line_items.map(li => ({
+        n: li.price_data.product_data.name,
+        d: li.price_data.product_data.description || '',
+        q: li.quantity,
+        p: (li.price_data.unit_amount / 100).toFixed(2),
+      }))
+    ).slice(0, 490);
+
     // Toimitusmaksu
     if (deliveryType === 'delivery') {
       line_items.push({
@@ -93,6 +103,7 @@ app.post('/create-checkout-session', async (req, res) => {
         customerPhone: customerInfo.phone || '',
         deliveryAddress: customerInfo.address || '',
         notes: (customerInfo.notes || '').slice(0, 200),
+        items: orderItemsMeta,
       },
       success_url: `${origin}/checkout-success.html?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/checkout-cancel.html`,
@@ -149,15 +160,13 @@ app.post('/webhook', async (req, res) => {
 
   if (event.type === 'checkout.session.completed') {
     try {
-      const session = await stripe.checkout.sessions.retrieve(event.data.object.id, {
-        expand: ['line_items', 'line_items.data.price.product'],
-      });
+      const session = await stripe.checkout.sessions.retrieve(event.data.object.id);
 
       const meta = session.metadata || {};
       const customerName = meta.customerName || session.customer_details?.name || 'Asiakas';
       const customerEmail = session.customer_details?.email;
       const total = (session.amount_total / 100).toFixed(2);
-      const items = session.line_items?.data || [];
+      const items = JSON.parse(meta.items || '[]');
 
       const deliveryInfo = {
         type: meta.deliveryType || 'delivery',
