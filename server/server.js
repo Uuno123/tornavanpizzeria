@@ -171,7 +171,7 @@ app.post('/webhook', async (req, res) => {
           from: `"Törnävän Pizzeria" <${process.env.GMAIL_USER}>`,
           to: customerEmail,
           subject: '✅ Tilauksesi on vastaanotettu!',
-          html: customerReceiptHtml(customerName, items, total, deliveryInfo),
+          html: customerReceiptHtml(customerName, items, total, deliveryInfo, session.id),
         });
       }
 
@@ -179,7 +179,7 @@ app.post('/webhook', async (req, res) => {
         from: `"Törnävän Pizzeria" <${process.env.GMAIL_USER}>`,
         to: process.env.RESTAURANT_EMAIL,
         subject: `🍕 Uusi tilaus – ${total} € – ${customerName}`,
-        html: restaurantOrderHtml(customerName, customerEmail, items, total, deliveryInfo),
+        html: restaurantOrderHtml(customerName, customerEmail, items, total, deliveryInfo, session.id),
       });
 
       console.log(`Tilaus ${session.id} valmis | asiakas: ${customerEmail}`);
