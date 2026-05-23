@@ -159,47 +159,41 @@ app.post('/webhook', async (req, res) => {
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
 
-  if (event.type === 'checkout.session.completed') {
-    try {
-      const session = event.data.object;
-
-      const meta = session.metadata || {};
-      console.log('WEBHOOK META:', JSON.stringify(meta));
-      const customerName = meta.customerName || session.customer_details?.name || 'Asiakas';
-      const customerEmail = session.customer_details?.email;
-      const total = (session.amount_total / 100).toFixed(2);
-      const items = JSON.parse(meta.items || '[]');
-
-      const deliveryInfo = {
-        type: meta.deliveryType || 'delivery',
-        phone: meta.customerPhone || '',
-        address: meta.deliveryAddress || '',
-        notes: meta.notes || '',
-      };
-
-      if (customerEmail) {
-        await mailer.sendMail({
-          from: `"Törnävän Pizzeria" <${process.env.GMAIL_USER}>`,
-          to: customerEmail,
-          subject: '✅ Tilauksesi on vastaanotettu!',
-          html: customerReceiptHtml(customerName, items, total, deliveryInfo, session.id),
-        });
-      }
-
-      await mailer.sendMail({
-        from: `"Törnävän Pizzeria" <${process.env.GMAIL_USER}>`,
-        to: process.env.RESTAURANT_EMAIL,
-        subject: `🍕 Uusi tilaus – ${total} € – ${customerName}`,
-        html: restaurantOrderHtml(customerName, customerEmail, items, total, deliveryInfo, session.id),
-      });
-
-      console.log(`Tilaus ${session.id} valmis | asiakas: ${customerEmail}`);
-    } catch (err) {
-      console.error('Tilauksen käsittelyvirhe:', err.message);
-    }
-  }
-
   res.json({ received: true });
+
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object;
+    const meta = session.metadata || {};
+    const customerName = meta.customerName || session.customer_details?.name || 'Asiakas';
+    const customerEmail = session.customer_details?.email;
+    const total = (session.amount_total / 100).toFixed(2);
+    const items = JSON.parse(meta.items || '[]');
+
+    const deliveryInfo = {
+      type: meta.deliveryType || 'delivery',
+      phone: meta.customerPhone || '',
+      address: meta.deliveryAddress || '',
+      notes: meta.notes || '',
+    };
+
+    if (customerEmail) {
+      mailer.sendMail({
+        from: `"Törnävän Pizzeria" <${process.env.GMAIL_USER}>`,
+        to: customerEmail,
+        subject: '✅ Tilauksesi on vastaanotettu!',
+        html: customerReceiptHtml(customerName, items, total, deliveryInfo, session.id),
+      }).catch(err => console.error('Asiakkaan email epäonnistui:', err.message));
+    }
+
+    mailer.sendMail({
+      from: `"Törnävän Pizzeria" <${process.env.GMAIL_USER}>`,
+      to: process.env.RESTAURANT_EMAIL,
+      subject: `🍕 Uusi tilaus – ${total} € – ${customerName}`,
+      html: restaurantOrderHtml(customerName, customerEmail, items, total, deliveryInfo, session.id),
+    }).catch(err => console.error('Ravintolan email epäonnistui:', err.message));
+
+    console.log(`Tilaus ${session.id} | asiakas: ${customerEmail}`);
+  }
 });
 
 const PORT = process.env.PORT || 3000;
