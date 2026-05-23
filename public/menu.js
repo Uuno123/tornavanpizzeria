@@ -152,10 +152,6 @@ function addToCart() {
     return;
   }
 
-  if (!selectedSauce) {
-    alert("Valitse kastike");
-    return;
-  }
 
 
   // 3. haetaan valittu tuote
@@ -185,7 +181,7 @@ function addToCart() {
   const cartItem = {
     productId: product.id,
     size: selectedSize.value,
-    sauce: selectedSauce.value,
+    sauce: selectedSauce?.value || '',
     extras,
     quantity
   };
