@@ -160,9 +160,10 @@ app.post('/webhook', async (req, res) => {
 
   if (event.type === 'checkout.session.completed') {
     try {
-      const session = await stripe.checkout.sessions.retrieve(event.data.object.id);
+      const session = event.data.object;
 
       const meta = session.metadata || {};
+      console.log('WEBHOOK META:', JSON.stringify(meta));
       const customerName = meta.customerName || session.customer_details?.name || 'Asiakas';
       const customerEmail = session.customer_details?.email;
       const total = (session.amount_total / 100).toFixed(2);
