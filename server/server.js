@@ -173,7 +173,9 @@ app.post('/webhook', async (req, res) => {
         to: customerEmail,
         subject: '✅ Tilauksesi on vastaanotettu!',
         html: customerReceiptHtml(customerName, items, total, deliveryInfo, session.id),
-      }).catch(err => console.error('Asiakkaan email epäonnistui:', err.message));
+      }).then(({ error }) => {
+        if (error) console.error('Asiakkaan email epäonnistui:', JSON.stringify(error));
+      });
     }
 
     resend.emails.send({
@@ -181,7 +183,9 @@ app.post('/webhook', async (req, res) => {
       to: process.env.RESTAURANT_EMAIL,
       subject: `🍕 Uusi tilaus – ${total} € – ${customerName}`,
       html: restaurantOrderHtml(customerName, customerEmail, items, total, deliveryInfo, session.id),
-    }).catch(err => console.error('Ravintolan email epäonnistui:', err.message));
+    }).then(({ error }) => {
+      if (error) console.error('Ravintolan email epäonnistui:', JSON.stringify(error));
+    });
 
     console.log(`Tilaus ${session.id} | asiakas: ${customerEmail}`);
   }
