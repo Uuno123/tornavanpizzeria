@@ -95,7 +95,7 @@ function customerReceiptHtml(name, items, total, delivery = {}, sessionId = '') 
       <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
           <td style="font-family:Arial,sans-serif;font-size:14px;color:#1a1008;padding:4px 0;">
-            📞 <a href="tel:0405536005" style="color:#F5A800;text-decoration:none;font-weight:700;">040 553 6005</a>
+            📞 <a href="tel:0401829726" style="color:#F5A800;text-decoration:none;font-weight:700;">040 1829726</a>
           </td>
         </tr>
         <tr>
