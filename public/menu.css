@@ -1503,3 +1503,34 @@ footer{
 
 
 }
+.footer-new {
+    background: linear-gradient(135deg, #0a0503 0%, #1a0a02 100%);
+    border-top: 3px solid #F5A800;
+    padding: 60px 40px 0;
+    font-family: "Inter", sans-serif;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+.footer-col { display: flex; flex-direction: column; align-items: flex-start; }
+.footer-logo { border-radius: 50%; width: 90px; height: 90px; object-fit: cover; margin-bottom: 16px; border: 2px solid #F5A800; }
+.footer-tagline { color: #aaa; font-size: 14px; line-height: 1.6; margin: 0; }
+.footer-heading { color: #F5A800; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 16px; font-weight: 700; }
+.footer-hours { border-collapse: collapse; color: #ccc; font-size: 14px; }
+.footer-hours td { padding: 4px 20px 4px 0; }
+.footer-hours td:last-child { color: #fff; font-weight: 700; }
+.footer-contact { color: #ccc; font-size: 14px; margin: 0 0 10px; }
+.footer-contact a { color: #F5A800; text-decoration: none; font-weight: 700; }
+.footer-order-btn { margin-top: 16px; background: #F5A800; color: #1a1008; font-weight: 800; font-size: 14px; padding: 10px 24px; border-radius: 8px; text-decoration: none; display: inline-block; transition: background 0.2s; }
+.footer-order-btn:hover { background: #e09900; }
+.footer-bottom { border-top: 1px solid #2a1a08; text-align: center; padding: 18px 0; }
+.footer-bottom p { color: #555; font-size: 12px; margin: 0; }
+@media (max-width: 700px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-new { padding: 40px 24px 0; }
+}
