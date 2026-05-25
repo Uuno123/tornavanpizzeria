@@ -64,7 +64,7 @@ function customerReceiptHtml(name, items, total, delivery = {}, sessionId = '') 
       </p>
       ${isDelivery
         ? `<p style="margin:0;font-size:15px;font-weight:700;color:#1a1008;font-family:Arial,sans-serif;">${delivery.address || '–'}</p>
-           <p style="margin:4px 0 0;font-size:13px;color:#666;font-family:Arial,sans-serif;">Arvioitu toimitusaika: <strong>30–45 min</strong></p>`
+           <p style="margin:4px 0 0;font-size:13px;color:#666;font-family:Arial,sans-serif;">Arvioitu toimitusaika: <strong>45–60 min</strong></p>`
         : `<p style="margin:0;font-size:15px;color:#1a1008;font-family:Arial,sans-serif;">Tilaus noudetaan ravintolasta</p>
            <p style="margin:4px 0 0;font-size:13px;color:#666;font-family:Arial,sans-serif;">Valmis noudettavaksi: <strong>~20 min</strong></p>`
       }
