@@ -43,20 +43,26 @@ body{
   transform: translateY(80px);
 }
 
+.show-nav span{
+    display: block;
+    margin-top: 8px;
+}
+
+.show-nav span a{
+    display: block;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-family: "Archivo Black", sans-serif;
+    color: white;
+    width: 100%;
+}
+
 .puh-mob{
+    display: block;
     padding: 10px 15px;
     width: 100%;
     background: orange;
     font-size: 20px;
-    text-decoration: none;
-    font-family: "Archivo Black", sans-serif;
-    color: white;
-}
-
-.show-nav span{
-    margin-top: 8px;
-     padding: 0px 15px;
-   font-size: 20px;
     text-decoration: none;
     font-family: "Archivo Black", sans-serif;
     color: white;
@@ -434,7 +440,7 @@ body{
 
 .section4 {
     background: linear-gradient(135deg, #1a0a02 0%, #0a0503 60%, #1a0800 100%);
-    padding: 60px 20px;
+    padding: 70px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -470,7 +476,7 @@ body{
 
 .section4-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
+    font-size: 3.5rem;
     line-height: 1;
     color: #fff;
     margin-bottom: 20px;
@@ -537,7 +543,6 @@ body{
 ===================*/
 
 footer{
-    margin-top: 500px;
       background: linear-gradient(135deg, #0a0503 0%, #150a02 50%, #0a0303 100%);
    padding: 25px;
     color: black;
