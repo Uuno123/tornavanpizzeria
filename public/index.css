@@ -1684,67 +1684,6 @@ footer{
 }
 
 
-/*=====================
-    SECTIO0N4   
-=======================*/
-
-.section4{
-     background: orange;
-   padding: 55px;
-    color: black;
-    flex-direction: column;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: auto;   
-}
-
-.section4 h1{
-    padding: 0.1rem;
-    font-weight: bold;
-    letter-spacing: 0.01cap;
-    font-size: 3.8rem;
-     font-family: 'Bebas Neue', sans-serif;
-    color: white;
-}
-
-.call-link{
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: 'Inter', sans-serif;
-    text-decoration: none;
-    color: white;
-    padding: 5px 80px;
-    border-radius: 20px;
-    background: black;
-}
-
-.call-link:hover {
-  background: #222;
-  transform: translateY(-2px);
-}
-
-
-.link1{
-    margin-top: 10px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: 'Inter', sans-serif;
-    text-decoration: none;
-    color: orange;
-     padding: 5px 80px;
-    border-radius: 20px;
-    background: white;
-}
-
-.link1:hover {
-  background: orange;
-  color: white;
-  transform: translateY(-2px);
-}
 
 
 /*=================
