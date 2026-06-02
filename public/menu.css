@@ -1,3 +1,8 @@
+:root {
+    --orange: #F5A800;
+    --dark: #1a1008;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -318,12 +323,7 @@ SECTION2
 }
 
 .line{
-     font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.5rem;
-  padding-bottom: 0;
-  margin-top: -35px;
-  display: inline-block;
-    color: orange;
+    display: none;
 }
 
 
@@ -922,12 +922,7 @@ SECTION2
 }
 
 .line{
-     font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.5rem;
-  padding-bottom: 0;
-  margin-top: -35px;
-  display: inline-block;
-    color: orange;
+    display: none;
 }
 
 
