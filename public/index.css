@@ -1,4 +1,4 @@
-*{
+﻿*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -174,7 +174,7 @@ body{
     background-size: cover;
     width: 100%;
    background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(pexels-cesar-o-neill-26650613-35628174.jpg);
     justify-content: flex-start;
     align-items: flex-start;
@@ -269,6 +269,7 @@ body{
 .card1,
 .card2,
 .card3{
+    font-family: 'Inter', sans-serif;
     width: 90%;
     margin-top: 15px;
       background: rgba(255,255,255,.07);
@@ -402,28 +403,28 @@ body{
     margin-top: 20px;
     background-size: cover;
     background-position: center;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittävyys) */
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(kuva1.jpg);
 }
 
 .b{
      background-size: cover;
     background-position: center;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittävyys) */
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(kuva2.jpg);
 }
 
 .c{
      background-size: cover;
     background-position: center;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(kuva3.jpg);    
 }
 
 .d{
      background-size: cover;
     background-position: center;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(kuva4.jpg);
 }
 
@@ -433,7 +434,7 @@ body{
 
 .section4 {
     background: linear-gradient(135deg, #1a0a02 0%, #0a0503 60%, #1a0800 100%);
-    padding: 100px 40px;
+    padding: 60px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -453,12 +454,12 @@ body{
 .section4-inner {
     position: relative;
     z-index: 1;
-    max-width: 700px;
+    max-width: 100%;
 }
 
 .section4-label {
     font-family: 'Inter', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: #F5A800;
@@ -832,7 +833,7 @@ footer{
     background-size: cover;
     width: 100%;
    background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(pexels-cesar-o-neill-26650613-35628174.jpg);
     justify-content: flex-start;
     align-items: flex-start;
@@ -1065,28 +1066,28 @@ footer{
     margin-top: 20px;
     background-size: cover;
     background-position: center;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittävyys) */
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(kuva1.jpg);
 }
 
 .b{
      background-size: cover;
     background-position: center;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittävyys) */
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(kuva2.jpg);
 }
 
 .c{
      background-size: cover;
     background-position: center;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(kuva3.jpg);    
 }
 
 .d{
      background-size: cover;
     background-position: center;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(kuva4.jpg);
 }
 
@@ -1399,7 +1400,7 @@ footer{
     background-size: cover;
     width: 100%;
    background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(pexels-cesar-o-neill-26650613-35628174.jpg);
     justify-content: flex-start;
     align-items: flex-start;
@@ -1632,28 +1633,28 @@ footer{
     margin-top: 20px;
     background-size: cover;
     background-position: center;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittävyys) */
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(kuva1.jpg);
 }
 
 .b{
      background-size: cover;
     background-position: center;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittävyys) */
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(kuva2.jpg);
 }
 
 .c{
      background-size: cover;
     background-position: center;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(kuva3.jpg);    
 }
 
 .d{
      background-size: cover;
     background-position: center;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittävyys) */
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), /* Tummennus (0.6 = 60% peittÃ¤vyys) */
     url(kuva4.jpg);
 }
 
