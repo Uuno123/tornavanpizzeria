@@ -2,7 +2,7 @@ const products = [
   {
     id: "Margareta",
     name: "Margareta",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600",
     price: "10.50",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -40,7 +40,7 @@ const products = [
   {
     id: "Jauhelihapizza",
     name: "Jauhelihapizza",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545bf1848a677b0364084e?w=600",
     price: "11.50",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -78,7 +78,7 @@ const products = [
   {
     id: "Tropicana",
     name: "Tropicana",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545bd9447efd43463bab94?w=600",
     price: "11.50",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -116,7 +116,7 @@ const products = [
   {
     id: "Opera",
     name: "Opera",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545bd4848a677b0364084a?w=600",
     price: "11.50",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -154,7 +154,7 @@ const products = [
   {
     id: "Pepperoni",
     name: "Pepperoni",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545bcc447efd43463bab91?w=600",
     price: "11.50",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -192,7 +192,7 @@ const products = [
   {
     id: "KasvisPizza",
     name: "Kasvis Pizza",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66582dc42f6a1159bbc02abf?w=600",
     price: "13.00",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -230,7 +230,7 @@ const products = [
   {
     id: "OperaSpecial",
     name: "Opera Special",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545be3447efd43463bab95?w=600",
     price: "12.50",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -268,7 +268,7 @@ const products = [
   {
     id: "QuattroStagioni",
     name: "Quattro Stagioni",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545c25447efd43463bab9b?w=600",
     price: "13.00",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -306,7 +306,7 @@ const products = [
   {
     id: "FruttiDiMare",
     name: "Frutti di Mare",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545c00848a677b03640850?w=600",
     price: "12.50",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -344,7 +344,7 @@ const products = [
   {
     id: "Americana",
     name: "Americana",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545c14447efd43463bab9a?w=600",
     price: "12.50",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -420,7 +420,7 @@ const products = [
   {
     id: "Venetsia",
     name: "Venetsia",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545c2a848a677b03640851?w=600",
     price: "12.50",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -534,7 +534,7 @@ const products = [
   {
     id: "Romeo",
     name: "Romeo",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545c2f848a677b03640852?w=600",
     price: "13.00",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -572,7 +572,7 @@ const products = [
   {
     id: "Julia",
     name: "Julia",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545c7c447efd43463bab9e?w=600",
     price: "13.00",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -686,7 +686,7 @@ const products = [
   {
     id: "Kummiseta",
     name: "Kummisetä",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545c82848a677b03640855?w=600",
     price: "13.00",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -876,7 +876,7 @@ const products = [
   {
     id: "Fantasia",
     name: "Fantasia",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545cb90b61ae1437496c6a?w=600",
     price: "13.50",
     sizes: [
       { name: "Normal", extra: 0 },
@@ -918,7 +918,7 @@ const products = [
   {
     id: "Pita Kebab",
     name: "PitaKebab",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545b7b447efd43463bab86?w=600",
     price: "11.00",
     sizes: [
       { name: "Normal", extra: 0 }
@@ -992,7 +992,7 @@ const products = [
   {
     id: "Kebab Ranskalaisilla",
     name: "Kebab Ranskalaisilla",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545b97ca587a012e7b9d83?w=600",
     price: "12.00",
     sizes: [
       { name: "Normal", extra: 0 }
@@ -1029,7 +1029,7 @@ const products = [
   {
     id: "Kebab Lohkoperunoilla",
     name: "Kebab Lohkoperunoilla",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545b97ca587a012e7b9d83?w=600",
     price: "12.00",
     sizes: [
       { name: "Normal", extra: 0 }
@@ -1066,7 +1066,7 @@ const products = [
   {
     id: "Iskender Kebab",
     name: "Iskender Kebab",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545b80447efd43463bab87?w=600",
     price: "12.50",
     sizes: [
       { name: "Normal", extra: 0 }
@@ -1103,7 +1103,7 @@ const products = [
   {
     id: "Rullakebab",
     name: "Rullakebab",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545b84ca587a012e7b9d81?w=600",
     price: "13.00",
     sizes: [
       { name: "Normal", extra: 0 }
@@ -1140,7 +1140,7 @@ const products = [
   {
     id: "Special Rulla Kebab",
     name: "Special Rulla Kebab",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545b84ca587a012e7b9d81?w=600",
     price: "17.00",
     sizes: [
       { name: "Normal", extra: 0 }
@@ -1177,7 +1177,7 @@ const products = [
   {
     id: "Kebab Kermaperunoilla",
     name: "Kebab Kermaperunoilla",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545b97ca587a012e7b9d83?w=600",
     price: "12.50",
     sizes: [
       { name: "Normal", extra: 0 }
@@ -1366,7 +1366,7 @@ const products = [
     {
     id: "tonnikalasalaatti",
     name: "Tonnikalasalaatti",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545b28848a677b0364083b?w=600",
     price: "11.50",
     sizes: [
       { name: "Normal", extra: 0 }
@@ -1403,7 +1403,7 @@ const products = [
   {
     id: "katkarapusalaatti",
     name: "Katkarapusalaatti",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545b3c447efd43463bab82?w=600",
     price: "11.50",
     sizes: [
       { name: "Normal", extra: 0 }
@@ -1440,7 +1440,7 @@ const products = [
   {
     id: "kanasalaatti",
     name: "Kanasalaatti",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545b21447efd43463bab7e?w=600",
     price: "12.50",
     sizes: [
       { name: "Normal", extra: 0 }
@@ -1477,7 +1477,7 @@ const products = [
   {
     id: "fetasalaatti",
     name: "Fetasalaatti",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545b35447efd43463bab81?w=600",
     price: "12.00",
     sizes: [
       { name: "Normal", extra: 0 }
@@ -1555,7 +1555,7 @@ const products = [
   {
     id: "rulla",
     name: "Rulla",
-    image: "kuva1.jpg",
+    image: "https://imageproxy.wolt.com/assets/66545b84ca587a012e7b9d81?w=600",
     price: "13.00",
     sizes: [{ name: "Normal", extra: 0 }],
     sauces: [
@@ -1973,6 +1973,64 @@ const products = [
       { name: "Kana", price: 1.5 },
       { name: "Jalapeno", price: 1.5 }
     ]
+  },
+
+  /*===================
+  JUOMAT
+  =====================*/
+  {
+    id: "coca-cola-15",
+    name: "Coca-Cola 1,5 l",
+    image: "https://imageproxy.wolt.com/products/06415600501811-02730637-07d6-4ab6-95c5-39adcd817074.jpg?w=600",
+    price: "5.90",
+    sizes: [{ name: "Normal", extra: 0 }],
+    sauces: [],
+    extras: []
+  },
+  {
+    id: "coca-cola-zero-15",
+    name: "Coca-Cola Zero 1,5 l",
+    image: "https://imageproxy.wolt.com/products/06415600502078-dbc81eef-644b-4284-9527-5147eebe08d9.jpg?w=600",
+    price: "5.90",
+    sizes: [{ name: "Normal", extra: 0 }],
+    sauces: [],
+    extras: []
+  },
+  {
+    id: "fanta-zero-033",
+    name: "Fanta Zero 0,33 l",
+    image: "https://imageproxy.wolt.com/assets/69e54e5166188661e63350db?w=600",
+    price: "2.90",
+    sizes: [{ name: "Normal", extra: 0 }],
+    sauces: [],
+    extras: []
+  },
+  {
+    id: "coca-cola-033",
+    name: "Coca-Cola 0,33 l",
+    image: "https://imageproxy.wolt.com/assets/69e54d3d66188661e63350d6?w=600",
+    price: "2.90",
+    sizes: [{ name: "Normal", extra: 0 }],
+    sauces: [],
+    extras: []
+  },
+  {
+    id: "coca-cola-zero-033",
+    name: "Coca-Cola Zero 0,33 l",
+    image: "https://imageproxy.wolt.com/assets/69e54d3d66188661e63350d6?w=600",
+    price: "2.90",
+    sizes: [{ name: "Normal", extra: 0 }],
+    sauces: [],
+    extras: []
+  },
+  {
+    id: "sprite-zero-033",
+    name: "Sprite Zero 0,33 l",
+    image: "https://imageproxy.wolt.com/assets/69e54dfd66188661e63350d9?w=600",
+    price: "2.90",
+    sizes: [{ name: "Normal", extra: 0 }],
+    sauces: [],
+    extras: []
   }
 ];
 

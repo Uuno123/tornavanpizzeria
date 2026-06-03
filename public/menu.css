@@ -64,7 +64,8 @@ body{
     flex-direction: column;
     display: flex;
     background: #ffffff;
-    height: 100vh;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
 
 
@@ -258,7 +259,7 @@ SECTION2
     align-items: center;
     justify-content: center;
     display: flex;
-    background:  #FFF8EC;
+    background: #edeae4;
     width: 100%;
     height: auto;
 }
@@ -269,7 +270,7 @@ SECTION2
   flex-wrap: wrap;
   justify-content: center;
   padding: 1rem 2rem;
-  background:  #FFF8EC;
+  background: #edeae4;
   border-bottom: 2px solid rgba(0,0,0,.06);
 }
 
@@ -327,87 +328,289 @@ SECTION2
 }
 
 
-.holder-a{
-  flex-direction: column;
-  margin-top: 50px;
-  display: flex;
+.holder-a, .holder-b, .holder-c, .holder-a3 {
+  margin-top: 40px;
 }
 
-.holder-b{
-   flex-direction: column;
-  margin-top: 50px;
-  display: flex;
+/*=========================
+  MENU-RAKENNE
+==========================*/
+
+.menu-wrapper {
+  background: #edeae4;
+  padding: 20px 0 50px;
+  overflow-x: hidden;
 }
 
-.holder-c{
-   flex-direction: column;
-  margin-top: 50px;
-  display: flex;
+.menu-inner {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 16px;
+  overflow: hidden;
 }
 
+.menu-category {
+  margin-top: 40px;
+}
+
+.category-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: #1a1008;
+  border-bottom: 3px solid #F5A800;
+  display: inline-block;
+  padding-bottom: 3px;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/*=========================
+  PIZZA-KORTTI
+==========================*/
+
+.pizza-card {
+  border-radius: 20px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1.5px solid #f0ede8;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 14px;
+  position: relative;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  overflow: hidden;
+}
+
+.pizza-card:hover {
+  box-shadow: 0 8px 24px rgba(245,168,0,0.16);
+  transform: translateY(-2px);
+}
+
+.pizza-card.featured {
+  border-color: rgba(245,168,0,0.5);
+}
+
+/* Kuva-alue — pyöreä */
+.pizza-img-wrap {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #ede9e3;
+}
+
+.pizza-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Tuotteen tiedot */
+.pizza-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.pizza-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.15rem;
+  color: #111111;
+  letter-spacing: 0.6px;
+  margin: 0 0 4px;
+  line-height: 1.1;
+}
+
+.pizza-ingredients {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.76rem;
+  color: #aaaaaa;
+  line-height: 1.4;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hinta + nappi */
+.pizza-bottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.pizza-price {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1rem;
+  color: #111111;
+  white-space: nowrap;
+}
+
+.add-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #F5A800;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.add-btn:hover {
+  background: #D48A00;
+  transform: scale(1.1);
+}
+
+/* Suosittu-badge */
+.pizza-badge {
+  position: absolute;
+  top: 0;
+  right: 16px;
+  background: #F5A800;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* Korttien grid — 1 sarake mobiililla */
+.holder-a2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.holder-a2 .otsikko,
+.holder-a2 .line {
+  grid-column: 1 / -1;
+}
 
 /*-------------------------TUOTE----------------*/
 
-
 .menu-item {
-  margin-top: 8px;
-    max-width: 95%;
-    font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1.1rem 1.4rem;
+  gap: 14px;
+  padding: 14px 16px;
   background: #fff;
   border-radius: 16px;
-  border: 1.5px solid rgba(0,0,0,.06);
-  transition: border-color .2s, transform .2s, box-shadow .2s;
-  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border: 1.5px solid rgba(0,0,0,.05);
+  transition: box-shadow .2s, transform .2s;
+  cursor: pointer;
+  position: relative;
 }
 
 .menu-item:hover {
-  border-color: #F5A800;
-  transform: translateX(4px);
-  box-shadow: 0 4px 20px rgba(245,168,0,.12);
+  box-shadow: 0 6px 20px rgba(245,168,0,.18);
+  transform: translateY(-2px);
+}
+
+/* Pyöreä kuva-alue */
+.menu-item-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f0ede8;
+}
+
+.menu-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Emoji placeholder kunnes kuva lisätään */
+.menu-item-emoji {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #FFF8EC;
+  border: 2px dashed #F5A800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
 }
 
 .menu-item-left {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 14px;
   flex: 1;
+  min-width: 0;
 }
-
-.menu-item-emoji { font-size: 1.8rem; flex-shrink: 0; }
 
 .menu-item-info {
   display: flex;
   flex-direction: column;
-  gap: .15rem;
+  gap: 3px;
+  min-width: 0;
 }
 
 .menu-item-name {
-  font-weight: 900;
-  font-size: 1rem;
-  color: #1a1008;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  color: #111;
+  letter-spacing: 0.5px;
 }
 
 .menu-item-desc {
-  font-size: .83rem;
+  font-size: .78rem;
   color: #999;
   line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menu-item-badges {
+  display: flex;
+  gap: .3rem;
+  margin-top: 4px;
+  flex-wrap: wrap;
 }
 
 .menu-item-right {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 10px;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .menu-item-price {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.6rem;
-  color: #F5A800;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1rem;
+  color: #111;
   white-space: nowrap;
 }
 
@@ -419,12 +622,14 @@ SECTION2
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 900;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background .2s, transform .2s;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 .add-btn:hover {
@@ -432,15 +637,23 @@ SECTION2
   transform: scale(1.1);
 }
 
-/* badget */
-.menu-item-badges {
-  display: flex;
-  gap: .3rem;
-  margin-top: .3rem;
+/* Suosittu-badge */
+.badge-suositu {
+  position: absolute;
+  top: -10px;
+  right: 14px;
+  background: #F5A800;
+  color: #fff;
+  font-size: .62rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 4px;
 }
 
 .badge {
-  font-size: .7rem;
+  font-size: .65rem;
   font-weight: 900;
   letter-spacing: .5px;
   text-transform: uppercase;
@@ -451,7 +664,7 @@ SECTION2
 .badge-veg  { background: #eafaf1; color: #27ae60; }
 .badge-hot  { background: #ffeaea; color: #c0392b; }
 .badge-new  { background: #fff3cd; color: #d48a00; }
-.badge-suos { background: #f0e6ff; color: #8e44ad; }
+.badge-suos { background: #fff3cd; color: #d48a00; }
 
 
 
@@ -663,6 +876,157 @@ footer{
 
 @media screen and (min-width: 800px) {
 
+  /* === MENU WRAPPER === */
+  .menu-wrapper {
+    background: #edeae4;
+    padding: 30px 0 60px;
+  }
+
+  .menu-inner {
+    max-width: 100%;
+    padding: 0 40px;
+  }
+
+  .menu-category {
+    margin-top: 48px;
+  }
+
+  .category-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    color: #1a1008;
+    border-bottom: 3px solid #F5A800;
+    display: inline-block;
+    padding-bottom: 3px;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 12px;
+    row-gap: 22px;
+  }
+
+  /* === PIZZA-KORTTI === */
+  .pizza-card {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1.5px solid #f0ede8;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 24px;
+    position: relative;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    overflow: visible;
+    cursor: pointer;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .pizza-card:hover {
+    box-shadow: 0 8px 24px rgba(245,168,0,0.16);
+    transform: translateY(-2px);
+  }
+
+  .pizza-card.featured {
+    border-color: rgba(245,168,0,0.5);
+  }
+
+  .pizza-img-wrap {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #ede9e3;
+  }
+
+  .pizza-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .pizza-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .pizza-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.25rem;
+    color: #111111;
+    letter-spacing: 0.6px;
+    margin: 0 0 4px;
+    line-height: 1.1;
+  }
+
+  .pizza-ingredients {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: #aaaaaa;
+    line-height: 1.4;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .pizza-bottom {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .pizza-price {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.05rem;
+    color: #111111;
+    white-space: nowrap;
+  }
+
+  .add-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #F5A800;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .add-btn:hover {
+    background: #D48A00;
+    transform: scale(1.1);
+  }
+
+  .pizza-badge {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: #F5A800;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    pointer-events: none;
+  }
 
   body{
         overflow-x: hidden;
@@ -856,7 +1220,7 @@ SECTION2
     align-items: center;
     justify-content: center;
     display: flex;
-    background:  #FFF8EC;
+    background: #edeae4;
     width: 100%;
     height: auto;
 }
@@ -867,7 +1231,7 @@ SECTION2
   flex-wrap: wrap;
   justify-content: center;
   padding: 1rem 2rem;
-  background:  #FFF8EC;
+  background: #edeae4;
   border-bottom: 2px solid rgba(0,0,0,.06);
 }
 
@@ -904,9 +1268,10 @@ SECTION2
 .section3{
   flex-direction: column;
   display: flex;
-    padding: 15px;
+    padding: 30px 40px;
     align-self: center;
     justify-content: center;
+    background: #f8f6f2 !important;
     background: #FFF8EC;
     width: 100%;
     height: auto;
@@ -929,65 +1294,93 @@ SECTION2
 /*-------------------------TUOTE----------------*/
 
 
+.holder-a2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.holder-a2 .otsikko,
+.holder-a2 .line {
+  grid-column: 1 / -1;
+}
+
 .menu-item {
-  margin-top: 5px;
-    max-width: 95%;
-    font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.1rem 1.4rem;
+  padding: 14px 16px;
   background: #fff;
   border-radius: 16px;
-  border: 1.5px solid rgba(0,0,0,.06);
-  transition: border-color .2s, transform .2s, box-shadow .2s;
-  gap: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  border: 1.5px solid rgba(0,0,0,.04);
+  transition: box-shadow .2s, transform .2s;
+  gap: 12px;
+  cursor: pointer;
 }
 
 .menu-item:hover {
-  border-color: #F5A800;
-  transform: translateX(4px);
-  box-shadow: 0 4px 20px rgba(245,168,0,.12);
+  box-shadow: 0 6px 24px rgba(245,168,0,.15);
+  transform: translateY(-2px);
 }
 
 .menu-item-left {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 12px;
   flex: 1;
+  min-width: 0;
 }
 
-.menu-item-emoji { font-size: 1.8rem; flex-shrink: 0; }
+.menu-item-emoji {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  background: #FFF8EC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
 
 .menu-item-info {
   display: flex;
   flex-direction: column;
-  gap: .15rem;
+  gap: 2px;
+  min-width: 0;
 }
 
 .menu-item-name {
-  font-weight: 900;
-  font-size: 1rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.15rem;
   color: #1a1008;
+  letter-spacing: 0.5px;
 }
 
 .menu-item-desc {
-  font-size: .83rem;
+  font-size: .8rem;
   color: #999;
   line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .menu-item-right {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
   flex-shrink: 0;
 }
 
 .menu-item-price {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.6rem;
-  color: #F5A800;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.1rem;
+  color: #1a1008;
   white-space: nowrap;
 }
 
@@ -996,15 +1389,16 @@ SECTION2
   color: #fff;
   border: none;
   cursor: pointer;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 900;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background .2s, transform .2s;
+  line-height: 1;
 }
 
 .add-btn:hover {
@@ -1016,7 +1410,7 @@ SECTION2
 .menu-item-badges {
   display: flex;
   gap: .3rem;
-  margin-top: .3rem;
+  margin-top: 4px;
 }
 
 .badge {
@@ -1262,9 +1656,18 @@ footer{
 }
 
 
+@media screen and (min-width: 1700px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .menu-wrapper {
+    padding: 30px 60px 60px;
+  }
+}
+
 @media screen and (min-width: 1800px) {
 
-  
+
 
 
  /*============
@@ -1526,6 +1929,6 @@ footer{
 .footer-bottom { border-top: 1px solid #2a1a08; text-align: center; padding: 18px 0; }
 .footer-bottom p { color: #555; font-size: 12px; margin: 0; }
 @media (max-width: 700px) {
-    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-    .footer-new { padding: 40px 24px 0; }
+    .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+    .footer-new { padding: 24px 20px 0; }
 }

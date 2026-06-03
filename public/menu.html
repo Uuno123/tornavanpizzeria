@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,1057 +25,486 @@
     <link rel="stylesheet" href="menu.css">
     <script src="products.js"></script>
     <script src="menu.js" defer></script>
-    <title>Document</title>
+    <title>Menu – Törnävän Pizzeria</title>
 </head>
 
 <div class="toast" id="toast"></div>
 <body>
 
-  
-
-  <div class="overlay2" id="overlay2"  onclick="closeModal()">
-
+  <!-- MODAL -->
+  <div class="overlay2" id="overlay2" onclick="closeModal()">
     <div class="pizza-modal" id="pizzaModal" onclick="event.stopPropagation()">
-    <div class="pizza-modal-content">
-
-  <!-- KUVA -->
-  <img id="modalImage" class="modal-image" src="" alt="">
-
-  <!-- NIMI -->
-  <h2 class="modal-title" id="modalTitle"></h2>
-
-  <!-- HINTA (näytetään backendistä myöhemmin) -->
-  <p id="modalDescription"></p>
-
-
-  <!-- KOKO -->
-  <h3 class="big-text">Koko</h3>
-  <div id="sizeOptions" class="options"></div required>
-
-
-  <!-- KASTIKE -->
-  <h3 class="big-text">Kastike</h3>
-  <div id="sauceOptions" class="options"></div required>
-
-
-  <!-- LISÄTÄYTEET -->
-  <h3 class="big-text">Lisätäytteet</h3>
-  <div id="extraOptions" class="options"></div>
-
-
-  <!-- MÄÄRÄ -->
-  <h3 class="big-text">Määrä</h3>
-  <input id="quantity" type="number" value="1" min="1">
-
-
-  <!-- LISÄÄ OSTOSKORIIN -->
-  <button onclick="addToCart()" class="add-cart-btn">
-    Lisää ostoskoriin
-  </button>
-
-</div>
-   </div>
-  </div>
-
-   
-
-     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-
-   <nav class="navbar">
-        <img src="logo.png" class="logo">
-        <div class="nav-holder">
-            <img src="logo.png" class="logo-desktop">
-            <button id="ham" onclick="toggleMenu()" class="hamburger">&#9776;</button>
-            <button   onclick="window.location.href='ostoskori.html'" class="cart"> <span class="cart-badge" id="cartBadge">0</span><img src="shopping_cart_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40 (1).png" class="cart-pic"></button>
-        </div>
-
-        <div class="nav-holder2">
-            <a href="index.html">Etuisvu</a>
-            <a href="menu.html">Menu</a>
-            <a href="#">Yhteystiedot</a>
-        </div>
-    </nav>
-
-    <div class="show-nav" id="show-nav">
-       <span><a href="index.html">Etusivu</a></span>
-       <span><a href="menu.html">Menu</a></span>
-       <span><a href="menu.html">Tilaa nyt!</a></span>
-       <a class="puh-mob" href="tel:0401829726">040 1829726</a>
-    </div>
-    <hr class="viiva1">
-
-
-    <section class="section1">
-        <h1>KOKO <span>MENU</span></h1>
-        <p class="hero1">Parhaat pizzat ja kebabit Törnävältä</p>
-    </section>
-
-
-    <section class="section2">
-        <div class="btn-container">
-            <a href="#pizzat">Pizzat</a>
-            <a href="#kebabit">Kebabit</a>
-            <a href="#salaatit">Salaatit</a>
-            <a href="#kanat">Kana-annokset</a>
-            <a href="#juomat">Juomat</a>
-        </div>
-    </section>
-
-
-    <section class="section3">
-      <div class="holder-a">
-        <div class="holder-a2">
-        <h1 id="pizzat" class="otsikko">PIZZAT </h1>
-        <p class="line">_______</p>
-
-      <div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍅</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Margareta</span>
-      <span class="menu-item-desc">Juustoa, pizzakastike</span>
-      <div class="menu-item-badges"><span class="badge badge-veg">Vegaani</span></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">10,50 €</span>
-    <button class="add-btn" onclick="openModal('Margareta')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥩</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Jauhelihapizza</span>
-      <span class="menu-item-desc">Jauheliha</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">11,50 €</span>
-    <button class="add-btn" onclick="openModal('Jauhelihapizza')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍍</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Tropicana</span>
-      <span class="menu-item-desc">Kinkku, ananas</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">11,50 €</span>
-    <button class="add-btn" onclick="openModal('Tropicana')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🐟</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Opera</span>
-      <span class="menu-item-desc">Kinkku, tonnikala</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">11,50 €</span>
-    <button class="add-btn" onclick="openModal('Opera')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍕</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Pepperoni</span>
-      <span class="menu-item-desc">Tupla pepperoni</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">11,50 €</span>
-    <button class="add-btn" onclick="openModal('Pepperoni')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥦</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Kasvis Pizza</span>
-      <span class="menu-item-desc">Sipuli, oliivi, herkkusieni, ananas, paprika</span>
-      <div class="menu-item-badges"><span class="badge badge-veg">Vegaani</span></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('KasvisPizza')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🐟</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Opera Special</span>
-      <span class="menu-item-desc">Kinkku, tonnikala, salami</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,50 €</span>
-    <button class="add-btn" onclick="openModal('OperaSpecial')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍄</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Quattro Stagioni</span>
-      <span class="menu-item-desc">Kinkku, herkkusieni, katkarapu, tonnikala</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('QuattroStagioni')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🦐</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Frutti di Mare</span>
-      <span class="menu-item-desc">Tonnikala, katkarapu, simpukka</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,50 €</span>
-    <button class="add-btn" onclick="openModal('FruttiDiMare')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🧀</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Americana</span>
-      <span class="menu-item-desc">Kinkku, ananas, Aura-juusto</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,50 €</span>
-    <button class="add-btn" onclick="openModal('Americana')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥙</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Kabul Pizza</span>
-      <span class="menu-item-desc">Kebab, jalopeno, tandoori-mausteet, sipuli, BBQ-kastike</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,50 €</span>
-    <button class="add-btn" onclick="openModal('KabulPizza')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🦐</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Venetsia</span>
-      <span class="menu-item-desc">Kinkku, herkkusieni, katkarapu</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,50 €</span>
-    <button class="add-btn" onclick="openModal('Venetsia')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍕</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Paradice</span>
-      <span class="menu-item-desc">Salami, tonnikala, paprika</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,50 €</span>
-    <button class="add-btn" onclick="openModal('Paradice')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥓</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Manzo</span>
-      <span class="menu-item-desc">Pepperoni, kinkku, sipuli</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,50 €</span>
-    <button class="add-btn" onclick="openModal('Manzo')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🧀</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Romeo</span>
-      <span class="menu-item-desc">Salami, ananas, katkarapu, aura-juusto</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('Romeo')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍍</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Julia</span>
-      <span class="menu-item-desc">Kinkku, ananas, katkarapu, aura-juusto</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('Julia')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">⭐</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Törnävä-Special</span>
-      <span class="menu-item-desc">Kebab-liha, Aura-juusto, ananas, herkkusieni</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('TornavaSpecial')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🌶️</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Diavola</span>
-      <span class="menu-item-desc">Kinkku, herkkusieni, pepperoni, sipuli, valkosipuli</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('Diavola')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🧀</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Kummisetä</span>
-      <span class="menu-item-desc">Kinkku, katkarapu, herkkusieni, tuplajuusto, valkosipuli</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('Kummiseta')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">👑</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Empire</span>
-      <span class="menu-item-desc">Salami, kinkku, katkarapu, tuplajuusto, mustapippuri, valkosipuli</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('Empire')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥙</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Kebab Special</span>
-      <span class="menu-item-desc">Kebab-liha, sipuli, herkkusieni, chilipepperoni</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('KebabSpecial')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🧀</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Papa's Special</span>
-      <span class="menu-item-desc">Salami, kinkku, katkarapu, tuplajuusto</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('PapasSpecial')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🌮</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Mexicana</span>
-      <span class="menu-item-desc">Kebab-liha, jalopeno, paprika, sipuli, valkosipuli</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('Mexicana')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">✨</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Fantasia</span>
-      <span class="menu-item-desc">Neljä täytettä oman valinnan mukaan</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,50 €</span>
-    <button class="add-btn" onclick="openModal('Fantasia')">+</button>
-  </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-  <div class="holder-a3">
-  <h1 class="otsikko" id="kebabit">KEBAB <br></h1>
-        <p class="line">_______</p>
-
-
-
-
-          <div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥙</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Pita Kebab</span>
-      <span class="menu-item-desc">Uunituore leipä, kebab-liha, salaatti, kebab-kastike</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">11,00 €</span>
-    <button class="add-btn" onclick="openModal('Pita Kebab')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥙</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Kebab Riisillä</span>
-      <span class="menu-item-desc">Riisi, kebab-liha, kebab-kastike, salaatti</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,00 €</span>
-    <button class="add-btn" onclick="openModal('Kebab Riisilla')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥙</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Kebab Ranskalaisilla</span>
-      <span class="menu-item-desc">Ranskalaiset, kebab-liha, kebab-kastike, salaatti</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,00 €</span>
-    <button class="add-btn" onclick="openModal('Kebab Ranskalaisilla')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥙</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Kebab Lohkoperunoilla</span>
-      <span class="menu-item-desc">Lohkoperunat, kebab-liha, kebab-kastike, salaatti</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,00 €</span>
-    <button class="add-btn" onclick="openModal('Kebab Lohkoperunoilla')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥙</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Iskender Kebab</span>
-      <span class="menu-item-desc">Uunituoreita leipäkuutioita, kebab-liha, kebab-kastike, jogurttikastike, salaatti</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,50 €</span>
-    <button class="add-btn" onclick="openModal('Iskender Kebab')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🌯</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Rullakebab</span>
-      <span class="menu-item-desc">Kebab-liha, salaatti, kebab-kastike</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('Rullakebab')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🌯</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Special Rulla Kebab</span>
-      <span class="menu-item-desc">Tupla kebab, juusto, salaatti, kebab-kastike</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">17,00 €</span>
-    <button class="add-btn" onclick="openModal('Special Rulla Kebab')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥙</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Kebab Kermaperunoilla</span>
-      <span class="menu-item-desc">Kermaperunat, kebab-liha, kebab-kastike, salaatti</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,50 €</span>
-    <button class="add-btn" onclick="openModal('Kebab Kermaperunoilla')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥙</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Kebab Aurajuustoperunoilla</span>
-      <span class="menu-item-desc">Aurajuustoperunat, kebab-liha, kebab-kastike, salaatti</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('Kebab Aurajuustoperunoilla')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥗</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Kebab Salaatti</span>
-      <span class="menu-item-desc">Jäävuorisalaatti, kebab-liha, tomaatti, kurkku, feta-juusto</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,50 €</span>
-    <button class="add-btn" onclick="openModal('kebab-salaatti')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍕</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Al Tonno Calzone</span>
-      <span class="menu-item-desc">Kebab-liha, sipuli, jalapeno, paprika, valkosipuli, mustapippuri</span>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('al_tonno')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍕</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Lorenzo Calzone</span>
-      <span class="menu-item-desc">Ananas, oliivi, sipuli, herkkusieni</span>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('lorenzo')">+</button>
-  </div>
-</div>
-  </div>
-  </div>
-
-
-
-
-
-
-  <div class="holder-b">
-    <div class="holder-b1">
-
-   <h1 class="otsikko" id="salaatit">SALAATTI<br></h1>
-        <p class="line">__________</p>
-
-
-
- <div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥗</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Tonnikalasalaatti</span>
-      <span class="menu-item-desc">Tonnikala, paprika, jäävuorisalaatti, kurkku, tomaatti, salaattikastike, uunituore leipä</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">11,50 €</span>
-    <button class="add-btn" onclick="openModal('tonnikalasalaatti')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥗</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Katkarapusalaatti</span>
-      <span class="menu-item-desc">Katkarapuja, herkkusieniä, jäävuorisalaatti, kurkku, tomaatti, salaattikastike, uunituore leipä</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">11,50 €</span>
-    <button class="add-btn" onclick="openModal('katkarapusalaatti')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥗</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Kanasalaatti</span>
-      <span class="menu-item-desc">Paistettu broilerin file, ananas, jäävuorisalaatti, kurkku, tomaatti, salaattikastike, uunituore leipä</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,50 €</span>
-    <button class="add-btn" onclick="openModal('kanasalaatti')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🥗</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Fetasalaatti</span>
-      <span class="menu-item-desc">Sipuli, chili, pepperoni, oliivi, jäävuorisalaatti, kurkku, tomaatti, salaattikastike, uunituore leipä</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,00 €</span>
-    <button class="add-btn" onclick="openModal('fetasalaatti')">+</button>
-  </div>
-</div>
-  </div>
-
-
-
-
-  <div class="holder-b2">
-   <h1 class="otsikko" id="kanat">KANA-ANNOS<br></h1>
-        <p class="line">__________</p>
-
-
-        <div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍗</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Pitaleipä</span>
-      <span class="menu-item-desc">Kana-annos pitaleivällä</span>
-      <div class="menu-item-badges"></div>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">11,50 €</span>
-    <button class="add-btn" onclick="openModal('pitaleipa')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍗</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Rulla</span>
-      <span class="menu-item-desc">Kana rullaleivällä</span>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('rulla')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍗</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Ranskalaiset</span>
-      <span class="menu-item-desc">Kana + ranskalaiset</span>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,00 €</span>
-    <button class="add-btn" onclick="openModal('ranskikset')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍗</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Lohkoperunat</span>
-      <span class="menu-item-desc">Kana + lohkoperunat</span>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,00 €</span>
-    <button class="add-btn" onclick="openModal('lohkoperunat')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍗</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Kermaperunat</span>
-      <span class="menu-item-desc">Kana + kermaperunat</span>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,50 €</span>
-    <button class="add-btn" onclick="openModal('kermaperunat')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍗</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Valkosipuliperunat</span>
-      <span class="menu-item-desc">Kana + valkosipuliperunat</span>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">12,50 €</span>
-    <button class="add-btn" onclick="openModal('valkosipuliperunat')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🍗</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Aurajuustoperunat</span>
-      <span class="menu-item-desc">Kana + aurajuustoperunat</span>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">13,00 €</span>
-    <button class="add-btn" onclick="openModal('aurajuustoperunat')">+</button>
-  </div>
-</div>
-
-  <div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🌶️</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Hot Wings 8 kpl</span>
-      <span class="menu-item-desc">Crispy kanansiivet</span>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">8,00 €</span>
-    <button class="add-btn" onclick="openModal('wings8')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🌶️</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Hot Wings 10 kpl</span>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">10,00 €</span>
-    <button class="add-btn" onclick="openModal('wings10')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🌶️</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Hot Wings 16 kpl</span>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">14,00 €</span>
-    <button class="add-btn" onclick="openModal('wings16')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🌶️</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Hot Wings 25 kpl</span>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">19,00 €</span>
-    <button class="add-btn" onclick="openModal('wings25')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🌶️</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Hot Wings 30 kpl</span>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">22,00 €</span>
-    <button class="add-btn" onclick="openModal('wings30')">+</button>
-  </div>
-</div>
-
-<div class="menu-item">
-  <div class="menu-item-left">
-    <span class="menu-item-emoji">🌶️</span>
-    <div class="menu-item-info">
-      <span class="menu-item-name">Hot Wings 50 kpl</span>
-    </div>
-  </div>
-  <div class="menu-item-right">
-    <span class="menu-item-price">30,00 €</span>
-    <button class="add-btn" onclick="openModal('wings50')">+</button>
-  </div>
-</div>
-  </div>
-  </div>
-
-
-
-
-
-
-
-
-  <div class="holder-c">
-    <h1 class="otsikko" id="juomat">JUOMAT<br></h1>
-        <p class="line">_______</p>
-
-
-
-  <div class="menu-item">
-    <div class="menu-item-left">
-      <span class="menu-item-emoji">🥤</span>
-      <div class="menu-item-info">
-        <span class="menu-item-name">Cola 0,5l</span>
-        <span class="menu-item-desc">Coca-Cola tai Pepsi, kylmänä</span>
+      <div class="pizza-modal-content">
+        <img id="modalImage" class="modal-image" src="" alt="">
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <h3 class="big-text">Koko</h3>
+        <div id="sizeOptions" class="options"></div>
+        <h3 class="big-text">Kastike</h3>
+        <div id="sauceOptions" class="options"></div>
+        <h3 class="big-text">Lisätäytteet</h3>
+        <div id="extraOptions" class="options"></div>
+        <h3 class="big-text">Määrä</h3>
+        <input id="quantity" type="number" value="1" min="1">
+        <button onclick="addToCart()" class="add-cart-btn">Lisää ostoskoriin</button>
       </div>
     </div>
-    <div class="menu-item-right">
-      <span class="menu-item-price">2,50 €</span>
-      <button class="add-btn">+</button>
-    </div>
   </div>
 
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
-
-
-
-  <div class="menu-item">
-    <div class="menu-item-left">
-      <span class="menu-item-emoji">🧃</span>
-      <div class="menu-item-info">
-        <span class="menu-item-name">Mehu 0,33l</span>
-        <span class="menu-item-desc">Appelsiini, omena tai mansikka</span>
-      </div>
+  <nav class="navbar">
+    <img src="logo.png" class="logo">
+    <div class="nav-holder">
+      <img src="logo.png" class="logo-desktop">
+      <button id="ham" onclick="toggleMenu()" class="hamburger">&#9776;</button>
+      <button onclick="window.location.href='ostoskori.html'" class="cart">
+        <span class="cart-badge" id="cartBadge">0</span>
+        <img src="shopping_cart_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40 (1).png" class="cart-pic">
+      </button>
     </div>
-    <div class="menu-item-right">
-      <span class="menu-item-price">2,00 €</span>
-      <button class="add-btn">+</button>
+    <div class="nav-holder2">
+      <a href="index.html">Etusivu</a>
+      <a href="menu.html">Menu</a>
+      <a href="#">Yhteystiedot</a>
     </div>
+  </nav>
+
+  <div class="show-nav" id="show-nav">
+    <span><a href="index.html">Etusivu</a></span>
+    <span><a href="menu.html">Menu</a></span>
+    <span><a href="menu.html">Tilaa nyt!</a></span>
+    <a class="puh-mob" href="tel:0401829726">040 1829726</a>
   </div>
+  <hr class="viiva1">
 
+  <section class="section1">
+    <h1>KOKO <span>MENU</span></h1>
+    <p class="hero1">Parhaat pizzat ja kebabit Törnävältä</p>
+  </section>
 
-
-
-
-  <div class="menu-item">
-    <div class="menu-item-left">
-      <span class="menu-item-emoji">💧</span>
-      <div class="menu-item-info">
-        <span class="menu-item-name">Vesi 0,5l</span>
-        <span class="menu-item-desc">Kivennäisvesi tai lähdevesi</span>
-      </div>
+  <section class="section2">
+    <div class="btn-container">
+      <a href="#pizzat">Pizzat</a>
+      <a href="#kebabit">Kebabit</a>
+      <a href="#salaatit">Salaatit</a>
+      <a href="#kanat">Kana-annokset</a>
+      <a href="#juomat">Juomat</a>
     </div>
-    <div class="menu-item-right">
-      <span class="menu-item-price">1,50 €</span>
-      <button class="add-btn">+</button>
-    </div>
-  </div>
+  </section>
 
+  <div class="menu-wrapper">
+    <div class="menu-inner">
 
+    <!-- ======================== PIZZAT ======================== -->
+    <div class="menu-category" id="pizzat">
+      <h2 class="category-title">PIZZAT</h2>
+      <div class="menu-grid">
 
-
-
-  <div class="menu-item">
-    <div class="menu-item-left">
-      <span class="menu-item-emoji">☕</span>
-      <div class="menu-item-info">
-        <span class="menu-item-name">Kahvi</span>
-        <span class="menu-item-desc">Musta tai maidolla, tuoreeltaan keitetty</span>
-      </div>
-    </div>
-    <div class="menu-item-right">
-      <span class="menu-item-price">2,00 €</span>
-      <button class="add-btn">+</button>
-    </div>
-  </div>
-
-
-
-
-  <div class="menu-item">
-    <div class="menu-item-left">
-      <span class="menu-item-emoji">🧋</span>
-      <div class="menu-item-info">
-        <span class="menu-item-name">Milkshake</span>
-        <span class="menu-item-desc">Mansikka, suklaa tai vanilja</span>
-        <div class="menu-item-badges"><span class="badge badge-new">Uusi</span></div>
-      </div>
-    </div>
-    <div class="menu-item-right">
-      <span class="menu-item-price">4,50 €</span>
-      <button class="add-btn">+</button>
-    </div>
-  </div>
-  </div>
-
-
- 
-    </section>
-
-
-    <footer class="footer-new">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <img src="logo.png" class="footer-logo">
-                <p class="footer-tagline">Parasta pizzaa ja kebabia<br>vuodesta 2022!</p>
-            </div>
-            <div class="footer-col">
-                <h4 class="footer-heading">Aukioloajat</h4>
-                <table class="footer-hours">
-                    <tr><td>Ma–To</td><td>11–22</td></tr>
-                    <tr><td>Pe–La</td><td>11–23</td></tr>
-                    <tr><td>Su</td><td>14–22</td></tr>
-                </table>
-            </div>
-            <div class="footer-col">
-                <h4 class="footer-heading">Yhteystiedot</h4>
-                <p class="footer-contact"><a href="tel:0401829726">📞 040 1829726</a></p>
-                <p class="footer-contact">📍 Törnävä, Seinäjoki</p>
-                <a href="menu.html" class="footer-order-btn">Tilaa nyt</a>
-            </div>
+        <div class="pizza-card" onclick="openModal('Margareta')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Margareta" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Margareta</h3><p class="pizza-ingredients">Tomaattikastike, juusto</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">10,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Margareta')">+</button></div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2024 Törnävän Pizzeria. Kaikki oikeudet pidätetään.</p>
+
+        <div class="pizza-card" onclick="openModal('Jauhelihapizza')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf1848a677b0364084e?w=600" alt="Jauhelihapizza" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Jauhelihapizza</h3><p class="pizza-ingredients">Jauheliha, juusto</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">11,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Jauhelihapizza')">+</button></div>
         </div>
-    </footer>
-    
+
+        <div class="pizza-card" onclick="openModal('Tropicana')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bd9447efd43463bab94?w=600" alt="Tropicana" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Tropicana</h3><p class="pizza-ingredients">Kinkku, ananas</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">11,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Tropicana')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Opera')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bd4848a677b0364084a?w=600" alt="Opera" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Opera</h3><p class="pizza-ingredients">Tonnikala, oliivi</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">11,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Opera')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Pepperoni')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bcc447efd43463bab91?w=600" alt="Pepperoni" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Pepperoni</h3><p class="pizza-ingredients">Pepperonimakkara, juusto</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">11,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Pepperoni')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('OperaSpecial')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545be3447efd43463bab95?w=600" alt="Opera Special" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Opera Special</h3><p class="pizza-ingredients">Tonnikala, oliivi, katkarapu</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('OperaSpecial')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('FruttiDiMare')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545c00848a677b03640850?w=600" alt="Frutti di Mare" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Frutti di Mare</h3><p class="pizza-ingredients">Tonnikala, katkarapu, simpukka</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('FruttiDiMare')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Americana')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545c14447efd43463bab9a?w=600" alt="Americana" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Americana</h3><p class="pizza-ingredients">Kinkku, ananas, aurajuusto</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Americana')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Venetsia')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545c2a848a677b03640851?w=600" alt="Venetsia" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Venetsia</h3><p class="pizza-ingredients">Kinkku, paprika, oliivi</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Venetsia')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Paradice')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Paradice" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Paradice</h3><p class="pizza-ingredients">Jauheliha, salami, herkkusieni</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Paradice')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Manzo')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Manzo" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Manzo</h3><p class="pizza-ingredients">Kebabliha, paprika, sipuli</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Manzo')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('KasvisPizza')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66582dc42f6a1159bbc02abf?w=600" alt="Kasvis Pizza" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Kasvis Pizza</h3><p class="pizza-ingredients">Paprika, herkkusieni, oliivi, sipuli, tomaatti</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('KasvisPizza')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('QuattroStagioni')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545c25447efd43463bab9b?w=600" alt="Quattro Stagioni" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Quattro Stagioni</h3><p class="pizza-ingredients">Kinkku, herkkusieni, oliivi, paprika</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('QuattroStagioni')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Romeo')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545c2f848a677b03640852?w=600" alt="Romeo" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Romeo</h3><p class="pizza-ingredients">Kana, pekoni, paprika</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Romeo')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Julia')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545c7c447efd43463bab9e?w=600" alt="Julia" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Julia</h3><p class="pizza-ingredients">Kana, fetajuusto, paprika</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Julia')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Diavola')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Diavola" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Diavola</h3><p class="pizza-ingredients">Pepperoni, jalapeno, paprika</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Diavola')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Kummiseta')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545c82848a677b03640855?w=600" alt="Kummisetä" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Kummisetä</h3><p class="pizza-ingredients">Kebabliha, sipuli, jalapeno</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Kummiseta')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Empire')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Empire" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Empire</h3><p class="pizza-ingredients">Jauheliha, kebabliha, herkkusieni</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Empire')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('PapasSpecial')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Papa's Special" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Papa's Special</h3><p class="pizza-ingredients">Kana, kebabliha, aurajuusto, pekoni</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('PapasSpecial')">+</button></div>
+        </div>
+
+        <div class="pizza-card featured" onclick="openModal('TornavaSpecial')">
+          <span class="pizza-badge">SUOSITTU</span>
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Törnävä-Special" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Törnävä-Special</h3><p class="pizza-ingredients">Kebabliha, kana, fetajuusto, aurajuusto</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('TornavaSpecial')">+</button></div>
+        </div>
+
+        <div class="pizza-card featured" onclick="openModal('KebabSpecial')">
+          <span class="pizza-badge">SUOSITTU</span>
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Kebab Special" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Kebab Special</h3><p class="pizza-ingredients">Kebabliha, kana, fetajuusto, valkosipuli</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('KebabSpecial')">+</button></div>
+        </div>
+
+        <div class="pizza-card featured" onclick="openModal('Mexicana')">
+          <span class="pizza-badge">SUOSITTU</span>
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Mexicana" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Mexicana</h3><p class="pizza-ingredients">Pepperoni, jalapeno, ananas, chilikastike</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Mexicana')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('KabulPizza')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Kabul Pizza" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Kabul Pizza</h3><p class="pizza-ingredients">Kebabliha, aurajuusto, jalapeno</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('KabulPizza')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Fantasia')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545cb90b61ae1437496c6a?w=600" alt="Fantasia" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Fantasia</h3><p class="pizza-ingredients">Kana, ananas, currykastike</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Fantasia')">+</button></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ======================== KEBABIT ======================== -->
+    <div class="menu-category" id="kebabit">
+      <h2 class="category-title">KEBABIT</h2>
+      <div class="menu-grid">
+
+        <div class="pizza-card" onclick="openModal('Pita Kebab')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b7b447efd43463bab86?w=600" alt="Pita Kebab" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Pita Kebab</h3><p class="pizza-ingredients">Kebabliha, salaatti, tomaatti, sipuli</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">11,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Pita Kebab')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Kebab Riisilla')">
+          <div class="pizza-info"><h3 class="pizza-name">Kebab Riisillä</h3><p class="pizza-ingredients">Kebabliha, riisi, salaattikerros</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Kebab Riisilla')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Kebab Ranskalaisilla')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b97ca587a012e7b9d83?w=600" alt="Kebab Ranskalaisilla" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Kebab Ranskalaisilla</h3><p class="pizza-ingredients">Kebabliha, ranskalaiset, salaatti</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Kebab Ranskalaisilla')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Kebab Lohkoperunoilla')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b97ca587a012e7b9d83?w=600" alt="Kebab Lohkoperunoilla" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Kebab Lohkoperunoilla</h3><p class="pizza-ingredients">Kebabliha, lohkoperunat, salaatti</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Kebab Lohkoperunoilla')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Kebab Kermaperunoilla')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b97ca587a012e7b9d83?w=600" alt="Kebab Kermaperunoilla" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Kebab Kermaperunoilla</h3><p class="pizza-ingredients">Kebabliha, kermaperunat</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Kebab Kermaperunoilla')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('kebab-salaatti')">
+          <div class="pizza-info"><h3 class="pizza-name">Kebab Salaatti</h3><p class="pizza-ingredients">Kebabliha, jääsalaatti, tomaatti, oliivi</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('kebab-salaatti')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Iskender Kebab')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b80447efd43463bab87?w=600" alt="Iskender Kebab" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Iskender Kebab</h3><p class="pizza-ingredients">Kebabliha, tomaattikastike, jogurttikastike</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Iskender Kebab')">+</button></div>
+        </div>
+
+        <div class="pizza-card featured" onclick="openModal('Rullakebab')">
+          <span class="pizza-badge">SUOSITTU</span>
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b84ca587a012e7b9d81?w=600" alt="Rullakebab" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Rullakebab</h3><p class="pizza-ingredients">Kebabliha, salaatti, tomaatti, kastike</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Rullakebab')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Kebab Aurajuustoperunoilla')">
+          <div class="pizza-info"><h3 class="pizza-name">Kebab Aurajuustoperunoilla</h3><p class="pizza-ingredients">Kebabliha, aurajuustoperunat</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Kebab Aurajuustoperunoilla')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('al_tonno')">
+          <div class="pizza-info"><h3 class="pizza-name">Al Tonno Calzone</h3><p class="pizza-ingredients">Tonnikala, mozzarella, oliivi</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('al_tonno')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('lorenzo')">
+          <div class="pizza-info"><h3 class="pizza-name">Lorenzo Calzone</h3><p class="pizza-ingredients">Kinkku, mozzarella, herkkusieni</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('lorenzo')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('Special Rulla Kebab')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b84ca587a012e7b9d81?w=600" alt="Special Rulla Kebab" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Special Rulla Kebab</h3><p class="pizza-ingredients">Kebabliha, juusto, salaatti, erikoiskastike</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">17,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Special Rulla Kebab')">+</button></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ======================== SALAATIT ======================== -->
+    <div class="menu-category" id="salaatit">
+      <h2 class="category-title">SALAATIT</h2>
+      <div class="menu-grid">
+
+        <div class="pizza-card" onclick="openModal('tonnikalasalaatti')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b28848a677b0364083b?w=600" alt="Tonnikalasalaatti" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Tonnikalasalaatti</h3><p class="pizza-ingredients">Tonnikala, jääsalaatti, tomaatti, paprika</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">11,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('tonnikalasalaatti')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('katkarapusalaatti')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b3c447efd43463bab82?w=600" alt="Katkarapusalaatti" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Katkarapusalaatti</h3><p class="pizza-ingredients">Katkarapu, jääsalaatti, tomaatti</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">11,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('katkarapusalaatti')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('fetasalaatti')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b35447efd43463bab81?w=600" alt="Fetasalaatti" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Fetasalaatti</h3><p class="pizza-ingredients">Fetajuusto, jääsalaatti, oliivi, tomaatti</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('fetasalaatti')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('kanasalaatti')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b21447efd43463bab7e?w=600" alt="Kanasalaatti" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Kanasalaatti</h3><p class="pizza-ingredients">Kana, jääsalaatti, paprika, tomaatti</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('kanasalaatti')">+</button></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ======================== KANA-ANNOKSET ======================== -->
+    <div class="menu-category" id="kanat">
+      <h2 class="category-title">KANA-ANNOKSET</h2>
+      <div class="menu-grid">
+
+        <div class="pizza-card" onclick="openModal('pitaleipa')">
+          <div class="pizza-info"><h3 class="pizza-name">Pitaleipä</h3><p class="pizza-ingredients">Kana, salaatti, tomaatti, kastike</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">11,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('pitaleipa')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('ranskikset')">
+          <div class="pizza-info"><h3 class="pizza-name">Ranskalaiset</h3><p class="pizza-ingredients">Kana, ranskalaiset</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('ranskikset')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('lohkoperunat')">
+          <div class="pizza-info"><h3 class="pizza-name">Lohkoperunat</h3><p class="pizza-ingredients">Kana, lohkoperunat</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('lohkoperunat')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('kermaperunat')">
+          <div class="pizza-info"><h3 class="pizza-name">Kermaperunat</h3><p class="pizza-ingredients">Kana, kermaperunat</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('kermaperunat')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('valkosipuliperunat')">
+          <div class="pizza-info"><h3 class="pizza-name">Valkosipuliperunat</h3><p class="pizza-ingredients">Kana, valkosipuliperunat</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('valkosipuliperunat')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('rulla')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b84ca587a012e7b9d81?w=600" alt="Rulla" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Rulla</h3><p class="pizza-ingredients">Kana, salaatti, valkosipulikastike</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('rulla')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('aurajuustoperunat')">
+          <div class="pizza-info"><h3 class="pizza-name">Aurajuustoperunat</h3><p class="pizza-ingredients">Kana, aurajuustoperunat</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('aurajuustoperunat')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('wings8')">
+          <div class="pizza-info"><h3 class="pizza-name">Hot Wings 8 kpl</h3><p class="pizza-ingredients">Kanasiipipalat, dippikastike</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">8,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('wings8')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('wings10')">
+          <div class="pizza-info"><h3 class="pizza-name">Hot Wings 10 kpl</h3><p class="pizza-ingredients">Kanasiipipalat, dippikastike</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">10,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('wings10')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('wings16')">
+          <div class="pizza-info"><h3 class="pizza-name">Hot Wings 16 kpl</h3><p class="pizza-ingredients">Kanasiipipalat, dippikastike</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">14,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('wings16')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('wings25')">
+          <div class="pizza-info"><h3 class="pizza-name">Hot Wings 25 kpl</h3><p class="pizza-ingredients">Kanasiipipalat, dippikastike</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">19,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('wings25')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('wings30')">
+          <div class="pizza-info"><h3 class="pizza-name">Hot Wings 30 kpl</h3><p class="pizza-ingredients">Kanasiipipalat, dippikastike</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">22,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('wings30')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('wings50')">
+          <div class="pizza-info"><h3 class="pizza-name">Hot Wings 50 kpl</h3><p class="pizza-ingredients">Kanasiipipalat, dippikastike</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">30,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('wings50')">+</button></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ======================== JUOMAT ======================== -->
+    <div class="menu-category" id="juomat">
+      <h2 class="category-title">JUOMAT</h2>
+      <div class="menu-grid">
+
+        <div class="pizza-card" onclick="openModal('coca-cola-15')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/products/06415600501811-02730637-07d6-4ab6-95c5-39adcd817074.jpg?w=600" alt="Coca-Cola 1,5 l" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Coca-Cola 1,5 l</h3><p class="pizza-ingredients">Virvoitusjuoma</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">5,90 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('coca-cola-15')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('coca-cola-zero-15')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/products/06415600502078-dbc81eef-644b-4284-9527-5147eebe08d9.jpg?w=600" alt="Coca-Cola Zero 1,5 l" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Coca-Cola Zero 1,5 l</h3><p class="pizza-ingredients">Virvoitusjuoma</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">5,90 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('coca-cola-zero-15')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('fanta-zero-033')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/69e54e5166188661e63350db?w=600" alt="Fanta Zero 0,33 l" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Fanta Zero 0,33 l</h3><p class="pizza-ingredients">Virvoitusjuoma</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">2,90 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('fanta-zero-033')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('coca-cola-033')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/69e54d3d66188661e63350d6?w=600" alt="Coca-Cola 0,33 l" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Coca-Cola 0,33 l</h3><p class="pizza-ingredients">Virvoitusjuoma</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">2,90 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('coca-cola-033')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('coca-cola-zero-033')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/69e54d3d66188661e63350d6?w=600" alt="Coca-Cola Zero 0,33 l" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Coca-Cola Zero 0,33 l</h3><p class="pizza-ingredients">Virvoitusjuoma</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">2,90 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('coca-cola-zero-033')">+</button></div>
+        </div>
+
+        <div class="pizza-card" onclick="openModal('sprite-zero-033')">
+          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/69e54dfd66188661e63350d9?w=600" alt="Sprite Zero 0,33 l" class="pizza-img"></div>
+          <div class="pizza-info"><h3 class="pizza-name">Sprite Zero 0,33 l</h3><p class="pizza-ingredients">Virvoitusjuoma</p></div>
+          <div class="pizza-bottom"><span class="pizza-price">2,90 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('sprite-zero-033')">+</button></div>
+        </div>
+
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <footer class="footer-new">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="logo.png" class="footer-logo">
+        <p class="footer-tagline">Parasta pizzaa ja kebabia<br>vuodesta 2022!</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Aukioloajat</h4>
+        <table class="footer-hours">
+          <tr><td>Ma–To</td><td>11–22</td></tr>
+          <tr><td>Pe–La</td><td>11–23</td></tr>
+          <tr><td>Su</td><td>14–22</td></tr>
+        </table>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Yhteystiedot</h4>
+        <p class="footer-contact"><a href="tel:0401829726">📞 040 1829726</a></p>
+        <p class="footer-contact">📍 Törnävä, Seinäjoki</p>
+        <a href="menu.html" class="footer-order-btn">Tilaa nyt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Törnävän Pizzeria. Kaikki oikeudet pidätetään.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
