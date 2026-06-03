@@ -39,6 +39,32 @@ function updateCartBadge(){
 window.addEventListener("DOMContentLoaded", updateCartBadge);
 
 
+/*======================
+  SCROLL ANIMAATIOT
+========================*/
+
+window.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll(".category-title").forEach(el => {
+    observer.observe(el);
+  });
+
+  document.querySelectorAll(".pizza-card").forEach((card, i) => {
+    const delay = (i % 2) * 80;
+    card.style.animationDelay = delay + "ms";
+    observer.observe(card);
+  });
+});
+
+
 /*================  
   OpenModal
 ==================*/
