@@ -194,7 +194,17 @@ function renderSummary() {
     STRIPE CHECKOUT
 ===========================*/
 
+function closeClosedModal() {
+  document.getElementById("closedOverlay").classList.remove("active");
+}
+
 async function startCheckout() {
+  const hour = new Date().getHours();
+  if (hour < 14 || hour >= 22) {
+    document.getElementById("closedOverlay").classList.add("active");
+    return;
+  }
+
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   if (cart.length === 0) return;
 
