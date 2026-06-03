@@ -200,7 +200,7 @@ function closeClosedModal() {
 
 async function startCheckout() {
   const hour = new Date().getHours();
-  if (hour < 14 || hour >= 22) {
+  if (hour < 10 || hour >= 21) {
     document.getElementById("closedOverlay").classList.add("active");
     return;
   }
