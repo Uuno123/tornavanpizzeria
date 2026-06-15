@@ -436,47 +436,90 @@ body{
 }
 
 
-.show-nav{
-      position: fixed;
+.show-nav {
+  position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  background: #1a1008;
+  left: 10px;
+  right: 10px;
+  background: linear-gradient(160deg, #1a1008 0%, #2a1c0a 100%);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0;
   z-index: 89;
-
+  border-radius: 0 0 28px 28px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+  padding-bottom: 18px;
   transform: translateY(-100%);
-  transition: transform .4s ease;
+  transition: transform 0.42s cubic-bezier(0.32, 0.72, 0, 1);
+  overflow: hidden;
 }
 
-.show-nav a{
-    color: white;
-    text-decoration: none;
+.show-nav::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+  margin: 14px auto 0;
+}
+
+.show-nav a {
+  color: white;
+  text-decoration: none;
 }
 
 .show-nav.open {
-  transform: translateY(80px);
+  transform: translateY(72px);
 }
 
-.puh-mob{
-    padding: 10px 15px;
-    width: 100%;
-    background: orange;
-    font-size: 20px;
-    text-decoration: none;
-    font-family: "Archivo Black", sans-serif;
-    color: white;
+.show-nav span {
+  display: block;
+  padding: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
-.show-nav span{
-    margin-top: 8px;
-     padding: 0px 15px;
-   font-size: 20px;
-    text-decoration: none;
-    font-family: "Archivo Black", sans-serif;
-    color: white;
+.show-nav span a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+  font-size: 18px;
+  font-family: "Archivo Black", sans-serif;
+  color: rgba(255,255,255,0.92);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.show-nav span a::after {
+  content: '›';
+  font-size: 22px;
+  opacity: 0.4;
+}
+
+.show-nav span a:active {
+  background: rgba(245,168,0,0.12);
+  color: #F5A800;
+}
+
+.puh-mob {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 14px 16px 0;
+  padding: 13px 20px;
+  background: #F5A800;
+  border-radius: 14px;
+  font-size: 17px;
+  font-family: "Archivo Black", sans-serif;
+  color: #1a1008;
+  font-weight: 900;
+  text-decoration: none;
+  transition: background 0.18s ease;
+}
+
+.puh-mob:active {
+  background: #e09700;
 }
 
 .overlay{
@@ -738,18 +781,21 @@ body{
     justify-content: flex-start;
     width: 100%;
     font-weight: bold;
-    font-family: "Inter", sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     position: absolute;
 }
 
 .nav-holder2 a{
-    font-size: 20px;
+    font-size: 22px;
+    letter-spacing: 1px;
     padding: 0px 35px;
     color: white;
     text-decoration: none;
+    transition: color 0.18s ease, transform 0.18s ease;
 }
 
 .nav-holder2 a:hover{
+    color: #F5A800;
     transform: translateY(-2px);
 }
 

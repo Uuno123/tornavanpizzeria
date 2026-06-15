@@ -20,7 +20,10 @@
   <div class="overlay2" id="overlay2" onclick="closeModal()">
     <div class="pizza-modal" id="pizzaModal" onclick="event.stopPropagation()">
       <div class="pizza-modal-content">
-        <img id="modalImage" class="modal-image" src="" alt="">
+        <div class="modal-img-wrap">
+          <img id="modalImage" class="modal-image" src="" alt="">
+          <button class="modal-close-btn" onclick="closeModal()">✕</button>
+        </div>
         <h2 class="modal-title" id="modalTitle"></h2>
         <p id="modalDescription"></p>
         <h3 class="big-text">Koko</h3>
@@ -87,148 +90,148 @@
       <div class="menu-grid">
 
         <div class="pizza-card" onclick="openModal('Margareta')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Margareta" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="Gemini_Generated_Image_mrmgzvmrmgzvmrmg.png" alt="Margareta" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Margareta</h3><p class="pizza-ingredients">Tomaattikastike, juusto</p></div>
           <div class="pizza-bottom"><span class="pizza-price">10,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Margareta')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Jauhelihapizza')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf1848a677b0364084e?w=600" alt="Jauhelihapizza" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="jauhelihapizza.png" alt="Jauhelihapizza" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Jauhelihapizza</h3><p class="pizza-ingredients">Jauheliha, juusto</p></div>
           <div class="pizza-bottom"><span class="pizza-price">11,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Jauhelihapizza')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Tropicana')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bd9447efd43463bab94?w=600" alt="Tropicana" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="tropicana.png" alt="Tropicana" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Tropicana</h3><p class="pizza-ingredients">Kinkku, ananas</p></div>
           <div class="pizza-bottom"><span class="pizza-price">11,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Tropicana')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Opera')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bd4848a677b0364084a?w=600" alt="Opera" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="opera.png" alt="Opera" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Opera</h3><p class="pizza-ingredients">Tonnikala, oliivi</p></div>
           <div class="pizza-bottom"><span class="pizza-price">11,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Opera')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Pepperoni')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bcc447efd43463bab91?w=600" alt="Pepperoni" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="pepperoni.png" alt="Pepperoni" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Pepperoni</h3><p class="pizza-ingredients">Pepperonimakkara, juusto</p></div>
           <div class="pizza-bottom"><span class="pizza-price">11,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Pepperoni')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('OperaSpecial')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545be3447efd43463bab95?w=600" alt="Opera Special" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="opera.png" alt="Opera Special" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Opera Special</h3><p class="pizza-ingredients">Tonnikala, oliivi, katkarapu</p></div>
           <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('OperaSpecial')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('FruttiDiMare')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545c00848a677b03640850?w=600" alt="Frutti di Mare" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="fruttidimare.png" alt="Frutti di Mare" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Frutti di Mare</h3><p class="pizza-ingredients">Tonnikala, katkarapu, simpukka</p></div>
           <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('FruttiDiMare')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Americana')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545c14447efd43463bab9a?w=600" alt="Americana" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="americana.png" alt="Americana" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Americana</h3><p class="pizza-ingredients">Kinkku, ananas, aurajuusto</p></div>
           <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Americana')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Venetsia')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545c2a848a677b03640851?w=600" alt="Venetsia" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="venetsia.png" alt="Venetsia" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Venetsia</h3><p class="pizza-ingredients">Kinkku, paprika, oliivi</p></div>
           <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Venetsia')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Paradice')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Paradice" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="paradice.png" alt="Paradice" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Paradice</h3><p class="pizza-ingredients">Jauheliha, salami, herkkusieni</p></div>
           <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Paradice')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Manzo')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Manzo" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="manzo.png" alt="Manzo" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Manzo</h3><p class="pizza-ingredients">Kebabliha, paprika, sipuli</p></div>
           <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Manzo')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('KasvisPizza')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66582dc42f6a1159bbc02abf?w=600" alt="Kasvis Pizza" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="kasvispizza.png" alt="Kasvis Pizza" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Kasvis Pizza</h3><p class="pizza-ingredients">Paprika, herkkusieni, oliivi, sipuli, tomaatti</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('KasvisPizza')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('QuattroStagioni')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545c25447efd43463bab9b?w=600" alt="Quattro Stagioni" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="quatrostagioni.png" alt="Quattro Stagioni" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Quattro Stagioni</h3><p class="pizza-ingredients">Kinkku, herkkusieni, oliivi, paprika</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('QuattroStagioni')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Romeo')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545c2f848a677b03640852?w=600" alt="Romeo" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="romeo.png" alt="Romeo" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Romeo</h3><p class="pizza-ingredients">Kana, pekoni, paprika</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Romeo')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Julia')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545c7c447efd43463bab9e?w=600" alt="Julia" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="julia.png" alt="Julia" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Julia</h3><p class="pizza-ingredients">Kana, fetajuusto, paprika</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Julia')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Diavola')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Diavola" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="diavola.png" alt="Diavola" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Diavola</h3><p class="pizza-ingredients">Pepperoni, jalapeno, paprika</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Diavola')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Kummiseta')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545c82848a677b03640855?w=600" alt="Kummisetä" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="kummisetä.png" alt="Kummisetä" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Kummisetä</h3><p class="pizza-ingredients">Kebabliha, sipuli, jalapeno</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Kummiseta')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Empire')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Empire" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="empire.png" alt="Empire" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Empire</h3><p class="pizza-ingredients">Jauheliha, kebabliha, herkkusieni</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Empire')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('PapasSpecial')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Papa's Special" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="papasspecial.png" alt="Papa's Special" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Papa's Special</h3><p class="pizza-ingredients">Kana, kebabliha, aurajuusto, pekoni</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('PapasSpecial')">+</button></div>
         </div>
 
         <div class="pizza-card featured" onclick="openModal('TornavaSpecial')">
           <span class="pizza-badge">SUOSITTU</span>
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Törnävä-Special" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="törnävänspecial.png" alt="Törnävä-Special" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Törnävä-Special</h3><p class="pizza-ingredients">Kebabliha, kana, fetajuusto, aurajuusto</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('TornavaSpecial')">+</button></div>
         </div>
 
         <div class="pizza-card featured" onclick="openModal('KebabSpecial')">
           <span class="pizza-badge">SUOSITTU</span>
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Kebab Special" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="manzo.png" alt="Kebab Special" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Kebab Special</h3><p class="pizza-ingredients">Kebabliha, kana, fetajuusto, valkosipuli</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('KebabSpecial')">+</button></div>
         </div>
 
         <div class="pizza-card featured" onclick="openModal('Mexicana')">
           <span class="pizza-badge">SUOSITTU</span>
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Mexicana" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="pepperoni.png" alt="Mexicana" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Mexicana</h3><p class="pizza-ingredients">Pepperoni, jalapeno, ananas, chilikastike</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Mexicana')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('KabulPizza')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545bf7447efd43463bab97?w=600" alt="Kabul Pizza" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="paradice.png" alt="Kabul Pizza" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Kabul Pizza</h3><p class="pizza-ingredients">Kebabliha, aurajuusto, jalapeno</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('KabulPizza')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Fantasia')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545cb90b61ae1437496c6a?w=600" alt="Fantasia" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="tropicana.png" alt="Fantasia" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Fantasia</h3><p class="pizza-ingredients">Kana, ananas, currykastike</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Fantasia')">+</button></div>
         </div>
@@ -242,48 +245,50 @@
       <div class="menu-grid">
 
         <div class="pizza-card" onclick="openModal('Pita Kebab')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b7b447efd43463bab86?w=600" alt="Pita Kebab" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="pitakebab.png" alt="Pita Kebab" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Pita Kebab</h3><p class="pizza-ingredients">Kebabliha, salaatti, tomaatti, sipuli</p></div>
           <div class="pizza-bottom"><span class="pizza-price">11,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Pita Kebab')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Kebab Riisilla')">
+          <div class="pizza-img-wrap"><img src="kebabriisillä.png" alt="Kebab Riisillä" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Kebab Riisillä</h3><p class="pizza-ingredients">Kebabliha, riisi, salaattikerros</p></div>
           <div class="pizza-bottom"><span class="pizza-price">12,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Kebab Riisilla')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Kebab Ranskalaisilla')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b97ca587a012e7b9d83?w=600" alt="Kebab Ranskalaisilla" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="kebabranskalaisilla.png" alt="Kebab Ranskalaisilla" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Kebab Ranskalaisilla</h3><p class="pizza-ingredients">Kebabliha, ranskalaiset, salaatti</p></div>
           <div class="pizza-bottom"><span class="pizza-price">12,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Kebab Ranskalaisilla')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Kebab Lohkoperunoilla')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b97ca587a012e7b9d83?w=600" alt="Kebab Lohkoperunoilla" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="kebabranskalaisilla.png" alt="Kebab Lohkoperunoilla" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Kebab Lohkoperunoilla</h3><p class="pizza-ingredients">Kebabliha, lohkoperunat, salaatti</p></div>
           <div class="pizza-bottom"><span class="pizza-price">12,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Kebab Lohkoperunoilla')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Kebab Kermaperunoilla')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b97ca587a012e7b9d83?w=600" alt="Kebab Kermaperunoilla" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="kebabranskalaisilla.png" alt="Kebab Kermaperunoilla" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Kebab Kermaperunoilla</h3><p class="pizza-ingredients">Kebabliha, kermaperunat</p></div>
           <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Kebab Kermaperunoilla')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('kebab-salaatti')">
+          <div class="pizza-img-wrap"><img src="kebabranskalaisilla.png" alt="Kebab Salaatti" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Kebab Salaatti</h3><p class="pizza-ingredients">Kebabliha, jääsalaatti, tomaatti, oliivi</p></div>
           <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('kebab-salaatti')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('Iskender Kebab')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b80447efd43463bab87?w=600" alt="Iskender Kebab" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="kebabranskalaisilla.png" alt="Iskender Kebab" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Iskender Kebab</h3><p class="pizza-ingredients">Kebabliha, tomaattikastike, jogurttikastike</p></div>
           <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Iskender Kebab')">+</button></div>
         </div>
 
         <div class="pizza-card featured" onclick="openModal('Rullakebab')">
           <span class="pizza-badge">SUOSITTU</span>
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b84ca587a012e7b9d81?w=600" alt="Rullakebab" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="kebabrulla.png" alt="Rullakebab" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Rullakebab</h3><p class="pizza-ingredients">Kebabliha, salaatti, tomaatti, kastike</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Rullakebab')">+</button></div>
         </div>
@@ -304,7 +309,7 @@
         </div>
 
         <div class="pizza-card" onclick="openModal('Special Rulla Kebab')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b84ca587a012e7b9d81?w=600" alt="Special Rulla Kebab" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="kebabrulla.png" alt="Special Rulla Kebab" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Special Rulla Kebab</h3><p class="pizza-ingredients">Kebabliha, juusto, salaatti, erikoiskastike</p></div>
           <div class="pizza-bottom"><span class="pizza-price">17,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('Special Rulla Kebab')">+</button></div>
         </div>
@@ -318,25 +323,25 @@
       <div class="menu-grid">
 
         <div class="pizza-card" onclick="openModal('tonnikalasalaatti')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b28848a677b0364083b?w=600" alt="Tonnikalasalaatti" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="salaatti.png" alt="Tonnikalasalaatti" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Tonnikalasalaatti</h3><p class="pizza-ingredients">Tonnikala, jääsalaatti, tomaatti, paprika</p></div>
           <div class="pizza-bottom"><span class="pizza-price">11,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('tonnikalasalaatti')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('katkarapusalaatti')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b3c447efd43463bab82?w=600" alt="Katkarapusalaatti" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="salaatti.png" alt="Katkarapusalaatti" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Katkarapusalaatti</h3><p class="pizza-ingredients">Katkarapu, jääsalaatti, tomaatti</p></div>
           <div class="pizza-bottom"><span class="pizza-price">11,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('katkarapusalaatti')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('fetasalaatti')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b35447efd43463bab81?w=600" alt="Fetasalaatti" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="salaatti.png" alt="Fetasalaatti" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Fetasalaatti</h3><p class="pizza-ingredients">Fetajuusto, jääsalaatti, oliivi, tomaatti</p></div>
           <div class="pizza-bottom"><span class="pizza-price">12,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('fetasalaatti')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('kanasalaatti')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b21447efd43463bab7e?w=600" alt="Kanasalaatti" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="salaatti.png" alt="Kanasalaatti" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Kanasalaatti</h3><p class="pizza-ingredients">Kana, jääsalaatti, paprika, tomaatti</p></div>
           <div class="pizza-bottom"><span class="pizza-price">12,50 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('kanasalaatti')">+</button></div>
         </div>
@@ -375,7 +380,7 @@
         </div>
 
         <div class="pizza-card" onclick="openModal('rulla')">
-          <div class="pizza-img-wrap"><img src="https://imageproxy.wolt.com/assets/66545b84ca587a012e7b9d81?w=600" alt="Rulla" loading="lazy" class="pizza-img"></div>
+          <div class="pizza-img-wrap"><img src="kebabrulla.png" alt="Rulla" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Rulla</h3><p class="pizza-ingredients">Kana, salaatti, valkosipulikastike</p></div>
           <div class="pizza-bottom"><span class="pizza-price">13,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('rulla')">+</button></div>
         </div>
@@ -386,31 +391,37 @@
         </div>
 
         <div class="pizza-card" onclick="openModal('wings8')">
+          <div class="pizza-img-wrap"><img src="siivet.png" alt="Hot Wings 8 kpl" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Hot Wings 8 kpl</h3><p class="pizza-ingredients">Kanasiipipalat, dippikastike</p></div>
           <div class="pizza-bottom"><span class="pizza-price">8,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('wings8')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('wings10')">
+          <div class="pizza-img-wrap"><img src="siivet.png" alt="Hot Wings 10 kpl" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Hot Wings 10 kpl</h3><p class="pizza-ingredients">Kanasiipipalat, dippikastike</p></div>
           <div class="pizza-bottom"><span class="pizza-price">10,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('wings10')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('wings16')">
+          <div class="pizza-img-wrap"><img src="siivet.png" alt="Hot Wings 16 kpl" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Hot Wings 16 kpl</h3><p class="pizza-ingredients">Kanasiipipalat, dippikastike</p></div>
           <div class="pizza-bottom"><span class="pizza-price">14,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('wings16')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('wings25')">
+          <div class="pizza-img-wrap"><img src="siivet.png" alt="Hot Wings 25 kpl" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Hot Wings 25 kpl</h3><p class="pizza-ingredients">Kanasiipipalat, dippikastike</p></div>
           <div class="pizza-bottom"><span class="pizza-price">19,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('wings25')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('wings30')">
+          <div class="pizza-img-wrap"><img src="siivet.png" alt="Hot Wings 30 kpl" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Hot Wings 30 kpl</h3><p class="pizza-ingredients">Kanasiipipalat, dippikastike</p></div>
           <div class="pizza-bottom"><span class="pizza-price">22,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('wings30')">+</button></div>
         </div>
 
         <div class="pizza-card" onclick="openModal('wings50')">
+          <div class="pizza-img-wrap"><img src="siivet.png" alt="Hot Wings 50 kpl" loading="lazy" class="pizza-img"></div>
           <div class="pizza-info"><h3 class="pizza-name">Hot Wings 50 kpl</h3><p class="pizza-ingredients">Kanasiipipalat, dippikastike</p></div>
           <div class="pizza-bottom"><span class="pizza-price">30,00 €</span><button class="add-btn" onclick="event.stopPropagation();openModal('wings50')">+</button></div>
         </div>

@@ -44,6 +44,8 @@ window.addEventListener("DOMContentLoaded", updateCartBadge);
 ========================*/
 
 window.addEventListener("DOMContentLoaded", () => {
+
+  // --- Korttien scroll-animaatio ---
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -58,10 +60,46 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   document.querySelectorAll(".pizza-card").forEach((card, i) => {
-    const delay = (i % 2) * 80;
-    card.style.animationDelay = delay + "ms";
+    card.style.animationDelay = (i % 4) * 60 + "ms";
     observer.observe(card);
   });
+
+  // --- Staggered image loading ---
+  const imgs = document.querySelectorAll(".pizza-img");
+
+  imgs.forEach(img => {
+    if (!img.getAttribute("src")) return;
+    img.dataset.src = img.getAttribute("src");
+    img.removeAttribute("src");
+    img.closest(".pizza-img-wrap")?.classList.add("skeleton");
+  });
+
+  let batchCount = 0;
+  const imgObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const img = entry.target;
+      if (!img.dataset.src) return;
+
+      const delay = (batchCount % 5) * 100;
+      batchCount++;
+
+      setTimeout(() => {
+        img.src = img.dataset.src;
+        img.addEventListener("load", () => {
+          img.classList.add("img-loaded");
+          img.closest(".pizza-img-wrap")?.classList.remove("skeleton");
+        }, { once: true });
+        img.addEventListener("error", () => {
+          img.closest(".pizza-img-wrap")?.classList.remove("skeleton");
+        }, { once: true });
+      }, delay);
+
+      imgObserver.unobserve(img);
+    });
+  }, { rootMargin: "150px" });
+
+  imgs.forEach(img => imgObserver.observe(img));
 });
 
 
@@ -93,12 +131,12 @@ function openModal(productId) {
 
 
   // 🔵 KOKO
-  product.sizes.forEach(size => {
+  product.sizes.forEach((size, i) => {
 
     const label = document.createElement("label");
 
     label.innerHTML = `
-      <input type="radio" name="size" value="${size.name}">
+      <input type="radio" name="size" value="${size.name}" ${i === 0 ? "checked" : ""}>
       ${size.name} ${size.extra > 0 ? "(+" + size.extra + "€)" : ""}
     `;
 
