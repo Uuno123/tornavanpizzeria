@@ -982,6 +982,7 @@ footer{
 .card1,
 .card2,
 .card3{
+    font-family: 'Inter', sans-serif;
     margin-left: 5px;
     width: 200px;
     margin-top: 15px;
@@ -1549,6 +1550,7 @@ footer{
 .card1,
 .card2,
 .card3{
+    font-family: 'Inter', sans-serif;
     margin-left: 5px;
     width: 200px;
     margin-top: 15px;
