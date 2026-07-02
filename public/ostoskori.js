@@ -92,7 +92,7 @@ function renderCart() {
 
 window.onload = function () {
   renderCart();
-  renderSummary();
+  setDelivery(deliveryType);
 };
 
 /*========================
@@ -119,6 +119,15 @@ function setDelivery(type) {
 
   const addrGroup = document.getElementById("addressGroup");
   if (addrGroup) addrGroup.style.display = type === "delivery" ? "" : "none";
+
+  // Kotiinkuljetus ei ole vielä toiminnassa - näytetään sen sijaan ilmoitus eikä maksunappia
+  const checkoutBtn = document.getElementById("checkoutBtn");
+  const unavailableBtn = document.getElementById("deliveryUnavailableBtn");
+  if (checkoutBtn && unavailableBtn) {
+    const deliveryUnavailable = type === "delivery";
+    checkoutBtn.style.display = deliveryUnavailable ? "none" : "";
+    unavailableBtn.style.display = deliveryUnavailable ? "" : "none";
+  }
 
   renderSummary();
 }
@@ -199,6 +208,8 @@ function closeClosedModal() {
 }
 
 async function startCheckout() {
+  if (deliveryType === "delivery") return;
+
   const hour = new Date().getHours();
   if (hour < 10 || hour >= 21) {
     document.getElementById("closedOverlay").classList.add("active");

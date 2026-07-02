@@ -288,6 +288,15 @@
     transform: translateY(-2px);
 }
 
+.order-btn-disabled,
+.order-btn-disabled:hover {
+    background: #e5e0d8;
+    color: #8a8a8a;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
 /*=======================================
     CART-ITEM (kaikki koot)
 =========================================*/
@@ -570,8 +579,8 @@ body{
     margin-top: 5px;
     border-radius: 50%;
     position: absolute;
-    width: 15%;
-    height: auto;
+    width: 60px;
+    height: 60px;
 }
 
 .logo-desktop{

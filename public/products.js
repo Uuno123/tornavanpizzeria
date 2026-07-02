@@ -1214,7 +1214,7 @@ const products = [
   {
     id: "Kebab Aurajuustoperunoilla",
     name: "Kebab Aurajuustoperunoilla",
-    image: "kuva1.jpg",
+    image: "kebabaura.png",
     price: "13.00",
     sizes: [
       { name: "Normal", extra: 0 }
@@ -1290,7 +1290,7 @@ const products = [
   {
     id: "al_tonno",
     name: "Al Tonno Calzone",
-    image: "kuva1.jpg",
+    image: "al.png",
     price: "13.00",
     sizes: [{ name: "Normal", extra: 0 }],
     sauces: [
@@ -1325,7 +1325,7 @@ const products = [
   {
     id: "lorenzo",
     name: "Lorenzo Calzone",
-    image: "kuva1.jpg",
+    image: "al2.png",
     price: "13.00",
     sizes: [{ name: "Normal", extra: 0 }],
     sauces: [
@@ -1520,7 +1520,7 @@ const products = [
   {
     id: "pitaleipa",
     name: "Pitaleipä",
-    image: "kuva1.jpg",
+    image: "pita.png",
     price: "11.50",
     sizes: [{ name: "Normal", extra: 0 }],
     sauces: [
@@ -1590,7 +1590,7 @@ const products = [
   {
     id: "ranskikset",
     name: "Ranskalaiset",
-    image: "kuva1.jpg",
+    image: "ranu.png",
     price: "12.00",
     sizes: [{ name: "Normal", extra: 0 }],
     sauces: [
@@ -1625,7 +1625,7 @@ const products = [
   {
     id: "lohkoperunat",
     name: "Lohkoperunat",
-    image: "kuva1.jpg",
+    image: "lohko.png",
     price: "12.00",
     sizes: [{ name: "Normal", extra: 0 }],
     sauces: [
@@ -1660,7 +1660,7 @@ const products = [
   {
     id: "kermaperunat",
     name: "Kermaperunat",
-    image: "kuva1.jpg",
+    image: "lohko.png",
     price: "12.50",
     sizes: [{ name: "Normal", extra: 0 }],
     sauces: [
@@ -1695,7 +1695,7 @@ const products = [
   {
     id: "valkosipuliperunat",
     name: "Valkosipuliperunat",
-    image: "kuva1.jpg",
+    image: "lohko.png",
     price: "12.50",
     sizes: [{ name: "Normal", extra: 0 }],
     sauces: [
@@ -1730,7 +1730,7 @@ const products = [
   {
     id: "aurajuustoperunat",
     name: "Aurajuustoperunat",
-    image: "kuva1.jpg",
+    image: "lohko.png",
     price: "13.00",
     sizes: [{ name: "Normal", extra: 0 }],
     sauces: [
@@ -2028,6 +2028,19 @@ const products = [
     name: "Sprite Zero 0,33 l",
     image: "https://imageproxy.wolt.com/assets/69e54dfd66188661e63350d9?w=600",
     price: "2.90",
+    sizes: [{ name: "Normal", extra: 0 }],
+    sauces: [],
+    extras: []
+  },
+
+  /*===================
+  TESTI
+  =====================*/
+  {
+    id: "uuno-testaa",
+    name: "UUNO TESTAA",
+    image: "logo.png",
+    price: "0.50",
     sizes: [{ name: "Normal", extra: 0 }],
     sauces: [],
     extras: []

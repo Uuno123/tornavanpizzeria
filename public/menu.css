@@ -203,8 +203,8 @@ body{
     margin-top: 5px;
     border-radius: 50%;
     position: absolute;
-    width: 15%;
-    height: auto;
+    width: 60px;
+    height: 60px;
 }
 
 .logo-desktop{
