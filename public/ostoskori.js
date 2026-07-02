@@ -37,6 +37,7 @@ function renderCart() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const container = document.getElementById("cartItems");
   container.innerHTML = "";
+  updateUpsellVisibility();
 
   if (cart.length === 0) {
     container.innerHTML = `
@@ -92,6 +93,7 @@ function renderCart() {
 
 window.onload = function () {
   renderCart();
+  renderUpsellGrid();
   setDelivery(deliveryType);
 };
 
@@ -223,7 +225,6 @@ async function startCheckout() {
   const name = document.getElementById("customerName")?.value.trim() || "";
   const phone = document.getElementById("customerPhone")?.value.trim() || "";
   const address = document.getElementById("customerAddress")?.value.trim() || "";
-  const notes = document.getElementById("customerNotes")?.value.trim() || "";
 
   // Validointi
   let valid = true;
@@ -244,6 +245,8 @@ async function startCheckout() {
     return;
   }
 
+  const notes = document.getElementById("customerNotes")?.value.trim() || "";
+
   try {
     const res = await fetch("/create-checkout-session", {
       method: "POST",
@@ -262,5 +265,58 @@ async function startCheckout() {
     }
   } catch {
     alert("Yhteysvirhe. Yritä uudelleen.");
+  }
+}
+
+/*========================
+    HOUKUTUKSET (UPSELL)
+===========================*/
+
+const UPSELL_ITEM_IDS = [
+  "ranskikset",
+  "wings8",
+  "lohkoperunat",
+  "coca-cola-033",
+  "coca-cola-zero-033",
+  "fanta-zero-033",
+  "sprite-zero-033",
+];
+
+function updateUpsellVisibility() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const section = document.getElementById("upsellInline");
+  if (section) section.style.display = cart.length === 0 ? "none" : "";
+}
+
+function renderUpsellGrid() {
+  const grid = document.getElementById("upsellGrid");
+  if (!grid || typeof products === "undefined") return;
+
+  grid.innerHTML = UPSELL_ITEM_IDS.map(id => {
+    const p = products.find(prod => prod.id === id);
+    if (!p) return "";
+    return `
+      <div class="upsell-item">
+        <img src="${p.image}" alt="${p.name}" class="upsell-item-img">
+        <span class="upsell-item-name">${p.name}</span>
+        <span class="upsell-item-price">${parseFloat(p.price).toFixed(2)} €</span>
+        <button class="upsell-add-btn" onclick="addUpsellItemToCart('${id}', this)">+ Lisää</button>
+      </div>`;
+  }).join("");
+}
+
+function addUpsellItemToCart(productId, btnEl) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({ productId, size: "Normal", sauce: "", extras: [], quantity: 1 });
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  updateCartBadge();
+  renderCart();
+  renderSummary();
+
+  if (btnEl) {
+    btnEl.textContent = "✓ Lisätty";
+    btnEl.disabled = true;
+    btnEl.classList.add("added");
   }
 }

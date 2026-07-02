@@ -194,9 +194,14 @@ body{
     align-items: center;
     justify-content: center;
     display: flex;
-    background: black;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
     padding: 25px;
     border-bottom: none;
+    transition: background 0.25s ease;
+}
+
+.navbar.scrolled{
+    background: black;
 }
 
 .logo{
@@ -260,13 +265,12 @@ body{
 ================*/
 
 .section1{
-    padding: 35px;
-    margin-top: 75px;
+    padding: 110px 35px 35px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     display: flex;
-    background: #1a1008;
+    background: linear-gradient(135deg, #1a1008 0%, #0f0904 55%, #1a0e05 100%);
     width: 100%;
     height: auto;
 }
@@ -995,6 +999,10 @@ footer{
 
 @media screen and (min-width: 800px) {
 
+  .show-nav{
+    display: none;
+  }
+
   /* === MENU WRAPPER === */
   .menu-wrapper {
     background: #edeae4;
@@ -1262,8 +1270,6 @@ footer{
 
 
 .navbar{
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
     position: absolute;
     max-height: 110px;
     width: 100%;
@@ -1271,7 +1277,7 @@ footer{
     align-items: center;
     justify-content: center;
     display: flex;
-    background: black;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
     padding: 25px;
     border-bottom: none;
 }
@@ -1281,7 +1287,7 @@ footer{
 }
 
 .logo-desktop{
-    margin-left: 50px;
+    margin-left: 90px;
     border-radius: 50%;
     width: 70px;
     height: 70px;
@@ -1333,13 +1339,12 @@ footer{
 ================*/
 
 .section1{
-    padding: 100px;
-    margin-top: 75px;
+    padding: 150px 100px 100px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     display: flex;
-    background: #1a1008;
+    background: linear-gradient(135deg, #1a1008 0%, #0f0904 55%, #1a0e05 100%);
     width: 100%;
     height: auto;
 }
@@ -1854,260 +1859,31 @@ footer{
 
 @media screen and (min-width: 1800px) {
 
+    /*===================
+        Vain 1800px+ -kohtaiset erot; loput periytyy
+        "min-width: 800px" -lohkosta (ei enää kopioitu tänne).
+    =====================*/
 
-
-
- /*============
-    NAVBAR
-    ==============*/
-    
-
-.nav-holder{
-    max-height: 120px;
-    width: 80%;
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
+.nav-holder {
+  width: 80%;
 }
 
-.nav-holder2{
-    margin-left: 900px;
-    justify-content: flex-start;
-    width: 100%;
-    font-weight: bold;
-    font-family: "Bebas Neue", sans-serif;
-    position: absolute;
-}
-
-.nav-holder2 a{
-    font-size: 22px;
-    letter-spacing: 1px;
-    padding: 0px 35px;
-    color: white;
-    text-decoration: none;
-    transition: color 0.18s ease, transform 0.18s ease;
-}
-
-.nav-holder2 a:hover{
-    color: #F5A800;
-    transform: translateY(-2px);
-}
-
-
-.navbar{
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    position: absolute;
-    max-height: 110px;
-    width: 100%;
-    z-index: 10;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    background: black;
-    padding: 25px;
-    border-bottom: none;
-}
-
-.logo{
-    display: none;
-}
-
-.logo-desktop{
-    margin-left: 50px;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-}
-
-.hamburger{
-    display: none;
-}
-
-.cart{
-    cursor: pointer;
-    margin-right: 50px;
-    margin-top: 5px;
-    font-family: "Inter", sans-serif;
-    border: none;
-    background: none;
-}
-
-.viiva1{
-    border: none;
-    height: 2px;
-    width: 100%;
-    background: orange;
-}
-
-
-/*============================
-  PIZZA-MODAL
-===============================*/
-
-.overlay2 {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 998;
-}
-
-.overlay2.active {
-  opacity: 1;
-  pointer-events: all;
+.nav-holder2 {
+  margin-left: 900px;
 }
 
 .pizza-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -46%) scale(0.94);
-  opacity: 0;
   width: 540px;
-  max-height: 82vh;
-  background: #FEFEFE;
-  border-radius: 24px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  transition: transform 0.38s cubic-bezier(0.32, 0.72, 0, 1), opacity 0.28s ease;
   z-index: 999;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.28);
 }
-
-.pizza-modal.active {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-}
-
-.drag-line { display: none; }
-
-.modal-img-wrap { position: relative; width: 100%; }
 
 .modal-image {
-  width: 100%;
   height: 250px;
-  object-fit: cover;
-  display: block;
-  border-radius: 24px 24px 0 0;
 }
-
-.modal-close-btn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(0,0,0,0.45);
-  color: white;
-  font-size: 15px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(4px);
-  transition: background 0.15s ease;
-}
-
-.modal-close-btn:hover { background: rgba(0,0,0,0.65); }
 
 .modal-title {
-  font-family: "Archivo Black", sans-serif;
   font-size: 1.65rem;
-  color: #1a1008;
-  padding: 18px 22px 2px;
-  margin: 0;
 }
-
-.big-text {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 2.5px;
-  color: #111;
-  text-transform: uppercase;
-  padding: 16px 22px 8px;
-  margin: 0;
-  border-top: 1px solid #f2f2f2;
-}
-
-.options {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 0 22px 4px;
-  margin-bottom: 0;
-}
-
-.options label {
-  display: flex;
-  align-items: center;
-  padding: 8px 15px;
-  border: 1.5px solid #e8e8e8;
-  border-radius: 50px;
-  cursor: pointer;
-  font-size: 13px;
-  font-family: "Inter", sans-serif;
-  color: #111;
-  background: #fafafa;
-  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
-  user-select: none;
-}
-
-.options label:hover { border-color: #ccc; background: #f5f5f5; }
-
-.options label:has(input:checked) {
-  border-color: #F5A800;
-  background: rgba(245,168,0,0.1);
-  color: #1a1008;
-  font-weight: 700;
-}
-
-.options input { display: none; }
-
-#quantity {
-  display: block;
-  margin: 4px 22px;
-  width: calc(100% - 44px);
-  padding: 12px 16px;
-  border: 1.5px solid #e8e8e8;
-  border-radius: 14px;
-  font-size: 16px;
-  font-family: "Inter", sans-serif;
-  color: #111;
-  background: #fafafa;
-  outline: none;
-  transition: border-color 0.15s ease;
-}
-
-#quantity:focus { border-color: #F5A800; }
-
-.add-cart-btn {
-  display: block;
-  margin: 16px 22px 28px;
-  width: calc(100% - 44px);
-  padding: 17px;
-  border: none;
-  border-radius: 16px;
-  background: #F5A800;
-  color: #1a1008;
-  font-size: 16px;
-  font-weight: 900;
-  font-family: "Archivo Black", sans-serif;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  box-shadow: 0 6px 24px rgba(245,168,0,0.38);
-  transition: background 0.18s ease, transform 0.15s ease;
-}
-
-.add-cart-btn:hover { background: #e09700; transform: translateY(-1px); }
-.add-cart-btn:active { background: #d08800; transform: scale(0.98); }
 
 }
 .footer-new {

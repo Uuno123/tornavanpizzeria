@@ -28,3 +28,17 @@ function updateCartBadge(){
 
 window.addEventListener("DOMContentLoaded", updateCartBadge);
 
+/*=====================
+NAVBAR TAUSTA VIERITTÄESSÄ
+======================*/
+
+const navbarEl = document.querySelector(".navbar");
+
+function updateNavbarScroll() {
+  if (!navbarEl) return;
+  navbarEl.classList.toggle("scrolled", window.scrollY > 40);
+}
+
+window.addEventListener("scroll", updateNavbarScroll);
+window.addEventListener("DOMContentLoaded", updateNavbarScroll);
+
