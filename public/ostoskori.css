@@ -655,6 +655,10 @@ body{
     display: flex;
 }
 
+.nav-left-group{
+    display: none;
+}
+
 .nav-holder2{
     display: none;
 }
@@ -695,10 +699,26 @@ body{
 .cart{
     position: relative;
     cursor: pointer;
-    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: "Inter", sans-serif;
     border: none;
     background: none;
+}
+
+.cart-pic{
+    width: 30px;
+    height: 30px;
+    margin-top: 3px;
+    color: #fff;
+    display: block;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.cart:hover .cart-pic{
+    color: #F5A800;
+    transform: scale(1.1);
 }
 
 .cart-badge {
@@ -894,26 +914,32 @@ body{
     display: flex;
 }
 
+.nav-left-group{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
 .nav-holder2{
-    margin-left: 400px;
+    display: flex;
     justify-content: flex-start;
-    width: 100%;
     font-weight: bold;
     font-family: "Bebas Neue", sans-serif;
-    position: absolute;
 }
 
 .nav-holder2 a{
     font-size: 22px;
     letter-spacing: 1px;
-    padding: 0px 35px;
+    padding: 10px 24px;
+    border-radius: 50px;
     color: white;
     text-decoration: none;
-    transition: color 0.18s ease, transform 0.18s ease;
+    transition: color 0.18s ease, transform 0.18s ease, background 0.18s ease;
 }
 
 .nav-holder2 a:hover{
     color: #F5A800;
+    background: rgba(255,255,255,0.08);
     transform: translateY(-2px);
 }
 
@@ -951,10 +977,26 @@ body{
 .cart{
     position: relative;
     margin-right: 50px;
-    margin-top: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: "Inter", sans-serif;
     border: none;
     background: none;
+}
+
+.cart-pic{
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    display: block;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.cart:hover .cart-pic{
+    color: #F5A800;
+    transform: scale(1.1);
 }
 
 .cart-badge {
@@ -1157,10 +1199,6 @@ body {
 
 .nav-holder{
     width: 80%;
-}
-
-.nav-holder2{
-    margin-left: 900px;
 }
 
 .nav-holder2 a{

@@ -36,9 +36,38 @@ const navbarEl = document.querySelector(".navbar");
 
 function updateNavbarScroll() {
   if (!navbarEl) return;
-  navbarEl.classList.toggle("scrolled", window.scrollY > 40);
+  navbarEl.classList.toggle("scrolled", window.scrollY > 30);
 }
 
 window.addEventListener("scroll", updateNavbarScroll);
 window.addEventListener("DOMContentLoaded", updateNavbarScroll);
+
+/*======================
+  SCROLL ANIMAATIOT
+========================*/
+
+window.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(".section3 h5, .section3 h2").forEach(el => {
+    observer.observe(el);
+  });
+
+  document.querySelectorAll(".card-container .a, .card-container .b, .card-container .c, .card-container .d")
+    .forEach((card, i) => {
+      card.style.transitionDelay = (i % 4) * 80 + "ms";
+      observer.observe(card);
+    });
+
+  document.querySelectorAll(".section4-label, .section4-title, .section4-sub, .section4-btns").forEach(el => {
+    observer.observe(el);
+  });
+});
 

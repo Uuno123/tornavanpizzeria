@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,15 +18,16 @@
     <nav class="navbar">
         <img src="logo.png" class="logo">
         <div class="nav-holder">
-            <img src="logo.png" class="logo-desktop">
+            <div class="nav-left-group">
+                <img src="logo.png" class="logo-desktop">
+                <div class="nav-holder2">
+                    <a href="index.html">Etusivu</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="#yhteystiedot">Yhteystiedot</a>
+                </div>
+            </div>
             <button id="ham" onclick="toggleMenu()" class="hamburger">&#9776;</button>
-            <button   onclick="window.location.href='ostoskori.html'" class="cart"> <span class="cart-badge" id="cartBadge">0</span><img src="shopping_cart_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40 (1).png" class="cart-pic"></button>
-        </div>
-
-        <div class="nav-holder2">
-            <a href="index.html">Etuisvu</a>
-            <a href="menu.html">Menu</a>
-            <a href="#yhteystiedot">Yhteystiedot</a>
+            <button   onclick="window.location.href='ostoskori.html'" class="cart"> <span class="cart-badge" id="cartBadge">0</span><svg class="cart-pic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></button>
         </div>
     </nav>
 
@@ -81,6 +82,7 @@
         </div>
     </div>
 
+    <div class="hero-gap"></div>
 
     <section class="section3">
         <h5>MITÄ HALUAISIT?</h5>

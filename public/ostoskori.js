@@ -1,5 +1,5 @@
 const DELIVERY_FEE = 5.99;
-let deliveryType = "delivery";
+let deliveryType = "pickup";
 
 /*===========================
     TOGGLE-MENU
