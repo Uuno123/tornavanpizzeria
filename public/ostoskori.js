@@ -205,6 +205,17 @@ function renderSummary() {
     STRIPE CHECKOUT
 ===========================*/
 
+// Ravintolan aukioloajat viikonpäivittäin (0 = sunnuntai ... 6 = lauantai)
+const OPENING_HOURS = {
+  0: { open: 14, close: 22 }, // sunnuntai
+  1: { open: 11, close: 22 }, // maanantai
+  2: { open: 11, close: 22 }, // tiistai
+  3: { open: 11, close: 22 }, // keskiviikko
+  4: { open: 11, close: 22 }, // torstai
+  5: { open: 11, close: 23 }, // perjantai
+  6: { open: 11, close: 23 }, // lauantai
+};
+
 function closeClosedModal() {
   document.getElementById("closedOverlay").classList.remove("active");
 }
@@ -212,8 +223,16 @@ function closeClosedModal() {
 async function startCheckout() {
   if (deliveryType === "delivery") return;
 
-  const hour = new Date().getHours();
-  if (hour < 10 || hour >= 21) {
+  const now = new Date();
+  const today = OPENING_HOURS[now.getDay()];
+  const orderCutoff = today.close - 1; // tilaukset kiinni tuntia ennen sulkemista
+  const hour = now.getHours();
+
+  if (hour < today.open || hour >= orderCutoff) {
+    const timeText = document.getElementById("closedTimeText");
+    if (timeText) {
+      timeText.textContent = `klo ${String(today.open).padStart(2, "0")}:00–${String(orderCutoff).padStart(2, "0")}:00`;
+    }
     document.getElementById("closedOverlay").classList.add("active");
     return;
   }

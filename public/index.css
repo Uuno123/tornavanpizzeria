@@ -880,7 +880,7 @@ footer{
 =======================*/
 
 .section1{
-    height: 100vh;
+    min-height: 100vh;
     box-sizing: border-box;
     padding: 140px 80px 40px;
     color: white;
@@ -917,8 +917,19 @@ footer{
      font-family: "Inter", sans-serif;
 }
 
-.btn-container{
+.hero-actions-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
     margin-top: 16px;
+}
+
+.btn-container{
+    margin-top: 0;
 }
 
 .menu-btn{
@@ -969,15 +980,14 @@ footer{
 =====================*/
 
 .section2{
-    margin-top: -30px;
-    margin-right: -60px;
+    margin-top: 0;
     z-index: 2;
    padding: 15px;
     color: white;
     flex-direction: row;
     background-position: center;
     background-size: cover;
-    width: calc(100% + 60px);
+    width: auto;
     justify-content: flex-end;
     align-items: center;
     display: flex;
@@ -989,27 +999,27 @@ footer{
 .card3{
     font-family: 'Inter', sans-serif;
     margin-left: 5px;
-    width: 200px;
-    margin-top: 15px;
+    width: 170px;
+    margin-top: 0;
       background: rgba(255,255,255,.07);
   border: 1px solid rgba(245,168,0,.3);
   backdrop-filter: blur(12px);
   border-radius: 16px;
-  padding: 1rem 1.5rem;
+  padding: 0.9rem 1rem;
   text-align: center;
 }
 
 .section2 h1{
       font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.2rem;
+  font-size: 1.9rem;
   color: #F5A800;
   line-height: 1;
 }
 
 .section2 p{
-      font-size: .75rem;
+      font-size: .68rem;
   color: rgba(255,255,255,.6);
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   margin-top: .2rem;
 }

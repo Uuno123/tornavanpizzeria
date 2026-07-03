@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const rateLimit = require('express-rate-limit');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const { Resend } = require('resend');
 const path = require('path');
@@ -15,10 +16,19 @@ app.use('/webhook', express.raw({ type: 'application/json' }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
+// Estää botteja/skriptejä luomasta rajattomasti maksusessioita samasta IP:stä
+const checkoutLimiter = rateLimit({
+  windowMs: 10 * 60 * 1000, // 10 min
+  max: 15,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Liikaa tilausyrityksiä. Yritä uudelleen hetken kuluttua.' },
+});
+
 /*=============================
   LUO STRIPE CHECKOUT SESSIO
 ===============================*/
-app.post('/create-checkout-session', async (req, res) => {
+app.post('/create-checkout-session', checkoutLimiter, async (req, res) => {
   try {
     const { cart, deliveryType = 'delivery', customerInfo = {} } = req.body;
     if (!Array.isArray(cart) || cart.length === 0)
