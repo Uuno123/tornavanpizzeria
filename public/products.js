@@ -2040,7 +2040,7 @@ const products = [
     id: "uuno-testaa",
     name: "UUNO TESTAA",
     image: "logo.png",
-    price: "0.50",
+    price: "1.00",
     sizes: [{ name: "Normal", extra: 0 }],
     sauces: [],
     extras: []
