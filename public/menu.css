@@ -432,6 +432,13 @@ SECTION2
   letter-spacing: 1px;
 }
 
+.category-note {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #7a6a58;
+  margin: -8px 0 16px;
+}
+
 .menu-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -925,6 +932,14 @@ footer{
   margin: 0;
 }
 
+#modalDescription {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: #7a6a58;
+  padding: 4px 20px 0;
+  margin: 0;
+}
+
 .big-text {
   font-family: "Bebas Neue", sans-serif;
   font-size: 0.82rem;
@@ -965,6 +980,11 @@ footer{
   background: rgba(245,168,0,0.1);
   color: #1a1008;
   font-weight: 700;
+}
+
+.options label:has(input:disabled) {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .options input { display: none; }
@@ -1047,6 +1067,13 @@ footer{
     padding-bottom: 3px;
     margin-bottom: 18px;
     letter-spacing: 1px;
+  }
+
+  .category-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #7a6a58;
+    margin: -10px 0 18px;
   }
 
   .menu-grid {
@@ -1738,6 +1765,14 @@ grid-template-columns: repeat(1, 1fr);
   margin: 0;
 }
 
+#modalDescription {
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+  color: #7a6a58;
+  padding: 4px 22px 0;
+  margin: 0;
+}
+
 .big-text {
   font-family: "Bebas Neue", sans-serif;
   font-size: 0.82rem;
@@ -1783,6 +1818,11 @@ grid-template-columns: repeat(1, 1fr);
   background: rgba(245,168,0,0.1);
   color: #1a1008;
   font-weight: 700;
+}
+
+.options label:has(input:disabled) {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .options input { display: none; }

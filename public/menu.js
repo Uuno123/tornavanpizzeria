@@ -121,7 +121,10 @@ window.addEventListener("DOMContentLoaded", () => {
   OpenModal
 ==================*/
 
-function openModal(productId) {
+// Kategoriat joissa pizzapohjan voi valita gluteenittomana (+3€)
+const DOUGH_CATEGORIES = ["pizzat", "venepizzat", "calzonet", "pannupizzat"];
+
+function openModal(productId, category) {
 
   const product =
     products.find(p => p.id === productId);
@@ -133,9 +136,10 @@ function openModal(productId) {
   window.selectedProduct = product;
 
 
-  // Nimi + kuva
+  // Nimi + kuva + kuvaus
   document.getElementById("modalTitle").innerText = product.name;
   document.getElementById("modalImage").src = product.image;
+  document.getElementById("modalDescription").innerText = product.description || "";
 
 
   // TYHJENNÄ VANHAT OPTIONSIT
@@ -173,23 +177,91 @@ function openModal(productId) {
 
 
   // 🟢 LISÄTÄYTEET
+  // Pannupizzoilla täytteet sisältyvät hintaan, mutta niitä saa valita vain tuotteen
+  // ilmoittaman määrän verran (esim. "2 täytettä" -> max 2). Muilla tuotteilla hinta
+  // riippuu koosta: normaali 1.50€, perhekoko 3.00€.
+  const extraHeading = document.getElementById("extraHeading");
+  if (extraHeading) {
+    extraHeading.textContent = product.maxFreeExtras
+      ? `Täytteet (sisältyy hintaan, valitse enintään ${product.maxFreeExtras})`
+      : "Lisätäytteet";
+  }
+
   product.extras.forEach(extra => {
 
     const label = document.createElement("label");
+    label.dataset.basePrice = extra.price;
 
     label.innerHTML = `
       <input type="checkbox" value="${extra.name}">
-      ${extra.name} (+${extra.price}€)
+      <span class="extra-label-text">${extra.name}${product.maxFreeExtras ? "" : " (+" + extra.price.toFixed(2) + "€)"}</span>
     `;
 
     document.getElementById("extraOptions").appendChild(label);
   });
+
+  updateExtraPrices();
+  enforceMaxFreeExtras();
+
+
+  // ⚪ GLUTEENITON POHJA (vain taikinapohjaisille tuotteille)
+  const glutenFreeRow = document.getElementById("glutenFreeRow");
+  const glutenFreeHeading = document.getElementById("glutenFreeHeading");
+  const glutenFreeCheckbox = document.getElementById("glutenFreeCheckbox");
+  if (glutenFreeRow && glutenFreeHeading && glutenFreeCheckbox) {
+    glutenFreeCheckbox.checked = false;
+    const show = DOUGH_CATEGORIES.includes(category);
+    glutenFreeRow.style.display = show ? "" : "none";
+    glutenFreeHeading.style.display = show ? "" : "none";
+  }
 
 
   // Avaa modal + overlay
   document.getElementById("pizzaModal").classList.add("active");
   document.getElementById("overlay2").classList.add("active");
 }
+
+// Päivittää lisätäytteiden näytettävän hinnan valitun koon mukaan
+function updateExtraPrices() {
+  const product = window.selectedProduct;
+  if (!product || product.maxFreeExtras) return; // pannupizzoilla täytteet ovat aina ilmaisia
+
+  const selectedSize = document.querySelector('input[name="size"]:checked');
+  const sizeData = product.sizes.find(s => s.name === selectedSize?.value);
+  const sizeExtra = sizeData ? sizeData.extra : 0;
+  const multiplier = sizeExtra > 0 ? 2 : 1;
+
+  document.querySelectorAll('#extraOptions label').forEach(label => {
+    const base = parseFloat(label.dataset.basePrice);
+    const input = label.querySelector('input');
+    const textEl = label.querySelector('.extra-label-text');
+    if (textEl && input) {
+      textEl.textContent = `${input.value} (+${(base * multiplier).toFixed(2)}€)`;
+    }
+  });
+}
+
+// Estää valitsemasta enempää täytteitä kuin tuote sallii (esim. pannupizza "2 täytettä")
+function enforceMaxFreeExtras() {
+  const product = window.selectedProduct;
+  if (!product || !product.maxFreeExtras) return;
+
+  const checkboxes = document.querySelectorAll('#extraOptions input[type="checkbox"]');
+  const checkedCount = document.querySelectorAll('#extraOptions input[type="checkbox"]:checked').length;
+  const limitReached = checkedCount >= product.maxFreeExtras;
+
+  checkboxes.forEach(cb => {
+    cb.disabled = limitReached && !cb.checked;
+  });
+}
+
+document.getElementById("sizeOptions")?.addEventListener("change", (e) => {
+  if (e.target.name === "size") updateExtraPrices();
+});
+
+document.getElementById("extraOptions")?.addEventListener("change", (e) => {
+  if (e.target.type === "checkbox") enforceMaxFreeExtras();
+});
 
 
 
@@ -255,12 +327,17 @@ function addToCart() {
     });
 
 
+  // 5b. gluteeniton pohja
+  const glutenFree = document.getElementById("glutenFreeCheckbox")?.checked || false;
+
+
   // 6. cart item
   const cartItem = {
     productId: product.id,
     size: selectedSize.value,
     sauce: selectedSauce?.value || '',
     extras,
+    glutenFree,
     quantity
   };
 

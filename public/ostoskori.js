@@ -58,12 +58,14 @@ function renderCart() {
     const basePrice = tuoteData ? parseFloat(tuoteData.price) || 0 : 0;
     const sizeData = tuoteData?.sizes?.find(s => s.name === item.size);
     const sizeExtra = sizeData ? sizeData.extra : 0;
-    const extrasTotal = (item.extras || []).reduce((sum, extraName) => {
+    const extraMultiplier = sizeExtra > 0 ? 2 : 1;
+    const extrasTotal = tuoteData?.maxFreeExtras ? 0 : (item.extras || []).reduce((sum, extraName) => {
       const ed = tuoteData?.extras?.find(e => e.name === extraName);
-      return sum + (ed ? ed.price : 0);
+      return sum + (ed ? ed.price * extraMultiplier : 0);
     }, 0);
+    const glutenFreeTotal = item.glutenFree ? 3 : 0;
     const qty = item.quantity || 1;
-    const itemTotal = (basePrice + sizeExtra + extrasTotal) * qty;
+    const itemTotal = (basePrice + sizeExtra + extrasTotal + glutenFreeTotal) * qty;
 
     const extrasHtml = (item.extras || []).length > 0
       ? `<div class="cart-item-extras">${(item.extras || []).map(e => `<span class="extra-chip">${e}</span>`).join("")}</div>`
@@ -81,7 +83,7 @@ function renderCart() {
           <h3 class="cart-item-name">${item.productId}</h3>
           <button class="remove-btn" onclick="removeFromCart(${index})">&#10005;</button>
         </div>
-        <p class="cart-item-sub">${item.size} &middot; ${item.sauce}</p>
+        <p class="cart-item-sub">${item.size} &middot; ${item.sauce}${item.glutenFree ? " &middot; Gluteeniton" : ""}</p>
         ${extrasHtml}
         <div class="cart-item-bottom">
           ${itemTotal > 0 ? `<span class="cart-item-price">${itemTotal.toFixed(2)} &euro;</span>` : "<span></span>"}
@@ -162,23 +164,26 @@ function renderSummary() {
     const basePrice = tuoteData ? parseFloat(tuoteData.price) || 0 : 0;
     const sizeData = tuoteData?.sizes?.find(s => s.name === item.size);
     const sizeExtra = sizeData ? sizeData.extra : 0;
-    const extrasTotal = (item.extras || []).reduce((sum, extraName) => {
+    const extraMultiplier = sizeExtra > 0 ? 2 : 1;
+    const extrasTotal = tuoteData?.maxFreeExtras ? 0 : (item.extras || []).reduce((sum, extraName) => {
       const ed = tuoteData?.extras?.find(e => e.name === extraName);
-      return sum + (ed ? ed.price : 0);
+      return sum + (ed ? ed.price * extraMultiplier : 0);
     }, 0);
+    const glutenFreeTotal = item.glutenFree ? 3 : 0;
 
     const qty = item.quantity || 1;
-    const itemTotal = (basePrice + sizeExtra + extrasTotal) * qty;
+    const itemTotal = (basePrice + sizeExtra + extrasTotal + glutenFreeTotal) * qty;
     subtotal += itemTotal;
 
     const extrasText = item.extras?.length > 0 ? item.extras.join(", ") : null;
+    const detailParts = [item.size, item.sauce, item.glutenFree ? "Gluteeniton" : null, extrasText].filter(Boolean);
 
     const row = document.createElement("div");
     row.classList.add("summary-item-row");
     row.innerHTML = `
       <div class="summary-item-left">
         <span class="summary-item-name">${item.productId}</span>
-        <span class="summary-item-detail">${item.size} · ${item.sauce}${extrasText ? " · " + extrasText : ""}</span>
+        <span class="summary-item-detail">${detailParts.join(" · ")}</span>
       </div>
       <div class="summary-item-right">
         <span class="summary-item-qty">×${qty}</span>

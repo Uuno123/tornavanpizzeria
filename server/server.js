@@ -44,16 +44,19 @@ app.post('/create-checkout-session', checkoutLimiter, async (req, res) => {
       const basePrice = parseFloat(product.price) || 0;
       const sizeData = product.sizes?.find(s => s.name === item.size);
       const sizeExtra = sizeData ? sizeData.extra : 0;
-      const extrasTotal = (item.extras || []).reduce((sum, extraName) => {
+      const extraMultiplier = sizeExtra > 0 ? 2 : 1;
+      const extrasTotal = product.maxFreeExtras ? 0 : (item.extras || []).reduce((sum, extraName) => {
         const ed = product.extras?.find(e => e.name === extraName);
-        return sum + (ed ? ed.price : 0);
+        return sum + (ed ? ed.price * extraMultiplier : 0);
       }, 0);
+      const glutenFreeTotal = item.glutenFree ? 3 : 0;
 
-      const unitPrice = basePrice + sizeExtra + extrasTotal;
+      const unitPrice = basePrice + sizeExtra + extrasTotal + glutenFreeTotal;
       const qty = item.quantity || 1;
 
       let desc = item.size || '';
       if (item.sauce) desc += ` · ${item.sauce}`;
+      if (item.glutenFree) desc += ' · Gluteeniton';
       if (item.extras?.length) desc += ` · ${item.extras.join(', ')}`;
 
       line_items.push({
