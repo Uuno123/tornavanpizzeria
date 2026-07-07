@@ -8,6 +8,7 @@ const products = require('../public/products');
 const { customerReceiptHtml, restaurantOrderHtml } = require('./emails');
 
 const app = express();
+app.set('trust proxy', 1);
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
