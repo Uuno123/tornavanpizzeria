@@ -73,14 +73,16 @@ function renderCart() {
 
     const div = document.createElement("div");
     div.classList.add("cart-item");
+    const displayName = tuoteData?.name || item.productId;
+
     div.innerHTML = `
       <div class="cart-item-img-wrap">
-        <img src="${kuvaUrl}" alt="${item.productId}" class="cart-item-image">
+        <img src="${kuvaUrl}" alt="${displayName}" class="cart-item-image">
         <span class="cart-item-qty-badge">&times;${qty}</span>
       </div>
       <div class="cart-item-info">
         <div class="cart-item-top">
-          <h3 class="cart-item-name">${item.productId}</h3>
+          <h3 class="cart-item-name">${displayName}</h3>
           <button class="remove-btn" onclick="removeFromCart(${index})">&#10005;</button>
         </div>
         <p class="cart-item-sub">${item.size} &middot; ${item.sauce}${item.glutenFree ? " &middot; Gluteeniton" : ""}</p>
@@ -182,7 +184,7 @@ function renderSummary() {
     row.classList.add("summary-item-row");
     row.innerHTML = `
       <div class="summary-item-left">
-        <span class="summary-item-name">${item.productId}</span>
+        <span class="summary-item-name">${tuoteData?.name || item.productId}</span>
         <span class="summary-item-detail">${detailParts.join(" · ")}</span>
       </div>
       <div class="summary-item-right">

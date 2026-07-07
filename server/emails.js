@@ -1,3 +1,5 @@
+const glutenFreeBadge = `<span style="display:inline-block;margin-left:8px;padding:2px 9px;border-radius:20px;background:#ecfdf5;color:#059669;font-size:10px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;font-family:Arial,sans-serif;vertical-align:middle;">Gluteeniton</span>`;
+
 function itemTableRows(items) {
   return items.map(item => {
     const name = item.n || 'Tuote';
@@ -7,7 +9,7 @@ function itemTableRows(items) {
     return `
       <tr>
         <td style="padding:14px 0;border-bottom:1px solid #f0ede6;font-family:Arial,sans-serif;">
-          <span style="font-size:15px;font-weight:700;color:#1a1008;">${name}</span>
+          <span style="font-size:15px;font-weight:700;color:#1a1008;">${name}</span>${item.gf ? glutenFreeBadge : ''}
           ${custom ? `<br><span style="font-size:13px;color:#94a3b8;">${custom}</span>` : ''}
         </td>
         <td style="padding:14px 0;border-bottom:1px solid #f0ede6;font-family:Arial,sans-serif;text-align:center;font-size:14px;color:#666;">×${qty}</td>
@@ -129,7 +131,7 @@ function restaurantOrderHtml(customerName, customerEmail, items, total, delivery
     return `
       <tr>
         <td style="padding:14px 0;border-bottom:1px solid #f0ede6;font-family:Arial,sans-serif;">
-          <span style="font-size:16px;font-weight:700;color:#1a1008;">${name}</span>
+          <span style="font-size:16px;font-weight:700;color:#1a1008;">${name}</span>${item.gf ? glutenFreeBadge : ''}
           ${custom ? `<br><span style="font-size:13px;color:#555;">${custom}</span>` : ''}
         </td>
         <td style="padding:14px 0;border-bottom:1px solid #f0ede6;text-align:center;font-size:16px;font-weight:700;color:#1a1008;font-family:Arial,sans-serif;">×${qty}</td>

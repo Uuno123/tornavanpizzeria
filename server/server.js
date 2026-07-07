@@ -36,6 +36,7 @@ app.post('/create-checkout-session', checkoutLimiter, async (req, res) => {
       return res.status(400).json({ error: 'Ostoskori on tyhjä' });
 
     const line_items = [];
+    const orderItemsRaw = [];
 
     for (const item of cart) {
       const product = products.find(p => p.id === item.productId);
@@ -63,12 +64,24 @@ app.post('/create-checkout-session', checkoutLimiter, async (req, res) => {
         price_data: {
           currency: 'eur',
           product_data: {
-            name: item.productId,
+            name: product.name,
             description: desc || undefined,
           },
           unit_amount: Math.round(unitPrice * 100),
         },
         quantity: qty,
+      });
+
+      let metaDesc = item.size || '';
+      if (item.sauce) metaDesc += ` · ${item.sauce}`;
+      if (item.extras?.length) metaDesc += ` · ${item.extras.join(', ')}`;
+
+      orderItemsRaw.push({
+        n: product.name,
+        d: metaDesc,
+        gf: !!item.glutenFree,
+        q: qty,
+        p: unitPrice.toFixed(2),
       });
     }
 
@@ -76,14 +89,7 @@ app.post('/create-checkout-session', checkoutLimiter, async (req, res) => {
       return res.status(400).json({ error: 'Ei kelvollisia tuotteita' });
 
     // Tallenna tilausrivit metadataan ennen toimitusmaksun lisäystä
-    const orderItemsMeta = JSON.stringify(
-      line_items.map(li => ({
-        n: li.price_data.product_data.name,
-        d: li.price_data.product_data.description || '',
-        q: li.quantity,
-        p: (li.price_data.unit_amount / 100).toFixed(2),
-      }))
-    ).slice(0, 490);
+    const orderItemsMeta = JSON.stringify(orderItemsRaw).slice(0, 490);
 
     // Toimitusmaksu
     if (deliveryType === 'delivery') {
