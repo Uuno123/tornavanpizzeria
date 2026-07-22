@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tietosuojaseloste – Törnävän Pizzeria</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="stylesheet" href="fonts.css">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #FFF8EC;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      color: #1a1008;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 80px;
+    }
+
+    .top-bar {
+      width: 100%;
+      max-width: 760px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .top-bar img { width: 48px; height: 48px; border-radius: 50%; }
+    .top-bar a {
+      color: #1a1008;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 2px solid #e5e0d8;
+      border-radius: 50px;
+      padding: 8px 18px;
+      margin-left: auto;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .top-bar a:hover { border-color: #F5A800; color: #F5A800; }
+
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      border-top: 5px solid #F5A800;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+      width: 100%;
+      max-width: 760px;
+      padding: 40px;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .updated {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #1a1008;
+    }
+    p, li { font-size: 0.95rem; line-height: 1.65; color: #333; }
+    ul { padding-left: 22px; margin: 8px 0; }
+    li { margin-bottom: 6px; }
+    a { color: #D48A00; }
+
+    .todo {
+      background: #FFF3CD;
+      border: 1px solid #F5A800;
+      border-radius: 14px;
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      margin-bottom: 28px;
+      color: #6b4c00;
+    }
+    .todo strong { color: #1a1008; }
+    mark {
+      background: #FDE68A;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .info-box {
+      background: #FFF8EC;
+      border: 1px solid #f0ede6;
+      border-radius: 14px;
+      padding: 16px 20px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <img src="logo.png" alt="Törnävän Pizzeria">
+    <a href="index.html">&larr; Etusivulle</a>
+  </div>
+
+  <div class="card">
+    <h1>Tietosuojaseloste</h1>
+    <p class="updated">Viimeisin päivitys: 22.7.2026</p>
+
+    <h2>1. Rekisterinpitäjä</h2>
+    <div class="info-box">
+      Törnävän Pizzeria<br>
+      Y-tunnus: 3444793-5<br>
+      Osoite: Törnäväntie 21, 60200 Seinäjoki<br>
+      Puhelin: <a href="tel:0401829726">040 1829726</a><br>
+      Sähköposti: <a href="mailto:Monirkhan.amiri@gmail.com">Monirkhan.amiri@gmail.com</a>
+    </div>
+
+    <h2>2. Mitä tietoja käsittelemme</h2>
+    <p>Kun teet tilauksen verkkosivullamme, käsittelemme seuraavia tietoja:</p>
+    <ul>
+      <li>Nimi</li>
+      <li>Puhelinnumero</li>
+      <li>Toimitusosoite (jos valitset kotiinkuljetuksen)</li>
+      <li>Sähköpostiosoite (annat sen maksun yhteydessä, tilausvahvistusta varten)</li>
+      <li>Tilaustiedot: tilatut tuotteet, valinnat ja mahdolliset lisätiedot</li>
+    </ul>
+    <p>Maksukortin tiedot käsittelee ja tallentaa yksinomaan maksunvälittäjämme Stripe. Emme näe emmekä tallenna korttitietoja omille palvelimillemme.</p>
+
+    <h2>3. Käyttötarkoitus ja käsittelyn peruste</h2>
+    <p>Käsittelemme tietoja tilauksen vastaanottamiseksi, valmistamiseksi, toimittamiseksi ja tilausvahvistuksen/kuitin lähettämiseksi. Käsittelyn peruste on sopimuksen täytäntöönpano (EU:n yleinen tietosuoja-asetus, 6 artikla 1 kohta b alakohta).</p>
+
+    <h2>4. Kenelle luovutamme tietoja</h2>
+    <p>Käytämme tilausten käsittelyyn seuraavia palveluntarjoajia (tietojenkäsittelijöitä), jotka käsittelevät tietoja puolestamme eivätkä omiin tarkoituksiinsa:</p>
+    <ul>
+      <li><strong>Stripe</strong> – maksunvälitys. Tietoja voidaan käsitellä myös EU/ETA-alueen ulkopuolella (mm. Yhdysvalloissa); siirto perustuu Stripen käyttämiin, EU:n komission hyväksymiin suojatoimiin (mm. vakiosopimuslausekkeet).</li>
+      <li><strong>Resend</strong> – tilausvahvistus- ja kuittisähköpostien lähetys. Myös tämän palvelun infrastruktuuri voi sijaita EU:n ulkopuolella vastaavin suojatoimin.</li>
+    </ul>
+    <p>Emme myy tai luovuta tietojasi kolmansille osapuolille markkinointitarkoituksiin.</p>
+
+    <h2>5. Säilytysaika</h2>
+    <p>Säilytämme tilaustietoja niin kauan kuin kirjanpitolaki ja muu soveltuva lainsäädäntö edellyttävät (kirjanpitoaineisto vähintään 6 vuotta tilikauden päättymisestä), tai kunnes tietoja ei enää tarvita yllä mainittuihin tarkoituksiin.</p>
+
+    <h2>6. Oikeutesi</h2>
+    <p>Sinulla on oikeus:</p>
+    <ul>
+      <li>tarkastaa, mitä tietoja sinusta on tallennettu</li>
+      <li>pyytää virheellisen tiedon oikaisua</li>
+      <li>pyytää tiedon poistamista, jos lakisääteinen säilytysvelvollisuus ei sitä estä</li>
+      <li>vastustaa käsittelyä tai pyytää sen rajoittamista</li>
+      <li>tehdä valitus tietosuojavaltuutetun toimistolle (<a href="https://tietosuoja.fi" target="_blank" rel="noopener">tietosuoja.fi</a>), jos katsot tietojasi käsitellyn lainvastaisesti</li>
+    </ul>
+    <p>Näitä oikeuksia koskevat pyynnöt: <a href="mailto:Monirkhan.amiri@gmail.com">Monirkhan.amiri@gmail.com</a></p>
+
+    <h2>7. Evästeet ja kolmannen osapuolen palvelut</h2>
+    <p>Fontit on ladattu omalta palvelimeltamme, joten selaimesi ei ota yhteyttä Googleen sivua ladatessa. Maksamisen yhteydessä sinut ohjataan Stripen ylläpitämälle maksusivulle, joka voi käsitellä selaimesi IP-osoitetta oman käytäntönsä mukaisesti. Emme itse käytä seuranta- tai analytiikkaevästeitä (esim. Google Analytics) tätä selostetta kirjoitettaessa.</p>
+
+    <h2>8. Selosteen päivittäminen</h2>
+    <p>Voimme päivittää tätä selostetta tarvittaessa. Ajantasainen versio on aina saatavilla tällä sivulla.</p>
+  </div>
+
+</body>
+</html>

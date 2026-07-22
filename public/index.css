@@ -828,6 +828,24 @@ footer{
     background: #e09900;
 }
 
+.footer-legal {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding: 16px 0 0;
+}
+
+.footer-legal a {
+    color: #aaa;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.footer-legal a:hover {
+    color: #F5A800;
+}
+
 .footer-bottom {
     border-top: 1px solid #2a1a08;
     text-align: center;

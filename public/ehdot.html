@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toimitusehdot – Törnävän Pizzeria</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="stylesheet" href="fonts.css">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #FFF8EC;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      color: #1a1008;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 80px;
+    }
+
+    .top-bar {
+      width: 100%;
+      max-width: 760px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .top-bar img { width: 48px; height: 48px; border-radius: 50%; }
+    .top-bar a {
+      color: #1a1008;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 2px solid #e5e0d8;
+      border-radius: 50px;
+      padding: 8px 18px;
+      margin-left: auto;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .top-bar a:hover { border-color: #F5A800; color: #F5A800; }
+
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      border-top: 5px solid #F5A800;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+      width: 100%;
+      max-width: 760px;
+      padding: 40px;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .updated {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #1a1008;
+    }
+    p, li { font-size: 0.95rem; line-height: 1.65; color: #333; }
+    ul { padding-left: 22px; margin: 8px 0; }
+    li { margin-bottom: 6px; }
+    a { color: #D48A00; }
+
+    .todo {
+      background: #FFF3CD;
+      border: 1px solid #F5A800;
+      border-radius: 14px;
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      margin-bottom: 28px;
+      color: #6b4c00;
+    }
+    .todo strong { color: #1a1008; }
+    mark {
+      background: #FDE68A;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .info-box {
+      background: #FFF8EC;
+      border: 1px solid #f0ede6;
+      border-radius: 14px;
+      padding: 16px 20px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <img src="logo.png" alt="Törnävän Pizzeria">
+    <a href="index.html">&larr; Etusivulle</a>
+  </div>
+
+  <div class="card">
+    <h1>Toimitusehdot</h1>
+    <p class="updated">Viimeisin päivitys: 22.7.2026</p>
+
+    <h2>1. Yleistä ja myyjän tiedot</h2>
+    <p>Näitä ehtoja sovelletaan kaikkiin osoitteesta tornavankebabpizzeria.com tehtyihin tilauksiin.</p>
+    <div class="info-box">
+      Törnävän Pizzeria<br>
+      Y-tunnus: 3444793-5<br>
+      Osoite: Törnäväntie 21, 60200 Seinäjoki<br>
+      Puhelin: <a href="tel:0401829726">040 1829726</a><br>
+      Sähköposti: <a href="mailto:Monirkhan.amiri@gmail.com">Monirkhan.amiri@gmail.com</a>
+    </div>
+
+    <h2>2. Tuotteet ja hinnat</h2>
+    <p>Kaikki menussa esitetyt hinnat sisältävät arvonlisäveron. Kotiinkuljetuksesta veloitetaan erillinen toimitusmaksu (5,99 €), joka näkyy ostoskorissa ennen maksamista. Pidätämme oikeuden muuttaa hintoja ja valikoimaa ilman ennakkoilmoitusta.</p>
+
+    <h2>3. Tilaaminen ja sopimuksen syntyminen</h2>
+    <p>Tilaus tehdään valitsemalla tuotteet menusta ja siirtymällä maksuun. Sopimus syntyy, kun maksu on hyväksytysti suoritettu ja saat tilausvahvistuksen sähköpostiisi.</p>
+
+    <h2>4. Maksutavat</h2>
+    <p>Maksut välittää Stripe (korttimaksu). Emme näe emmekä tallenna korttitietojasi.</p>
+
+    <h2>5. Toimitus ja nouto</h2>
+    <ul>
+      <li><strong>Kotiinkuljetus:</strong> arvioitu toimitusaika noin 30–45 minuuttia tilauksesta, toimitusalue rajattu Seinäjoen Törnävän lähialueelle.</li>
+      <li><strong>Nouto:</strong> arvioitu valmistumisaika noin 20 minuuttia.</li>
+    </ul>
+    <p>Emme vastaa viivästyksistä, jotka johtuvat meistä riippumattomista syistä (esim. sääolosuhteet tai liikenne).</p>
+
+    <h2>6. Peruuttaminen ja palautukset</h2>
+    <p>Koska kyseessä on tilauksesta valmistettava, nopeasti pilaantuva elintarvike, kuluttajansuojalain mukaista 14 vuorokauden peruuttamisoikeutta ei sovelleta enää sen jälkeen, kun valmistus on aloitettu (kuluttajansuojalaki 6 luku 16 § 4 kohta). Voit perua tai muuttaa tilauksen veloituksetta ottamalla välittömästi yhteyttä puhelimitse, ennen kuin valmistus on aloitettu.</p>
+
+    <h2>7. Virheet ja reklamaatiot</h2>
+    <p>Jos tilaus on virheellinen, puutteellinen tai ei vastaa tilattua, ota välittömästi yhteyttä puhelimitse tai sähköpostitse. Korjaamme virheen, toimitamme puuttuvan osan tai hyvitämme tilauksen kohtuullisessa ajassa. Reklamaatio tulee tehdä viipymättä virheen havaitsemisesta.</p>
+
+    <h2>8. Allergiat ja ainesosat</h2>
+    <p>Kerro allergioista tai erityisruokavaliosta tilausta tehdessä lisätiedot-kenttään. Valmistamme ruoan samassa keittiössä, jossa käsitellään mm. gluteenia, joten emme voi täysin taata ristikontaminaation puuttumista myöskään gluteenittomissa vaihtoehdoissa.</p>
+
+    <h2>9. Riitatilanteet</h2>
+    <p>Jos et pääse sopuun suoraan kanssamme, voit saattaa asian kuluttajariitalautakunnan (<a href="https://www.kuluttajariita.fi" target="_blank" rel="noopener">kuluttajariita.fi</a>) käsiteltäväksi. Suosittelemme olemaan ensin yhteydessä Kuluttajaneuvontaan (<a href="https://www.kkv.fi" target="_blank" rel="noopener">kkv.fi</a>).</p>
+
+    <h2>10. Ehtojen muutokset</h2>
+    <p>Pidätämme oikeuden päivittää näitä ehtoja. Voimassa olevat ehdot löytyvät aina tältä sivulta.</p>
+  </div>
+
+</body>
+</html>
