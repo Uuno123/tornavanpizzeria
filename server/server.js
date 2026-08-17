@@ -189,7 +189,7 @@ app.post('/webhook', async (req, res) => {
 
     if (customerEmail) {
       resend.emails.send({
-        from: 'Törnävän Pizzeria <onboarding@resend.dev>',
+        from: 'Törnävän Pizzeria <tilaukset@tornavankebabpizzeria.com>',
         to: customerEmail,
         subject: '✅ Tilauksesi on vastaanotettu!',
         html: customerReceiptHtml(customerName, items, total, deliveryInfo, session.id),
@@ -199,7 +199,7 @@ app.post('/webhook', async (req, res) => {
     }
 
     resend.emails.send({
-      from: 'Törnävän Pizzeria <onboarding@resend.dev>',
+      from: 'Törnävän Pizzeria <tilaukset@tornavankebabpizzeria.com>',
       to: process.env.RESTAURANT_EMAIL,
       subject: `🍕 Uusi tilaus – ${total} € – ${customerName}`,
       html: restaurantOrderHtml(customerName, customerEmail, items, total, deliveryInfo, session.id),
