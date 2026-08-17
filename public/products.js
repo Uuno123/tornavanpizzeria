@@ -2549,20 +2549,6 @@ const products = [
       { name: "Kana", price: 1.5 },
       { name: "Jalapeno", price: 1.5 }
     ]
-  },
-
-  /*===================
-  TESTI
-  =====================*/
-  {
-    id: "uuno-testaa",
-    name: "UUNO TESTAA",
-    image: "logo.png",
-    price: "0.50",
-    description: "Testituote",
-    sizes: [{ name: "Normal", extra: 0 }],
-    sauces: [],
-    extras: []
   }
 ];
 
