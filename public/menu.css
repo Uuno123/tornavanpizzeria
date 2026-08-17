@@ -1989,7 +1989,7 @@ footer{
 .footer-order-btn { margin-top: 16px; background: #F5A800; color: #1a1008; font-weight: 800; font-size: 14px; padding: 10px 24px; border-radius: 8px; text-decoration: none; display: inline-block; transition: background 0.2s; }
 .footer-order-btn:hover { background: #e09900; }
 .footer-legal { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; padding: 16px 0 0; }
-.footer-legal a { color: #aaa; font-size: 12px; text-decoration: underline; }
+.footer-legal a { color: #aaa; font-size: 12px; font-weight: 700; text-decoration: underline; }
 .footer-legal a:hover { color: #F5A800; }
 .footer-bottom { border-top: 1px solid #2a1a08; text-align: center; padding: 18px 0; }
 .footer-bottom p { color: #555; font-size: 12px; margin: 0; }
