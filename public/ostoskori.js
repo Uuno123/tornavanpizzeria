@@ -126,13 +126,13 @@ function setDelivery(type) {
   const addrGroup = document.getElementById("addressGroup");
   if (addrGroup) addrGroup.style.display = type === "delivery" ? "" : "none";
 
-  // Tilaukset pois päältä väliaikaisesti (sekä nouto että toimitus) - näytetään ilmoitus eikä maksunappia
+  // Kotiinkuljetus ei ole vielä toiminnassa - näytetään sen sijaan ilmoitus eikä maksunappia
   const checkoutBtn = document.getElementById("checkoutBtn");
   const unavailableBtn = document.getElementById("deliveryUnavailableBtn");
   if (checkoutBtn && unavailableBtn) {
-    const ordersDisabled = true;
-    checkoutBtn.style.display = ordersDisabled ? "none" : "";
-    unavailableBtn.style.display = ordersDisabled ? "" : "none";
+    const deliveryUnavailable = type === "delivery";
+    checkoutBtn.style.display = deliveryUnavailable ? "none" : "";
+    unavailableBtn.style.display = deliveryUnavailable ? "" : "none";
   }
 
   renderSummary();
@@ -228,7 +228,7 @@ function closeClosedModal() {
 }
 
 async function startCheckout() {
-  return; // Tilaukset pois päältä väliaikaisesti (sekä nouto että toimitus)
+  if (deliveryType === "delivery") return;
 
   const now = new Date();
   const today = OPENING_HOURS[now.getDay()];
