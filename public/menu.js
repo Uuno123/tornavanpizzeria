@@ -134,6 +134,7 @@ function openModal(productId, category) {
 
   // Tallenna valittu tuote myöhempää addToCartia varten
   window.selectedProduct = product;
+  window.selectedCategory = category;
 
 
   // Nimi + kuva + kuvaus
@@ -166,7 +167,7 @@ function openModal(productId, category) {
   product.sauces.forEach(sauce => {
 
     const label = document.createElement("label");
-    label.dataset.basePrice = SAUCE_PRICES[sauce] || 0;
+    label.dataset.basePrice = SAUCE_PRICE;
 
     label.innerHTML = `
       <input type="radio" name="sauce" value="${sauce}">
@@ -207,16 +208,10 @@ function openModal(productId, category) {
   enforceMaxFreeExtras();
 
 
-  // ⚪ GLUTEENITON POHJA (vain taikinapohjaisille tuotteille)
-  const glutenFreeRow = document.getElementById("glutenFreeRow");
-  const glutenFreeHeading = document.getElementById("glutenFreeHeading");
+  // ⚪ GLUTEENITON POHJA (vain taikinapohjaisille tuotteille, vain normikoossa)
   const glutenFreeCheckbox = document.getElementById("glutenFreeCheckbox");
-  if (glutenFreeRow && glutenFreeHeading && glutenFreeCheckbox) {
-    glutenFreeCheckbox.checked = false;
-    const show = DOUGH_CATEGORIES.includes(category);
-    glutenFreeRow.style.display = show ? "" : "none";
-    glutenFreeHeading.style.display = show ? "" : "none";
-  }
+  if (glutenFreeCheckbox) glutenFreeCheckbox.checked = false;
+  updateGlutenFreeAvailability();
 
 
   // Avaa modal + overlay
@@ -264,6 +259,22 @@ function updateSaucePrices() {
   });
 }
 
+// Gluteeniton pohja saatavilla vain oikean kategorian tuotteille normikoossa - ei perhekoossa
+function updateGlutenFreeAvailability() {
+  const product = window.selectedProduct;
+  const glutenFreeRow = document.getElementById("glutenFreeRow");
+  const glutenFreeHeading = document.getElementById("glutenFreeHeading");
+  const glutenFreeCheckbox = document.getElementById("glutenFreeCheckbox");
+  if (!product || !glutenFreeRow || !glutenFreeHeading || !glutenFreeCheckbox) return;
+
+  const selectedSize = document.querySelector('input[name="size"]:checked');
+  const show = DOUGH_CATEGORIES.includes(window.selectedCategory) && selectedSize?.value === "Normal";
+
+  glutenFreeRow.style.display = show ? "" : "none";
+  glutenFreeHeading.style.display = show ? "" : "none";
+  if (!show) glutenFreeCheckbox.checked = false;
+}
+
 // Estää valitsemasta enempää täytteitä kuin tuote sallii (esim. pannupizza "2 täytettä")
 function enforceMaxFreeExtras() {
   const product = window.selectedProduct;
@@ -282,6 +293,7 @@ document.getElementById("sizeOptions")?.addEventListener("change", (e) => {
   if (e.target.name === "size") {
     updateExtraPrices();
     updateSaucePrices();
+    updateGlutenFreeAvailability();
   }
 });
 

@@ -1,8 +1,6 @@
-// Kastikkeet ovat oletuksena ilmaisia; tähän lisätään ne joista veloitetaan.
-// Hinta tuplaantuu perhekoossa, samalla logiikalla kuin lisätäytteillä.
-const SAUCE_PRICES = {
-  "Majoneesi": 1.5
-};
+// Kaikki kastikkeet maksavat saman verran. Hinta tuplaantuu perhekoossa,
+// samalla logiikalla kuin lisätäytteillä.
+const SAUCE_PRICE = 1.5;
 
 const products = [
   {
@@ -1084,6 +1082,7 @@ const products = [
       "Mango kastike"
     ],
     extras: [
+      { name: "Tuplaliha", price: 6 },
       { name: "Ananas", price: 1.5 },
       { name: "Tonnikala", price: 1.5 },
       { name: "Oliivi", price: 1.5 },
@@ -1122,6 +1121,7 @@ const products = [
       "Mango kastike"
     ],
     extras: [
+      { name: "Tuplaliha", price: 6 },
       { name: "Ananas", price: 1.5 },
       { name: "Tonnikala", price: 1.5 },
       { name: "Oliivi", price: 1.5 },
@@ -1160,6 +1160,7 @@ const products = [
       "Mango kastike"
     ],
     extras: [
+      { name: "Tuplaliha", price: 6 },
       { name: "Ananas", price: 1.5 },
       { name: "Tonnikala", price: 1.5 },
       { name: "Oliivi", price: 1.5 },
@@ -1198,6 +1199,7 @@ const products = [
       "Mango kastike"
     ],
     extras: [
+      { name: "Tuplaliha", price: 6 },
       { name: "Ananas", price: 1.5 },
       { name: "Tonnikala", price: 1.5 },
       { name: "Oliivi", price: 1.5 },
@@ -1236,6 +1238,7 @@ const products = [
       "Mango kastike"
     ],
     extras: [
+      { name: "Tuplaliha", price: 6 },
       { name: "Ananas", price: 1.5 },
       { name: "Tonnikala", price: 1.5 },
       { name: "Oliivi", price: 1.5 },
@@ -1274,6 +1277,7 @@ const products = [
       "Mango kastike"
     ],
     extras: [
+      { name: "Tuplaliha", price: 6 },
       { name: "Ananas", price: 1.5 },
       { name: "Tonnikala", price: 1.5 },
       { name: "Oliivi", price: 1.5 },
@@ -1312,6 +1316,7 @@ const products = [
       "Mango kastike"
     ],
     extras: [
+      { name: "Tuplaliha", price: 6 },
       { name: "Ananas", price: 1.5 },
       { name: "Tonnikala", price: 1.5 },
       { name: "Oliivi", price: 1.5 },
@@ -1350,6 +1355,7 @@ const products = [
       "Mango kastike"
     ],
     extras: [
+      { name: "Tuplaliha", price: 6 },
       { name: "Ananas", price: 1.5 },
       { name: "Tonnikala", price: 1.5 },
       { name: "Oliivi", price: 1.5 },
@@ -1388,6 +1394,7 @@ const products = [
       "Mango kastike"
     ],
     extras: [
+      { name: "Tuplaliha", price: 6 },
       { name: "Ananas", price: 1.5 },
       { name: "Tonnikala", price: 1.5 },
       { name: "Oliivi", price: 1.5 },
@@ -1426,6 +1433,7 @@ const products = [
       "Mango kastike"
     ],
     extras: [
+      { name: "Tuplaliha", price: 6 },
       { name: "Ananas", price: 1.5 },
       { name: "Tonnikala", price: 1.5 },
       { name: "Oliivi", price: 1.5 },
@@ -1464,6 +1472,7 @@ const products = [
       "Mango kastike"
     ],
     extras: [
+      { name: "Tuplaliha", price: 6 },
       { name: "Ananas", price: 1.5 },
       { name: "Tonnikala", price: 1.5 },
       { name: "Oliivi", price: 1.5 },
@@ -2560,6 +2569,6 @@ const products = [
 
 if (typeof module !== 'undefined') {
   module.exports = products;
-  module.exports.SAUCE_PRICES = SAUCE_PRICES;
+  module.exports.SAUCE_PRICE = SAUCE_PRICE;
 }
 

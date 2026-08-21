@@ -63,7 +63,7 @@ function renderCart() {
       const ed = tuoteData?.extras?.find(e => e.name === extraName);
       return sum + (ed ? ed.price * extraMultiplier : 0);
     }, 0);
-    const sauceTotal = (SAUCE_PRICES[item.sauce] || 0) * extraMultiplier;
+    const sauceTotal = (item.sauce ? SAUCE_PRICE : 0) * extraMultiplier;
     const glutenFreeTotal = item.glutenFree ? 3 : 0;
     const qty = item.quantity || 1;
     const itemTotal = (basePrice + sizeExtra + extrasTotal + sauceTotal + glutenFreeTotal) * qty;
@@ -172,7 +172,7 @@ function renderSummary() {
       const ed = tuoteData?.extras?.find(e => e.name === extraName);
       return sum + (ed ? ed.price * extraMultiplier : 0);
     }, 0);
-    const sauceTotal = (SAUCE_PRICES[item.sauce] || 0) * extraMultiplier;
+    const sauceTotal = (item.sauce ? SAUCE_PRICE : 0) * extraMultiplier;
     const glutenFreeTotal = item.glutenFree ? 3 : 0;
 
     const qty = item.quantity || 1;
