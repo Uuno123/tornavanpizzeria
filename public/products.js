@@ -1,3 +1,9 @@
+// Kastikkeet ovat oletuksena ilmaisia; tähän lisätään ne joista veloitetaan.
+// Hinta tuplaantuu perhekoossa, samalla logiikalla kuin lisätäytteillä.
+const SAUCE_PRICES = {
+  "Majoneesi": 1.5
+};
+
 const products = [
   {
     id: "Margareta",
@@ -2552,5 +2558,8 @@ const products = [
   }
 ];
 
-if (typeof module !== 'undefined') module.exports = products;
+if (typeof module !== 'undefined') {
+  module.exports = products;
+  module.exports.SAUCE_PRICES = SAUCE_PRICES;
+}
 

@@ -5,6 +5,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const { Resend } = require('resend');
 const path = require('path');
 const products = require('../public/products');
+const { SAUCE_PRICES } = products;
 const { customerReceiptHtml, restaurantOrderHtml } = require('./emails');
 
 const app = express();
@@ -50,9 +51,10 @@ app.post('/create-checkout-session', checkoutLimiter, async (req, res) => {
         const ed = product.extras?.find(e => e.name === extraName);
         return sum + (ed ? ed.price * extraMultiplier : 0);
       }, 0);
+      const sauceTotal = (SAUCE_PRICES[item.sauce] || 0) * extraMultiplier;
       const glutenFreeTotal = item.glutenFree ? 3 : 0;
 
-      const unitPrice = basePrice + sizeExtra + extrasTotal + glutenFreeTotal;
+      const unitPrice = basePrice + sizeExtra + extrasTotal + sauceTotal + glutenFreeTotal;
       const qty = item.quantity || 1;
 
       let desc = item.size || '';

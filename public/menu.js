@@ -166,14 +166,17 @@ function openModal(productId, category) {
   product.sauces.forEach(sauce => {
 
     const label = document.createElement("label");
+    label.dataset.basePrice = SAUCE_PRICES[sauce] || 0;
 
     label.innerHTML = `
       <input type="radio" name="sauce" value="${sauce}">
-      ${sauce}
+      <span class="sauce-label-text">${sauce}</span>
     `;
 
     document.getElementById("sauceOptions").appendChild(label);
   });
+
+  updateSaucePrices();
 
 
   // 🟢 LISÄTÄYTEET
@@ -241,6 +244,26 @@ function updateExtraPrices() {
   });
 }
 
+// Päivittää maksullisten kastikkeiden (esim. majoneesi) näytettävän hinnan valitun koon mukaan
+function updateSaucePrices() {
+  const product = window.selectedProduct;
+  if (!product) return;
+
+  const selectedSize = document.querySelector('input[name="size"]:checked');
+  const sizeData = product.sizes.find(s => s.name === selectedSize?.value);
+  const sizeExtra = sizeData ? sizeData.extra : 0;
+  const multiplier = sizeExtra > 0 ? 2 : 1;
+
+  document.querySelectorAll('#sauceOptions label').forEach(label => {
+    const base = parseFloat(label.dataset.basePrice) || 0;
+    const input = label.querySelector('input');
+    const textEl = label.querySelector('.sauce-label-text');
+    if (textEl && input) {
+      textEl.textContent = base > 0 ? `${input.value} (+${(base * multiplier).toFixed(2)}€)` : input.value;
+    }
+  });
+}
+
 // Estää valitsemasta enempää täytteitä kuin tuote sallii (esim. pannupizza "2 täytettä")
 function enforceMaxFreeExtras() {
   const product = window.selectedProduct;
@@ -256,7 +279,10 @@ function enforceMaxFreeExtras() {
 }
 
 document.getElementById("sizeOptions")?.addEventListener("change", (e) => {
-  if (e.target.name === "size") updateExtraPrices();
+  if (e.target.name === "size") {
+    updateExtraPrices();
+    updateSaucePrices();
+  }
 });
 
 document.getElementById("extraOptions")?.addEventListener("change", (e) => {
