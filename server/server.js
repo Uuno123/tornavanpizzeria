@@ -117,7 +117,19 @@ app.get('/api/orders/stream', dashboardAuth, (req, res) => {
   req.on('close', () => sseClients.delete(res));
 });
 
-app.post('/api/orders/:id/complete', dashboardAuth, (req, res) => {
+// Basic Auth lähettää tunnukset selaimesta automaattisesti mihin tahansa pyyntöön
+// samalle origin+realm-yhdistelmälle, myös toisen sivuston käynnistämään pyyntöön (CSRF).
+// Tämä omaa custom-headeria vaativa tarkistus estää sen: ristiin sivustolta lähetetty
+// lomake ei voi koskaan asettaa custom-headeria, ja fetch/XHR laukaisisi CORS-preflightin
+// jonka palvelin (ei CORS-middlewarea) hylkäisi, joten selain ei koskaan lähettäisi itse pyyntöä.
+function requireDashboardOrigin(req, res, next) {
+  if (req.headers['x-requested-with'] !== 'TilauksetDashboard') {
+    return res.status(403).json({ error: 'Pyyntö hylätty (väärä origin).' });
+  }
+  next();
+}
+
+app.post('/api/orders/:id/complete', dashboardAuth, requireDashboardOrigin, (req, res) => {
   const order = orders.get(req.params.id);
   if (!order) return res.status(404).json({ error: 'Tilausta ei löydy' });
   order.status = 'done';

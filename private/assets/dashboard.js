@@ -218,7 +218,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function completeOrder(id) {
-    fetch(`/api/orders/${encodeURIComponent(id)}/complete`, { method: 'POST' }).catch(() => {
+    fetch(`/api/orders/${encodeURIComponent(id)}/complete`, {
+      method: 'POST',
+      headers: { 'X-Requested-With': 'TilauksetDashboard' },
+    }).catch(() => {
       // SSE-lähetys päivittää näkymän joka tapauksessa onnistuessaan; epäonnistuessa
       // tilaus jää yksinkertaisesti "uusi"-tilaan ja sen voi yrittää merkitä uudelleen.
     });
