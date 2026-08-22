@@ -6,7 +6,7 @@ const products = [
   {
     id: "Margareta",
     name: "Margareta",
-    image: "Gemini_Generated_Image_mrmgzvmrmgzvmrmg.png",
+    image: "images/Gemini_Generated_Image_mrmgzvmrmgzvmrmg.png",
     price: "10.50",
     description: "Juustoa, pizzakastike",
     sizes: [
@@ -45,7 +45,7 @@ const products = [
   {
     id: "Jauhelihapizza",
     name: "Jauhelihapizza",
-    image: "jauhelihapizza.png",
+    image: "images/jauhelihapizza.png",
     price: "11.50",
     description: "Jauheliha",
     sizes: [
@@ -84,7 +84,7 @@ const products = [
   {
     id: "Tropicana",
     name: "Tropicana",
-    image: "tropicana.png",
+    image: "images/tropicana.png",
     price: "11.50",
     description: "Kinkku, ananas",
     sizes: [
@@ -123,7 +123,7 @@ const products = [
   {
     id: "Opera",
     name: "Opera",
-    image: "opera.png",
+    image: "images/opera.png",
     price: "11.50",
     description: "Kinkku, tonnikala",
     sizes: [
@@ -162,7 +162,7 @@ const products = [
   {
     id: "Pepperoni",
     name: "Pepperoni",
-    image: "pepperoni.png",
+    image: "images/pepperoni.png",
     price: "11.50",
     description: "Tupla pepperoni",
     sizes: [
@@ -201,7 +201,7 @@ const products = [
   {
     id: "KasvisPizza",
     name: "Kasvis Pizza",
-    image: "kasvispizza.png",
+    image: "images/kasvispizza.png",
     price: "13.00",
     description: "Sipuli, oliivi, herkkusieni, ananas, paprika",
     sizes: [
@@ -240,7 +240,7 @@ const products = [
   {
     id: "OperaSpecial",
     name: "Opera Special",
-    image: "opera.png",
+    image: "images/opera.png",
     price: "12.50",
     description: "Kinkku, tonnikala, salami",
     sizes: [
@@ -279,7 +279,7 @@ const products = [
   {
     id: "QuattroStagioni",
     name: "Quattro Stagioni",
-    image: "quatrostagioni.png",
+    image: "images/quatrostagioni.png",
     price: "13.00",
     description: "Kinkku, herkkusieni, katkarapu, tonnikala",
     sizes: [
@@ -318,7 +318,7 @@ const products = [
   {
     id: "FruttiDiMare",
     name: "Frutti di Mare",
-    image: "fruttidimare.png",
+    image: "images/fruttidimare.png",
     price: "12.50",
     description: "Tonnikala, katkarapu, simpukka",
     sizes: [
@@ -357,7 +357,7 @@ const products = [
   {
     id: "Americana",
     name: "Americana",
-    image: "americana.png",
+    image: "images/americana.png",
     price: "12.50",
     description: "Kinkku, ananas, aura-juusto",
     sizes: [
@@ -396,7 +396,7 @@ const products = [
   {
     id: "KabulPizza",
     name: "Kabul Pizza",
-    image: "paradice.png",
+    image: "images/paradice.png",
     price: "13.50",
     description: "Kebab, jalapeno, tandoori-maustet, sipuli, BBQ-kastike",
     sizes: [
@@ -435,7 +435,7 @@ const products = [
   {
     id: "Venetsia",
     name: "Venetsia",
-    image: "venetsia.png",
+    image: "images/venetsia.png",
     price: "12.50",
     description: "Kinkku, herkkusieni, katkarapu",
     sizes: [
@@ -474,7 +474,7 @@ const products = [
   {
     id: "Paradice",
     name: "Paradice",
-    image: "paradice.png",
+    image: "images/paradice.png",
     price: "12.50",
     description: "Salami, tonnikala, paprika",
     sizes: [
@@ -513,7 +513,7 @@ const products = [
   {
     id: "Manzo",
     name: "Manzo",
-    image: "manzo.png",
+    image: "images/manzo.png",
     price: "12.50",
     description: "Pepperoni, kinkku, sipuli",
     sizes: [
@@ -552,7 +552,7 @@ const products = [
   {
     id: "Romeo",
     name: "Romeo",
-    image: "romeo.png",
+    image: "images/romeo.png",
     price: "13.00",
     description: "Salami, ananas, katkarapu, aura-juusto",
     sizes: [
@@ -591,7 +591,7 @@ const products = [
   {
     id: "Julia",
     name: "Julia",
-    image: "julia.png",
+    image: "images/julia.png",
     price: "13.00",
     description: "Kinkku, ananas, katkarapu, aura-juusto",
     sizes: [
@@ -630,7 +630,7 @@ const products = [
   {
     id: "BlueChicken",
     name: "Blue Chicken",
-    image: "romeo.png",
+    image: "images/romeo.png",
     price: "12.50",
     description: "Kana, ananas, aura-juusto",
     sizes: [
@@ -669,7 +669,7 @@ const products = [
   {
     id: "TornavaSpecial",
     name: "Törnävä-Special",
-    image: "törnävänspecial.png",
+    image: "törnävänspeciimages/al.png",
     price: "13.00",
     description: "Kebab-liha, aura-juusto, ananas, herkkusieni",
     sizes: [
@@ -708,7 +708,7 @@ const products = [
   {
     id: "Diavola",
     name: "Diavola",
-    image: "diavola.png",
+    image: "images/diavola.png",
     price: "13.00",
     description: "Kinkku, herkkusieni, pepperoni, sipuli, valkosipuli",
     sizes: [
@@ -747,7 +747,7 @@ const products = [
   {
     id: "Kummiseta",
     name: "Kummisetä",
-    image: "kummisetä.png",
+    image: "images/kummisetä.png",
     price: "13.00",
     description: "Kinkku, katkarapu, herkkusieni, tuplajuusto, valkosipuli",
     sizes: [
@@ -786,7 +786,7 @@ const products = [
   {
     id: "Empire",
     name: "Empire",
-    image: "empire.png",
+    image: "images/empire.png",
     price: "13.00",
     description: "Salami, kinkku, katkarapu, tuplajuusto, mustapippuri, valkosipuli",
     sizes: [
@@ -825,7 +825,7 @@ const products = [
   {
     id: "KebabSpecial",
     name: "Kebab Special",
-    image: "manzo.png",
+    image: "images/manzo.png",
     price: "13.00",
     description: "Kebab-liha, sipuli, herkkusieni, chilipepperoni",
     sizes: [
@@ -864,7 +864,7 @@ const products = [
   {
     id: "PapasSpecial",
     name: "Papa's Special",
-    image: "papasspecial.png",
+    image: "papasspeciimages/al.png",
     price: "13.00",
     description: "Salami, kinkku, katkarapu, tuplajuusto",
     sizes: [
@@ -903,7 +903,7 @@ const products = [
   {
     id: "Mexicana",
     name: "Mexicana",
-    image: "pepperoni.png",
+    image: "images/pepperoni.png",
     price: "13.00",
     description: "Kebab-liha, jalapeno, paprika, sipuli, valkosipuli",
     sizes: [
@@ -942,7 +942,7 @@ const products = [
   {
     id: "Fantasia",
     name: "Fantasia",
-    image: "tropicana.png",
+    image: "images/tropicana.png",
     price: "13.50",
     maxFreeExtras: 4,
     description: "Neljä täytettä oman valinnan mukaan",
@@ -986,7 +986,7 @@ const products = [
   {
     id: "tornava-vene",
     name: "Törnävä Vene",
-    image: "manzo.png",
+    image: "images/manzo.png",
     price: "13.00",
     description: "Kebab-liha, herkkusieni, sipuli, chili, majoneesi",
     sizes: [
@@ -1025,7 +1025,7 @@ const products = [
   {
     id: "ligure",
     name: "Ligure",
-    image: "venetsia.png",
+    image: "images/venetsia.png",
     price: "13.00",
     description: "Kebab-liha, ananas, aura-juusto, majoneesi, curry",
     sizes: [
@@ -1068,7 +1068,7 @@ const products = [
   {
     id: "Pita Kebab",
     name: "PitaKebab",
-    image: "pitakebab.png",
+    image: "images/pitakebab.png",
     price: "11.00",
     description: "Uunituore leipä, kebab-liha, salaatti, kebab-kastike",
     sizes: [
@@ -1107,7 +1107,7 @@ const products = [
   {
     id: "Kebab Riisilla",
     name: "KebabRiisillä",
-    image: "kebabriisillä.png",
+    image: "images/kebabriisillä.png",
     price: "12.00",
     description: "Riisi, kebab-liha, kebab-kastike, salaatti",
     sizes: [
@@ -1146,7 +1146,7 @@ const products = [
   {
     id: "Kebab Ranskalaisilla",
     name: "Kebab Ranskalaisilla",
-    image: "kebabranskalaisilla.png",
+    image: "images/kebabranskalaisilla.png",
     price: "12.00",
     description: "Ranskalaiset, kebab-liha, kebab-kastike, salaatti",
     sizes: [
@@ -1185,7 +1185,7 @@ const products = [
   {
     id: "Kebab Lohkoperunoilla",
     name: "Kebab Lohkoperunoilla",
-    image: "kebabranskalaisilla.png",
+    image: "images/kebabranskalaisilla.png",
     price: "12.00",
     description: "Lohkoperunat, kebab-liha, kebab-kastike, salaatti",
     sizes: [
@@ -1224,7 +1224,7 @@ const products = [
   {
     id: "Iskender Kebab",
     name: "Iskender Kebab",
-    image: "kebabranskalaisilla.png",
+    image: "images/kebabranskalaisilla.png",
     price: "12.50",
     description: "Uunituoreita leipäkuutioita, kebab-liha, kebab-kastike, jogurttikastike, salaatti",
     sizes: [
@@ -1263,7 +1263,7 @@ const products = [
   {
     id: "Rullakebab",
     name: "Rullakebab",
-    image: "kebabrulla.png",
+    image: "images/kebabrulla.png",
     price: "13.00",
     description: "Kebab-liha, salaatti, kebab-kastike",
     sizes: [
@@ -1302,7 +1302,7 @@ const products = [
   {
     id: "Special Rulla Kebab",
     name: "Special Rulla Kebab",
-    image: "kebabrulla.png",
+    image: "images/kebabrulla.png",
     price: "17.00",
     description: "Tupla kebab, juusto, salaatti, kebab-kastike",
     sizes: [
@@ -1341,7 +1341,7 @@ const products = [
   {
     id: "Kebab Valkosipuliperunoilla",
     name: "Kebab Valkosipuliperunoilla",
-    image: "kebabranskalaisilla.png",
+    image: "images/kebabranskalaisilla.png",
     price: "12.50",
     description: "Valkosipuliperunat, kebab-liha, kebab-kastike, salaatti",
     sizes: [
@@ -1380,7 +1380,7 @@ const products = [
   {
     id: "Kebab Kermaperunoilla",
     name: "Kebab Kermaperunoilla",
-    image: "kebabranskalaisilla.png",
+    image: "images/kebabranskalaisilla.png",
     price: "12.50",
     description: "Kermaperunat, kebab-liha, kebab-kastike, salaatti",
     sizes: [
@@ -1419,7 +1419,7 @@ const products = [
   {
     id: "Kebab Aurajuustoperunoilla",
     name: "Kebab Aurajuustoperunoilla",
-    image: "kebabaura.png",
+    image: "images/kebabaura.png",
     price: "13.00",
     description: "Aurajuustoperunat, kebab-liha, kebab-kastike, salaatti",
     sizes: [
@@ -1458,7 +1458,7 @@ const products = [
   {
     id: "kebab-salaatti",
     name: "Kebab Salaatti",
-    image: "kebabranskalaisilla.png",
+    image: "images/kebabranskalaisilla.png",
     price: "12.50",
     description: "Jäävuorisalaatti, kebab-liha, tomaatti, kurkku, fetajuusto",
     sizes: [
@@ -1499,7 +1499,7 @@ const products = [
   {
     id: "al_tonno",
     name: "Al Tonno Calzone",
-    image: "al.png",
+    image: "images/al.png",
     price: "13.00",
     description: "Kebab-liha, sipuli, jalapeno, paprika, valkosipuli, mustapippuri",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -1535,7 +1535,7 @@ const products = [
   {
     id: "lorenzo",
     name: "Lorenzo Calzone",
-    image: "al2.png",
+    image: "images/al2.png",
     price: "13.00",
     description: "Ananas, oliivi, sipuli, herkkusieni",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -1576,7 +1576,7 @@ const products = [
   {
     id: "pannupizza-2",
     name: "Pannupizza 2 täytettä",
-    image: "quatrostagioni.png",
+    image: "images/quatrostagioni.png",
     price: "15.00",
     maxFreeExtras: 2,
     description: "Valitse täytteet lisätäytteistä",
@@ -1613,7 +1613,7 @@ const products = [
   {
     id: "pannupizza-3",
     name: "Pannupizza 3 täytettä",
-    image: "quatrostagioni.png",
+    image: "images/quatrostagioni.png",
     price: "16.00",
     maxFreeExtras: 3,
     description: "Valitse täytteet lisätäytteistä",
@@ -1650,7 +1650,7 @@ const products = [
   {
     id: "pannupizza-4",
     name: "Pannupizza 4 täytettä",
-    image: "quatrostagioni.png",
+    image: "images/quatrostagioni.png",
     price: "17.00",
     maxFreeExtras: 4,
     description: "Valitse täytteet lisätäytteistä",
@@ -1692,7 +1692,7 @@ const products = [
     {
     id: "tonnikalasalaatti",
     name: "Tonnikalasalaatti",
-    image: "salaatti.png",
+    image: "images/salaatti.png",
     price: "11.50",
     description: "Tonnikala, paprika, jäävuorisalaatti, kurkku, tomaatti, salaattikastike, uunituore leipä",
     sizes: [
@@ -1730,7 +1730,7 @@ const products = [
   {
     id: "katkarapusalaatti",
     name: "Katkarapusalaatti",
-    image: "salaatti.png",
+    image: "images/salaatti.png",
     price: "11.50",
     description: "Katkarapuja, herkkusieniä, jäävuorisalaatti, kurkku, tomaatti, salaattikastike, uunituore leipä",
     sizes: [
@@ -1768,7 +1768,7 @@ const products = [
   {
     id: "kanasalaatti",
     name: "Kanasalaatti",
-    image: "salaatti.png",
+    image: "images/salaatti.png",
     price: "12.50",
     description: "Paistettu broilerin filee, ananas, jäävuorisalaatti, kurkku, tomaatti, salaattikastike, uunituore leipä",
     sizes: [
@@ -1806,7 +1806,7 @@ const products = [
   {
     id: "fetasalaatti",
     name: "Fetasalaatti",
-    image: "salaatti.png",
+    image: "images/salaatti.png",
     price: "12.00",
     description: "Sipuli, chili, pepperoni, oliivi, jäävuorisalaatti, kurkku, tomaatti, salaattikastike, uunituore leipä",
     sizes: [
@@ -1850,7 +1850,7 @@ const products = [
   {
     id: "pitaleipa",
     name: "Pitaleipä",
-    image: "pita.png",
+    image: "images/pita.png",
     price: "11.50",
     description: "Kana",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -1886,7 +1886,7 @@ const products = [
   {
     id: "rulla",
     name: "Rulla",
-    image: "kebabrulla.png",
+    image: "images/kebabrulla.png",
     price: "13.00",
     description: "Kana",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -1922,7 +1922,7 @@ const products = [
   {
     id: "kana-riisi",
     name: "Riisi",
-    image: "kebabriisillä.png",
+    image: "images/kebabriisillä.png",
     price: "12.00",
     description: "Kana, riisi",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -1958,7 +1958,7 @@ const products = [
   {
     id: "ranskikset",
     name: "Ranskalaiset",
-    image: "ranu.png",
+    image: "images/ranu.png",
     price: "12.00",
     description: "Kana, ranskalaiset",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -1994,7 +1994,7 @@ const products = [
   {
     id: "lohkoperunat",
     name: "Lohkoperunat",
-    image: "lohko.png",
+    image: "images/lohko.png",
     price: "12.00",
     description: "Kana, lohkoperunat",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -2030,7 +2030,7 @@ const products = [
   {
     id: "kermaperunat",
     name: "Kermaperunat",
-    image: "lohko.png",
+    image: "images/lohko.png",
     price: "12.50",
     description: "Kana, kermaperunat",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -2066,7 +2066,7 @@ const products = [
   {
     id: "valkosipuliperunat",
     name: "Valkosipuliperunat",
-    image: "lohko.png",
+    image: "images/lohko.png",
     price: "12.50",
     description: "Kana, valkosipuliperunat",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -2102,7 +2102,7 @@ const products = [
   {
     id: "aurajuustoperunat",
     name: "Aurajuustoperunat",
-    image: "lohko.png",
+    image: "images/lohko.png",
     price: "13.00",
     description: "Kana, aurajuustoperunat",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -2140,7 +2140,7 @@ const products = [
   {
     id: "wings8",
     name: "Hot Wings 8 kpl",
-    image: "siivet.png",
+    image: "images/siivet.png",
     price: "8.00",
     description: "Kanasiipipalat, dippikastike",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -2176,7 +2176,7 @@ const products = [
   {
     id: "wings10",
     name: "Hot Wings 10 kpl",
-    image: "siivet.png",
+    image: "images/siivet.png",
     price: "10.00",
     description: "Kanasiipipalat, dippikastike",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -2212,7 +2212,7 @@ const products = [
   {
     id: "wings16",
     name: "Hot Wings 16 kpl",
-    image: "siivet.png",
+    image: "images/siivet.png",
     price: "14.00",
     description: "Kanasiipipalat, dippikastike",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -2248,7 +2248,7 @@ const products = [
   {
     id: "wings25",
     name: "Hot Wings 25 kpl",
-    image: "siivet.png",
+    image: "images/siivet.png",
     price: "19.00",
     description: "Kanasiipipalat, dippikastike",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -2284,7 +2284,7 @@ const products = [
   {
     id: "wings30",
     name: "Hot Wings 30 kpl",
-    image: "siivet.png",
+    image: "images/siivet.png",
     price: "22.00",
     description: "Kanasiipipalat, dippikastike",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -2320,7 +2320,7 @@ const products = [
   {
     id: "wings50",
     name: "Hot Wings 50 kpl",
-    image: "siivet.png",
+    image: "images/siivet.png",
     price: "30.00",
     description: "Kanasiipipalat, dippikastike",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -2424,7 +2424,7 @@ const products = [
   {
     id: "falafel-pita",
     name: "Falafel Pita",
-    image: "pita.png",
+    image: "images/pita.png",
     price: "11.00",
     description: "Falafel, salaatti, kastike",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -2460,7 +2460,7 @@ const products = [
   {
     id: "falafel-riisilla",
     name: "Falafel Riisillä",
-    image: "kebabriisillä.png",
+    image: "images/kebabriisillä.png",
     price: "12.00",
     description: "Falafel, riisi, salaatti",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -2496,7 +2496,7 @@ const products = [
   {
     id: "falafel-ranskalaisilla",
     name: "Falafel Ranskalaisilla",
-    image: "kebabranskalaisilla.png",
+    image: "images/kebabranskalaisilla.png",
     price: "12.00",
     description: "Falafel, ranskalaiset, salaatti",
     sizes: [{ name: "Normal", extra: 0 }],
@@ -2532,7 +2532,7 @@ const products = [
   {
     id: "falafel-rulla",
     name: "Falafel Rulla",
-    image: "kebabrulla.png",
+    image: "images/kebabrulla.png",
     price: "12.00",
     description: "Falafel, salaatti, kastike",
     sizes: [{ name: "Normal", extra: 0 }],
