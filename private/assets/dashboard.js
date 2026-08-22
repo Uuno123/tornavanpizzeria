@@ -44,6 +44,7 @@ function renderOrderCard(order) {
   const phoneHtml = order.phone
     ? `<a href="tel:${escapeHtml(order.phone.replace(/\s+/g, ''))}">${escapeHtml(order.phone)}</a>`
     : '';
+  const emailHtml = order.email ? `<span class="order-address">${escapeHtml(order.email)}</span>` : '';
   const addressHtml = order.address ? `<span class="order-address">${escapeHtml(order.address)}</span>` : '';
 
   return `
@@ -59,6 +60,7 @@ function renderOrderCard(order) {
       <div class="order-customer">
         <strong>${escapeHtml(order.customer)}</strong>
         ${phoneHtml}
+        ${emailHtml}
         ${addressHtml}
       </div>
 
@@ -322,6 +324,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const phoneEl = document.getElementById('modalCustomerPhone');
     phoneEl.textContent = order.phone;
     phoneEl.href = order.phone ? 'tel:' + order.phone.replace(/\s+/g, '') : '#';
+
+    const emailEl = document.getElementById('modalEmail');
+    emailEl.textContent = order.email;
+    emailEl.style.display = order.email ? '' : 'none';
 
     const addressEl = document.getElementById('modalAddress');
     addressEl.textContent = order.address;

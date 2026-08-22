@@ -329,6 +329,7 @@ app.post('/webhook', async (req, res) => {
       monthKey: helsinkiMonthKey(now),
       type: deliveryInfo.type === 'delivery' ? 'delivery' : 'pickup',
       customer: customerName,
+      email: customerEmail || '',
       phone: deliveryInfo.phone,
       address: deliveryInfo.address,
       items: items.map(i => ({ qty: i.q, name: i.n, detail: i.d + (i.gf ? ' · Gluteeniton' : '') })),
