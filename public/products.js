@@ -2564,6 +2564,41 @@ const products = [
       { name: "Kana", price: 1.5 },
       { name: "Jalapeno", price: 1.5 }
     ]
+  },
+
+  /*===================
+  TESTI
+  =====================*/
+  {
+    id: "uuno-testaa",
+    name: "UUNO TESTAA",
+    image: "images/logo.png",
+    price: "0.50",
+    description: "Testituote",
+    sizes: [{ name: "Normal", extra: 0 }],
+    sauces: [],
+    maxFreeExtras: 19,
+    extras: [
+      { name: "Ananas", price: 1.5 },
+      { name: "Tonnikala", price: 1.5 },
+      { name: "Oliivi", price: 1.5 },
+      { name: "Aurajuusto", price: 1.5 },
+      { name: "Paprika", price: 1.5 },
+      { name: "Herkkusieni", price: 1.5 },
+      { name: "Simpukka", price: 1.5 },
+      { name: "Feta", price: 1.5 },
+      { name: "Katkarapu", price: 1.5 },
+      { name: "Tomaatti", price: 1.5 },
+      { name: "Kinkku", price: 1.5 },
+      { name: "Salami", price: 1.5 },
+      { name: "Pepperonimakkara", price: 1.5 },
+      { name: "Juusto", price: 1.5 },
+      { name: "Valkosipuli", price: 1.5 },
+      { name: "Jauheliha", price: 1.5 },
+      { name: "Kebabliha", price: 1.5 },
+      { name: "Kana", price: 1.5 },
+      { name: "Jalapeno", price: 1.5 }
+    ]
   }
 ];
 
