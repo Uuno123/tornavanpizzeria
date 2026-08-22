@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const rateLimit = require('express-rate-limit');
+const crypto = require('crypto');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const { Resend } = require('resend');
 const path = require('path');
@@ -13,10 +14,116 @@ app.set('trust proxy', 1);
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+/*=============================
+  TILAUKSET-DASHBOARD: MUISTIVARASTO + SSE
+  Nollautuu palvelimen uudelleenkäynnistyksessä/deployssa - ei tietokantaa.
+===============================*/
+const orders = new Map(); // sessionId -> tilausobjekti
+const sseClients = new Set();
+
+function helsinkiDateKey(date) {
+  return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Helsinki', year: 'numeric', month: '2-digit', day: '2-digit' }).format(date);
+}
+function helsinkiMonthKey(date) {
+  return helsinkiDateKey(date).slice(0, 7);
+}
+
+function broadcastOrders() {
+  const payload = JSON.stringify({ orders: Array.from(orders.values()) });
+  const message = `data: ${payload}\n\n`;
+  for (const client of sseClients) client.write(message);
+}
+
+/*=============================
+  BASIC AUTH /tilaukset-dashboardille
+===============================*/
+function dashboardAuth(req, res, next) {
+  const user = process.env.DASHBOARD_USER;
+  const pass = process.env.DASHBOARD_PASS;
+
+  if (!user || !pass) {
+    return res.status(503).send('Dashboard ei ole käytössä: DASHBOARD_USER/DASHBOARD_PASS puuttuu palvelimen ympäristömuuttujista.');
+  }
+
+  const header = req.headers.authorization || '';
+  const [scheme, encoded] = header.split(' ');
+  if (scheme !== 'Basic' || !encoded) {
+    res.set('WWW-Authenticate', 'Basic realm="Tilaukset"');
+    return res.status(401).send('Tunnistautuminen vaaditaan.');
+  }
+
+  const decoded = Buffer.from(encoded, 'base64').toString('utf8');
+  const sepIndex = decoded.indexOf(':');
+  const reqUser = sepIndex === -1 ? decoded : decoded.slice(0, sepIndex);
+  const reqPass = sepIndex === -1 ? '' : decoded.slice(sepIndex + 1);
+
+  const userBuf = Buffer.from(reqUser);
+  const passBuf = Buffer.from(reqPass);
+  const expectedUserBuf = Buffer.from(user);
+  const expectedPassBuf = Buffer.from(pass);
+
+  const userMatch = userBuf.length === expectedUserBuf.length && crypto.timingSafeEqual(userBuf, expectedUserBuf);
+  const passMatch = passBuf.length === expectedPassBuf.length && crypto.timingSafeEqual(passBuf, expectedPassBuf);
+
+  if (!userMatch || !passMatch) {
+    res.set('WWW-Authenticate', 'Basic realm="Tilaukset"');
+    return res.status(401).send('Väärä käyttäjätunnus tai salasana.');
+  }
+
+  next();
+}
+
 // Webhook tarvitsee raa'an bodyn ennen JSON-middlewarea
 app.use('/webhook', express.raw({ type: 'application/json' }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
+
+// Dashboardin CSS/JS - ei sisällä asiakastietoja, ei tarvitse suojausta.
+// dashboard.html EI ole tässä kansiossa staattisesti, vain /tilaukset-reitin kautta.
+app.use('/tilaukset-assets', express.static(path.join(__dirname, '../private/assets')));
+
+/*=============================
+  TILAUKSET-DASHBOARD (suojattu)
+===============================*/
+// Estää Basic Authin salasanan arvaamisen automaattisesti toistamalla pyyntöjä
+const dashboardLoginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 min
+  max: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: 'Liikaa kirjautumisyrityksiä. Yritä uudelleen hetken kuluttua.',
+});
+
+app.get('/tilaukset', dashboardLoginLimiter, dashboardAuth, (req, res) => {
+  res.sendFile(path.join(__dirname, '../private/dashboard.html'));
+});
+
+// Basic Authilla ei ole oikeaa palvelinpuolen "kirjaudu ulos" -käsitettä (ei sessiota).
+// Tämä pakottaa useimmat selaimet kysymään tunnukset uudelleen hylkäämällä pyynnön aina.
+app.get('/tilaukset/logout', (req, res) => {
+  res.set('WWW-Authenticate', 'Basic realm="Tilaukset"');
+  res.status(401).send('Kirjauduttu ulos. Voit sulkea tämän välilehden tai kirjautua uudelleen sisään.');
+});
+
+app.get('/api/orders/stream', dashboardAuth, (req, res) => {
+  res.writeHead(200, {
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive',
+  });
+  res.write(`data: ${JSON.stringify({ orders: Array.from(orders.values()) })}\n\n`);
+
+  sseClients.add(res);
+  req.on('close', () => sseClients.delete(res));
+});
+
+app.post('/api/orders/:id/complete', dashboardAuth, (req, res) => {
+  const order = orders.get(req.params.id);
+  if (!order) return res.status(404).json({ error: 'Tilausta ei löydy' });
+  order.status = 'done';
+  broadcastOrders();
+  res.json({ ok: true });
+});
 
 // Estää botteja/skriptejä luomasta rajattomasti maksusessioita samasta IP:stä
 const checkoutLimiter = rateLimit({
@@ -210,6 +317,28 @@ app.post('/webhook', async (req, res) => {
     });
 
     console.log(`Tilaus ${session.id} | asiakas: ${customerEmail}`);
+
+    // Tallenna dashboardia varten ja lähetä yhdistetyille selaimille (SSE)
+    const now = new Date();
+    orders.set(session.id, {
+      id: session.id,
+      displayId: session.id.slice(-8).toUpperCase(),
+      dateDisplay: now.toLocaleDateString('fi-FI', { timeZone: 'Europe/Helsinki' }),
+      timeDisplay: now.toLocaleTimeString('fi-FI', { timeZone: 'Europe/Helsinki', hour: '2-digit', minute: '2-digit' }),
+      dateKey: helsinkiDateKey(now),
+      monthKey: helsinkiMonthKey(now),
+      type: deliveryInfo.type === 'delivery' ? 'delivery' : 'pickup',
+      customer: customerName,
+      phone: deliveryInfo.phone,
+      address: deliveryInfo.address,
+      items: items.map(i => ({ qty: i.q, name: i.n, detail: i.d + (i.gf ? ' · Gluteeniton' : '') })),
+      notes: deliveryInfo.notes,
+      total: `${total} €`,
+      totalCents: session.amount_total,
+      status: 'new',
+      createdAt: now.getTime(),
+    });
+    broadcastOrders();
   }
 });
 
